@@ -1,0 +1,9 @@
+{
+  "parent": "vanillish:block/template_scaffolding_unstable",
+  "textures": {
+    "bottom": "vanillish:block/brass_scaffolding_bottom",
+    "particle": "vanillish:block/brass_scaffolding_top",
+    "side": "vanillish:block/brass_scaffolding_unstable_side",
+    "top": "vanillish:block/brass_scaffolding_top"
+  }
+}
