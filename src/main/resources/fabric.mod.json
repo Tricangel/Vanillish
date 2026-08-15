@@ -28,6 +28,7 @@
 	"mixins": [
 		"vanillish.mixins.json"
 	],
+	"accessWidener": "vanillish.classtweaker",
 	"depends": {
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~1.21.11",

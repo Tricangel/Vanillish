@@ -13,4 +13,5 @@ public class VanillishDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(VanillishModelGen::new);
 		pack.addProvider(VanillishTagGen::new);
 	}
+
 }

@@ -1,16 +1,8 @@
 package bee.vanillish;
 
-import bee.vanillish.registry.VanillishBlocks;
-import bee.vanillish.registry.VanillishItems;
+import bee.vanillish.registry.*;
 import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.event.player.ItemEvents;
-import net.fabricmc.fabric.api.event.player.UseItemCallback;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.common.ServerboundCustomClickActionPacket;
 import net.minecraft.resources.Identifier;
-
-import net.minecraft.world.InteractionResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,8 +17,10 @@ public class Vanillish implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		VanillishBlocks.init();
+		VanillishBlockEntities.init();
+		VanillishMenuTypes.init();
 		VanillishItems.init();
-
+		VanillishRegistries.init();
 
 	}
 

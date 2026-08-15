@@ -1,6 +1,7 @@
 package bee.vanillish.registry;
 
 import bee.vanillish.Vanillish;
+import bee.vanillish.block.BlastChamberBlock;
 import bee.vanillish.block.MetalScaffolding;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,6 +15,10 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import java.util.function.Function;
 
 public class VanillishBlocks {
+
+    //Components
+    public static final Block BLAST_CHAMBER = register("blast_chamber", BlastChamberBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE), true);
+
 
     //Brass family
 

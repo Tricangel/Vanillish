@@ -3,7 +3,7 @@
   "package": "bee.vanillish.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ExampleMixin",
+    "AbstractMinecartMixin",
     "LivingEntityMixin",
     "OldMinecartBehaviourMixin"
   ],
@@ -12,5 +12,8 @@
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  },
+  "client": [
+    "SearchRecipeBookCategoryMixin"
+  ]
 }

@@ -1,6 +1,5 @@
 package bee.vanillish.datagen;
 
-import bee.vanillish.Vanillish;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -18,6 +17,9 @@ public class VanillishTagGen extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+
+
         valueLookupBuilder(BlockTags.RAILS)
                 .add(VanillishBlocks.BRASS_RAILS);
 

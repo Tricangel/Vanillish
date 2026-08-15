@@ -1,4 +1,5 @@
 // 1.21.11	-999999999-01-01T00:00:00	Vanillish/Model Definitions
+4cbae64f54aa56cec490b05324b31fe11cd2afb9 assets/minecraft/items/air.json
 ca01ea0420a379a49f1afa5eda4dffca24298afb assets/vanillish/blockstates/brass_bars.json
 1f979688f871353283ea14ec10c45be21fa1f400 assets/vanillish/blockstates/brass_block.json
 cb1a95a012332547c85e8bf20efe5e292478931d assets/vanillish/blockstates/brass_bricks.json
@@ -13,7 +14,6 @@ b49ec4306aec2f0ae63b8b6f988f8566a00d7c1c assets/vanillish/items/brass_bricks.jso
 f709d0a951476081f39bd26fcc574752deabc4c6 assets/vanillish/items/brass_rails.json
 4cbae64f54aa56cec490b05324b31fe11cd2afb9 assets/vanillish/items/brass_scaffolding.json
 a1837a9108e1d9f820334b5332fedf07431ba817 assets/vanillish/items/brass_tiles.json
-4cbae64f54aa56cec490b05324b31fe11cd2afb9 assets/vanillish/items/package.json
 1fb728e9c9a6be1a072bd2f22dd0586e3fddd6a1 assets/vanillish/models/block/brass_bars_cap.json
 20d4563411ecc28aafd13405233bb69a744ad2f7 assets/vanillish/models/block/brass_bars_cap_alt.json
 486539f1e1b26a2c9fc023c8404697d11a7018c4 assets/vanillish/models/block/brass_bars_post.json
