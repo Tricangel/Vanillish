@@ -31,9 +31,8 @@ public class BlastChamberRecipe extends SingleItemRecipe {
 
     @Override
     public RecipeSerializer<? extends SingleItemRecipe> getSerializer() {
-        List<BlastChamberFuel> fuels = List.of();
-        fuels.stream().
-        return Va;
+
+        return new Serializer();
     }
 
     @Override

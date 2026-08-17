@@ -8,7 +8,9 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -30,6 +32,23 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_GRATE);
         blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_TILES);
         this.createScaffolding(VanillishBlocks.BRASS_SCAFFOLDING, blockModelGenerators);
+
+        blockModelGenerators.family(VanillishBlocks.CHARRED_LOG)
+                .fullBlock(VanillishBlocks.CHARRED_PLANKS, ModelTemplates.CUBE_ALL)
+                .stairs(VanillishBlocks.CHARRED_STAIRS)
+                .slab(VanillishBlocks.CHARRED_SLAB)
+                .fence(VanillishBlocks.CHARRED_FENCE)
+                .fenceGate(VanillishBlocks.CHARRED_FENCE_GATE)
+                .button(VanillishBlocks.CHARRED_BUTTON)
+                .pressurePlate(VanillishBlocks.CHARRED_PRESSURE_PLATE);
+
+        blockModelGenerators.createHangingSign(VanillishBlocks.STRIPPED_CHARRED_LOG, VanillishBlocks.CHARRED_HANGING_SIGN, VanillishBlocks.CHARRED_WALL_HANGING_SIGN);
+        blockModelGenerators.woodProvider(VanillishBlocks.CHARRED_LOG)
+                .log(VanillishBlocks.STRIPPED_CHARRED_LOG)
+                .wood(VanillishBlocks.CHARRED_WOOD)
+                .wood(VanillishBlocks.STRIPPED_CHARRED_WOOD);
+
+
 
 
     }

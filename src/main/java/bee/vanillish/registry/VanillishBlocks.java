@@ -1,8 +1,7 @@
 package bee.vanillish.registry;
 
 import bee.vanillish.Vanillish;
-import bee.vanillish.block.BlastChamberBlock;
-import bee.vanillish.block.MetalScaffolding;
+import bee.vanillish.block.*;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -11,6 +10,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 
 import java.util.function.Function;
 
@@ -18,7 +19,7 @@ public class VanillishBlocks {
 
     //Components
     public static final Block BLAST_CHAMBER = register("blast_chamber", BlastChamberBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE), true);
-
+    public static final Block REDSTONE_RANDOMIZER = register("redstone_randomizer", RedstoneRandomizer::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), true);
 
     //Brass family
 
@@ -34,7 +35,36 @@ public class VanillishBlocks {
     public static final Block BRASS_RAILS = register("brass_rails", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
 
 
+    //Wood
 
+    public static final BlockSetType CHARRED_WOOD_SET_TYPE = new BlockSetType("charred_wood");
+    public static final WoodType CHARRED_WOOD_TYPE = new WoodType("charred_wood", CHARRED_WOOD_SET_TYPE);
+
+    public static final Block CHARRED_LOG = register("charred_log", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LOG), true);
+    public static final Block CHARRED_WOOD = register("charred_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WOOD), true);
+    public static final Block STRIPPED_CHARRED_LOG = register("stripped_charred_log", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_LOG), true);
+    public static final Block STRIPPED_CHARRED_WOOD = register("stripped_charred_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_WOOD), true);
+    public static final Block CHARRED_PLANKS = register("charred_planks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS), true);
+    public static final Block CHARRED_STAIRS = register("charred_stairs", properties -> new StairBlock(CHARRED_PLANKS.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_STAIRS), true);
+    public static final Block CHARRED_SLAB = register("charred_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SLAB), true);
+    public static final Block CHARRED_PRESSURE_PLATE = register("charred_pressure_plate", properties -> new PressurePlateBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PRESSURE_PLATE), true);
+    public static final Block CHARRED_BUTTON = register("charred_button", properties -> new ButtonBlock(CHARRED_WOOD_SET_TYPE, 30, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_BUTTON), true);
+    public static final Block CHARRED_FENCE = register("charred_fence", FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE), true);
+    public static final Block CHARRED_FENCE_GATE = register("charred_fence_gate", properties -> new FenceGateBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE), true);
+    public static final Block CHARRED_SIGN = register("charred_sign", properties -> new StandingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
+    public static final Block CHARRED_WALL_SIGN = register("charred_wall_sign", properties -> new WallSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
+    public static final Block CHARRED_HANGING_SIGN = register("charred_hanging_sign", properties -> new CeilingHangingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
+    public static final Block CHARRED_WALL_HANGING_SIGN = register("charred_wall_hanging_sign", properties -> new WallHangingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
+    public static final Block CHARRED_DOOR = register("charred_door", properties -> new DoorBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_DOOR), true);
+    public static final Block CHARRED_TRAPDOOR = register("charred_trapdoor", properties -> new TrapDoorBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_TRAPDOOR), true);
+
+    //Vegetation
+
+    public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.KELP), true);
+
+    //Water Vegetation
+    public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
+    public static final Block DUCKWEED = register("duckweed", FloatingWaterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
 
 
 
