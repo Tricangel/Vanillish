@@ -1,5 +1,6 @@
 package bee.vanillish.client.recipebook;
 
+import bee.vanillish.Vanillish;
 import bee.vanillish.menu.BlastChamberMenu;
 import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.screens.recipebook.GhostSlots;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class BlastChamberRecipeBook extends RecipeBookComponent<BlastChamberMenu> {
     private final Component recipeFilterName;
-    private static final WidgetSprites FILTER_SPRITES = new WidgetSprites(Identifier.withDefaultNamespace("recipe_book/blast_chamber_filter_enabled"), Identifier.withDefaultNamespace("recipe_book/blast_chamber_filter_disabled"), Identifier.withDefaultNamespace("recipe_book/blast_chamber_filter_enabled_highlighted"), Identifier.withDefaultNamespace("recipe_book/blast_chamber_filter_disabled_highlighted"));
+    private static final WidgetSprites FILTER_SPRITES = new WidgetSprites(Vanillish.id("recipe_book/blast_chamber_filter_enabled"), Vanillish.id("recipe_book/blast_chamber_filter_disabled"), Vanillish.id("recipe_book/blast_chamber_filter_enabled_highlighted"), Vanillish.id("recipe_book/blast_chamber_filter_disabled_highlighted"));
 
     public BlastChamberRecipeBook(BlastChamberMenu recipeBookMenu, List<TabInfo> list, Component recipeFilterName) {
         super(recipeBookMenu, list);

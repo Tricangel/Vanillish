@@ -19,6 +19,7 @@ public class VanillishBlocks {
 
     //Components
     public static final Block BLAST_CHAMBER = register("blast_chamber", BlastChamberBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE), true);
+    public static final Block WARDING_STONE = register("warding_stone", WardingStoneBlock::new, BlockBehaviour.Properties.of(), true);
     public static final Block REDSTONE_RANDOMIZER = register("redstone_randomizer", RedstoneRandomizer::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), true);
 
     //Brass family
@@ -32,7 +33,17 @@ public class VanillishBlocks {
 
     //Brass components
 
-    public static final Block BRASS_RAILS = register("brass_rails", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    public static final Block ADVANCED_RAIL = register("advanced_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    public static final Block ADVANCED_STOP_RAIL = register("advanced_stop_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    //add function to this
+    public static final Block ADVANCED_BOUNCY_RAIL = register("advanced_bouncy_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    //...
+    public static final Block ADVANCED_DIRECTIONAL_RAIL = register("advanced_directional_rail", DirectionalRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    public static final Block ADVANCED_DETECTOR_RAIL = register("advanced_detector_rail", DetectorRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DETECTOR_RAIL), true);
+
+
+
+
 
 
     //Wood
@@ -51,10 +62,7 @@ public class VanillishBlocks {
     public static final Block CHARRED_BUTTON = register("charred_button", properties -> new ButtonBlock(CHARRED_WOOD_SET_TYPE, 30, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_BUTTON), true);
     public static final Block CHARRED_FENCE = register("charred_fence", FenceBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE), true);
     public static final Block CHARRED_FENCE_GATE = register("charred_fence_gate", properties -> new FenceGateBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_FENCE_GATE), true);
-    public static final Block CHARRED_SIGN = register("charred_sign", properties -> new StandingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
-    public static final Block CHARRED_WALL_SIGN = register("charred_wall_sign", properties -> new WallSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
-    public static final Block CHARRED_HANGING_SIGN = register("charred_hanging_sign", properties -> new CeilingHangingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
-    public static final Block CHARRED_WALL_HANGING_SIGN = register("charred_wall_hanging_sign", properties -> new WallHangingSignBlock(CHARRED_WOOD_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SIGN), false);
+    public static final Block CHARRED_SHELF = register("charred_shelf", ShelfBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_SHELF), false);
     public static final Block CHARRED_DOOR = register("charred_door", properties -> new DoorBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_DOOR), true);
     public static final Block CHARRED_TRAPDOOR = register("charred_trapdoor", properties -> new TrapDoorBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_TRAPDOOR), true);
 

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "vanillish:block/blast_chamber_front_on",
+    "side": "vanillish:block/blast_chamber_side",
+    "top": "vanillish:block/blast_chamber_top"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "vanillish:blast_chamber",
+  "group": "food",
+  "time": 200,
+  "input": "minecraft:beef",
+  "output": {
+    "id": "minecraft:cooked_beef"
+  }
+}

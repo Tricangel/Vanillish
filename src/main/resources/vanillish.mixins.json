@@ -5,6 +5,7 @@
   "mixins": [
     "AbstractMinecartMixin",
     "LivingEntityMixin",
+    "MobMixin",
     "OldMinecartBehaviourMixin"
   ],
   "injectors": {

@@ -20,7 +20,7 @@ public class FloatingWaterBlock extends VegetationBlock {
 
     @Override
     protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        return Shapes.box(0, 0, 0, 1, 0.2, 1);
+        return Shapes.box(0, 0, 0, 1, 0.1, 1);
     }
 
     @Override

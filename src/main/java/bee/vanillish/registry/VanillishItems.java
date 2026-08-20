@@ -3,20 +3,22 @@ package bee.vanillish.registry;
 import bee.vanillish.Vanillish;
 import bee.vanillish.item.MetalScaffoldingItem;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
+import net.minecraft.world.item.component.ItemContainerContents;
 
 import java.util.function.Function;
 
 public class VanillishItems {
 
-    public static final Item BRASS_SCAFFOLDING = register("brass_scaffolding", properties -> new MetalScaffoldingItem(VanillishBlocks.BRASS_SCAFFOLDING, properties), new Item.Properties());
     public static final BlockItem ALGAE = registerBlockItem("algae", properties -> new PlaceOnWaterBlockItem(VanillishBlocks.ALGAE, properties), new Item.Properties());
     public static final BlockItem DUCKWEED = registerBlockItem("duckweed", properties -> new PlaceOnWaterBlockItem(VanillishBlocks.DUCKWEED, properties), new Item.Properties());
+    public static final BlockItem CHARRED_SHELF = registerBlockItem("charred_shelf", properties -> new BlockItem(VanillishBlocks.CHARRED_SHELF, properties), new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
 
     public static void init() {
     }

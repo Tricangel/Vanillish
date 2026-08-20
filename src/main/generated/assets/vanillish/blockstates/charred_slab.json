@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vanillish:block/charred_slab"
+    },
+    "type=double": {
+      "model": "vanillish:block/charred_planks"
+    },
+    "type=top": {
+      "model": "vanillish:block/charred_slab_top"
+    }
+  }
+}

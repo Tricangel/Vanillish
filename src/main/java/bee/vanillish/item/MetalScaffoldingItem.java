@@ -18,49 +18,41 @@ public class MetalScaffoldingItem extends BlockItem {
         super(block, properties);
     }
 
-    public @Nullable BlockPlaceContext updatePlacementContext(BlockPlaceContext blockPlaceContext) {
-        BlockPos blockPos = blockPlaceContext.getClickedPos();
+    @Override
+    protected boolean canPlace(BlockPlaceContext blockPlaceContext, BlockState blockState) {
+        boolean bl = false;
         Level level = blockPlaceContext.getLevel();
-        BlockState blockState = level.getBlockState(blockPos);
-        Block block = this.getBlock();
-        if (!blockState.is(block)) {
-            return blockPlaceContext;
-        } else {
-            Direction direction;
-            if (blockPlaceContext.isSecondaryUseActive()) {
-                direction = blockPlaceContext.isInside() ? blockPlaceContext.getClickedFace().getOpposite() : blockPlaceContext.getClickedFace();
-            } else {
-                direction = blockPlaceContext.getClickedFace() == Direction.UP ? blockPlaceContext.getHorizontalDirection() : Direction.UP;
+        BlockPos pos = blockPlaceContext.getClickedPos();
+
+        for (Direction direction : Direction.values()) {
+            if (direction.equals(Direction.UP)) continue;
+
+            if (level.getBlockState(pos.relative(direction)).is(this.getBlock())) {
+                bl = true;
             }
 
-            int i = 0;
-            BlockPos.MutableBlockPos mutableBlockPos = blockPos.mutable().move(direction);
-
-            while(i < 7) {
-                if (!level.isClientSide() && !level.isInWorldBounds(mutableBlockPos)) {
-                    Player player = blockPlaceContext.getPlayer();
-                    int j = level.getMaxY();
-                    if (player instanceof ServerPlayer && mutableBlockPos.getY() > j) {
-                        ((ServerPlayer)player).sendSystemMessage(Component.translatable("build.tooHigh", new Object[]{j}).withStyle(ChatFormatting.RED), true);
-                    }
-                    break;
-                }
-
-                blockState = level.getBlockState(mutableBlockPos);
-                if (!blockState.is(this.getBlock())) {
-                    if (blockState.canBeReplaced(blockPlaceContext)) {
-                        return BlockPlaceContext.at(blockPlaceContext, mutableBlockPos, direction);
-                    }
-                    break;
-                }
-
-                mutableBlockPos.move(direction);
-                if (direction.getAxis().isHorizontal()) {
-                    ++i;
-                }
-            }
-
-            return null;
         }
+
+        if (level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) return true;
+
+        return bl;
+
+    }
+
+    public @Nullable BlockPlaceContext updatePlacementContext(BlockPlaceContext blockPlaceContext) {
+        BlockPos pos = blockPlaceContext.getClickedPos();
+        Level level = blockPlaceContext.getLevel();
+
+        if (blockPlaceContext.getClickedFace().equals(Direction.UP) && level.getBlockState(pos.below()).is(this.getBlock())) {
+            Direction direction = blockPlaceContext.getHorizontalDirection();
+            if (level.getBlockState(pos.relative(direction).below()).canBeReplaced()) {
+                return BlockPlaceContext.at(blockPlaceContext, pos.relative(direction).below(), direction);
+            }
+
+        }
+
+
+        return blockPlaceContext;
+
     }
 }

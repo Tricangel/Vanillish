@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_rail_raised_ne",
+  "textures": {
+    "rail": "vanillish:block/advanced_bouncy_rail"
+  }
+}

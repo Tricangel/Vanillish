@@ -1,0 +1,30 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"2": "vanillish:block/duckweed_top",
+		"3": "vanillish:block/duckweed_bottom",
+		"particle": "vanillish:block/duckweed_top"
+
+	},
+	"elements": [
+		{
+			"from": [0, 0.8, 0],
+			"to": [16, 0.8, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0.8, 0]},
+			"faces": {
+				"up": {"uv": [16, 16, 0, 0], "texture": "#2"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#2"}
+			}
+		},
+		{
+			"from": [-1, 0.2, -1],
+			"to": [17, 0.2, 17],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0.2, 0]},
+			"faces": {
+				"up": {"uv": [9, 9, 0, 0], "texture": "#3"},
+				"down": {"uv": [9, 0, 0, 9], "texture": "#3"}
+			}
+		}
+	]
+}

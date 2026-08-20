@@ -37,23 +37,23 @@ public class MetalScaffolding extends Block implements SimpleWaterloggedBlock {
 
 
 
-    public boolean update(Level level, BlockPos pos, Direction direction, ArrayList<BlockPos> original) {
-        if (level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) {
+    public boolean update(Level level, BlockPos pos, ArrayList<BlockPos> original) {
+        if (level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP) && !level.getBlockState(pos.below()).is(this)) {
             return true;
         }
+        if (original.size() > 300) return false;
 
         boolean output = false;
-        for (Direction direction1 : Direction.Plane.HORIZONTAL) {
-            if (direction1.equals(direction)) continue;
-
+        for (Direction direction1 : Direction.values()) {
             if (original.contains(pos.relative(direction1))) continue;
+            if (direction1.equals(Direction.UP)) continue;
 
-            BlockState neighbour = level.getBlockState(pos.relative(direction));
+            BlockState neighbour = level.getBlockState(pos.relative(direction1));
 
             if (neighbour.getBlock() instanceof MetalScaffolding scaffolding) {
                 if (!original.contains(pos)) original.add(pos);
 
-                boolean bl = scaffolding.update(level, pos.relative(direction1), direction1.getOpposite(), original);
+                boolean bl = scaffolding.update(level, pos.relative(direction1), original);
 
                 if (bl) output = true;
             }
@@ -69,13 +69,13 @@ public class MetalScaffolding extends Block implements SimpleWaterloggedBlock {
     @Override
     protected void neighborChanged(BlockState blockState, Level level, BlockPos blockPos, Block block, @Nullable Orientation orientation, boolean wawa) {
 
-        if (level.getBlockState(blockPos.below()).isFaceSturdy(level, blockPos.below(), Direction.UP) || level.getBlockState(blockPos.below()).is(this)) return;
+        if (level.getBlockState(blockPos.below()).isFaceSturdy(level, blockPos.below(), Direction.UP)) return;
         boolean bl = true;
-        for (Direction direction : Direction.Plane.HORIZONTAL) {
+        for (Direction direction : Direction.values()) {
             BlockState neighbour = level.getBlockState(blockPos.relative(direction));
 
             if (neighbour.getBlock() instanceof MetalScaffolding scaffolding) {
-                boolean temp = scaffolding.update(level, blockPos.relative(direction), direction.getOpposite(), new ArrayList<>(List.of(blockPos)));
+                boolean temp = scaffolding.update(level, blockPos.relative(direction), new ArrayList<>(List.of(blockPos)));
                 if (temp) bl = false;
             }
 
@@ -124,7 +124,7 @@ public class MetalScaffolding extends Block implements SimpleWaterloggedBlock {
     }
 
     private boolean isBottom(BlockGetter blockGetter, BlockPos blockPos) {
-        return !blockGetter.getBlockState(blockPos.below()).is(this) && blockGetter.getBlockState(blockPos.below()).isAir();
+        return !blockGetter.getBlockState(blockPos.below()).is(this) && !blockGetter.getBlockState(blockPos.below()).isFaceSturdy(blockGetter, blockPos.below(), Direction.UP);
     }
 
     @Override

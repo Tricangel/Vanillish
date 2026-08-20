@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "size=1": {
+      "model": "vanillish:block/algae_small"
+    },
+    "size=2": {
+      "model": "vanillish:block/algae_medium"
+    },
+    "size=3": {
+      "model": "vanillish:block/algae_large"
+    }
+  }
+}

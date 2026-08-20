@@ -1,0 +1,6 @@
+{
+  "parent": "vanillish:block/template_algae",
+  "textures": {
+    "texture": "vanillish:block/large_algae"
+  }
+}

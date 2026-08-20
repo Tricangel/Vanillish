@@ -1,22 +1,22 @@
 package bee.vanillish.menu;
 
+import bee.vanillish.Vanillish;
 import bee.vanillish.data.BlastChamberFuel;
 import bee.vanillish.menu.slot.BlastChamberFuelSlot;
 import bee.vanillish.menu.slot.BlastChamberResultSlot;
 import bee.vanillish.registry.VanillishMenuTypes;
-import bee.vanillish.registry.VanillishRegistries;
+import bee.vanillish.registry.VanillishRecipes;
+import bee.vanillish.registry.VanillishTags;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedItemContents;
-import net.minecraft.world.inventory.RecipeBookMenu;
-import net.minecraft.world.inventory.RecipeBookType;
-import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -28,20 +28,24 @@ public class BlastChamberMenu extends RecipeBookMenu {
     public Level level;
     public Player player;
     private final RecipePropertySet acceptedInputs;
+    private final ContainerData data;
     public BlastChamberMenu(int i, Inventory inventory) {
-        this(i, inventory, new SimpleContainer(3));
+        this(i, inventory, new SimpleContainer(3), new SimpleContainerData(4));
     }
 
-    public BlastChamberMenu(int i, Inventory inventory, Container container) {
+    public BlastChamberMenu(int i, Inventory inventory, Container container, ContainerData data) {
         super(VanillishMenuTypes.BLAST_CHAMBER, i);
         this.level = inventory.player.level();
         this.player = inventory.player;
         checkContainerSize(container, 3);
-        this.acceptedInputs = level.recipeAccess().propertySet(null);
+        checkContainerDataCount(data, 4);
+        this.data = data;
+        this.acceptedInputs = level.recipeAccess().propertySet(VanillishRecipes.BLAST_CHAMBER_KEY);
         this.addSlot(new Slot(container, 0, 56, 17));
         this.addSlot(new BlastChamberFuelSlot(container, 1, 56, 53, this));
         this.addSlot(new BlastChamberResultSlot(container, 2, 116, 35, this));
         this.addStandardInventorySlots(inventory, 8, 84);
+        this.addDataSlots(data);
         container.startOpen(player);
     }
 
@@ -61,6 +65,29 @@ public class BlastChamberMenu extends RecipeBookMenu {
 
     }
 
+    public boolean isLit() {
+        return data.get(2) > 0;
+    }
+
+    public float getBurnProgress() {
+
+        int i = data.get(0);
+        int j = data.get(1);
+
+        if (i == 0 | j == 0) return 0;
+
+        return Mth.clamp((float)i / (float)j, 0.0F, 1.0F);
+    }
+
+    public float getLitProgress() {
+        int i = this.data.get(3);
+        if (i == 0) {
+            i = 200;
+        }
+
+        return Mth.clamp((float)this.data.get(2) / (float)i, 0.0F, 1.0F);
+    }
+
     @Override
     public RecipeBookType getRecipeBookType() {
         return RecipeBookType.BLAST_FURNACE;
@@ -73,7 +100,7 @@ public class BlastChamberMenu extends RecipeBookMenu {
 
         if (slot.hasItem()) {
             ItemStack stack = slot.getItem();
-            itemStack = itemStack.copy(); //??
+            itemStack = itemStack.copy();
 
             if (i == 2) {
 
@@ -88,7 +115,7 @@ public class BlastChamberMenu extends RecipeBookMenu {
                     if (!this.moveItemStackTo(stack, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (this.isFuel(player.level(), stack.getItem())) {
+                } else if (this.isFuel(stack.getItem())) {
                     if (!this.moveItemStackTo(stack, 1, 2, false)) {
                         return ItemStack.EMPTY;
                     }
@@ -120,22 +147,13 @@ public class BlastChamberMenu extends RecipeBookMenu {
         return itemStack;
     }
 
+
     public boolean canSmelt(ItemStack stack) {
         return acceptedInputs.test(stack);
     }
 
-    public boolean isFuel(Level level, Item item) {
-        Registry<BlastChamberFuel> blastChamberFuels = level.registryAccess().lookupOrThrow(VanillishRegistries.BLAST_CHAMBER_FUEL);
-
-        for (BlastChamberFuel fuel : blastChamberFuels.stream().toList()) {
-
-            if (fuel.item().contains(Holder.direct(item))) {
-                return true;
-            }
-
-        }
-        return false;
-
+    public boolean isFuel(Item item) {
+        return item.getDefaultInstance().is(VanillishTags.FUEL);
 
     }
 
