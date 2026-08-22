@@ -63,6 +63,13 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_LANTERN, "Scrap Metal Lantern");
         translationBuilder.add(VanillishItems.SCRAP_METAL_TORCH, "Scrap Metal Torch");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_LADDER, "Scrap Metal Ladder");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_DOOR, "Scrap Metal Door");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_TRAPDOOR, "Scrap Metal Trapdoor");
 
+
+        translationBuilder.add(VanillishBlocks.ADVANCED_RAIL, "Advanced Rail");
+        translationBuilder.add(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, "Advanced Directional Rail");
+        translationBuilder.add(VanillishBlocks.ADVANCED_DETECTOR_RAIL, "Advanced Detector Rail");
+        translationBuilder.add(VanillishBlocks.ADVANCED_STOP_RAIL, "Advanced Stop Rail");
     }
 }

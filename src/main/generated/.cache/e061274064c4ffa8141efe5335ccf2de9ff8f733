@@ -1,5 +1,5 @@
 // 1.21.11	-999999999-01-01T00:00:00	Vanillish/Tags for minecraft:block
-4a26c52255f8a5dda8aed02ff2e820fbb98af3e1 data/minecraft/tags/block/climbable.json
+418dd62fa9338f343ae10fcb42603f44fe7a5c53 data/minecraft/tags/block/climbable.json
 a526268488cc518037ab3a96a28720ccc630ce0b data/minecraft/tags/block/rails.json
 a526268488cc518037ab3a96a28720ccc630ce0b data/vanillish/tags/block/advanced_rails.json
-708bb85f9d33b63aaf19b85263a10500c4a598fe data/vanillish/tags/block/scaffolding.json
+21b5a88f2e5a4ad3cd88ee23517cbad4f4b9881b data/vanillish/tags/block/scaffolding.json

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "scrap",
+  "ingredients": [
+    "vanillish:scrap_metal_torch"
+  ],
+  "result": {
+    "count": 9,
+    "id": "vanillish:scrap_metal_shard"
+  }
+}

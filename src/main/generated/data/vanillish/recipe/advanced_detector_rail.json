@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "b": "vanillish:brass",
+    "i": "minecraft:stone_pressure_plate",
+    "r": "minecraft:redstone",
+    "s": "vanillish:steel"
+  },
+  "pattern": [
+    "brb",
+    "sis",
+    "brb"
+  ],
+  "result": {
+    "count": 16,
+    "id": "vanillish:advanced_detector_rail"
+  }
+}

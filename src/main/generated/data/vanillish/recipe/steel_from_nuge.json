@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "steel_nugget",
+  "ingredients": [
+    "vanillish:steel"
+  ],
+  "result": {
+    "count": 9,
+    "id": "vanillish:steel_nugget"
+  }
+}

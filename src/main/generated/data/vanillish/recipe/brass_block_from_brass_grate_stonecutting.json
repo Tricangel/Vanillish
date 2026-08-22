@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:brass_grate",
+  "result": {
+    "count": 1,
+    "id": "vanillish:brass_block"
+  }
+}

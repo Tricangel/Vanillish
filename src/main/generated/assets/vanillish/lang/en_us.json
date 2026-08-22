@@ -1,4 +1,8 @@
 {
+  "block.vanillish.advanced_detector_rail": "Advanced Detector Rail",
+  "block.vanillish.advanced_directional_rail": "Advanced Directional Rail",
+  "block.vanillish.advanced_rail": "Advanced Rail",
+  "block.vanillish.advanced_stop_rail": "Advanced Stop Rail",
   "block.vanillish.blast_chamber": "Blast Chamber",
   "block.vanillish.brass_bars": "Brass Bars",
   "block.vanillish.brass_block": "Brass Block",
@@ -11,7 +15,9 @@
   "block.vanillish.brass_tiles": "Brass Tiles",
   "block.vanillish.brass_torch": "Brass Torch",
   "block.vanillish.carved_rose_gold": "Carved Rose Gold",
+  "block.vanillish.carved_scrap_door": "Scrap Metal Door",
   "block.vanillish.carved_scrap_metal": "Carved Scrap Metal",
+  "block.vanillish.carved_scrap_trapdoor": "Scrap Metal Trapdoor",
   "block.vanillish.carved_steel": "Carved Steel",
   "block.vanillish.redstone_randomizer": "Redstone Randomizer",
   "block.vanillish.rose_gold_bars": "Rose Gold Bars",

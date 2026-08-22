@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:carved_scrap_door",
+  "result": {
+    "count": 1,
+    "id": "vanillish:scrap_metal_shard"
+  }
+}

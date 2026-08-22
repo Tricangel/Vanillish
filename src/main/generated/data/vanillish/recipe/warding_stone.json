@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "minecraft:stone_bricks",
+    "c": "minecraft:amethyst_cluster",
+    "r": "vanillish:rose_gold"
+  },
+  "pattern": [
+    "brb",
+    "rcr",
+    "brb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillish:warding_stone"
+  }
+}

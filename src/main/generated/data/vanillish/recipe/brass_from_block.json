@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "brass",
+  "ingredients": [
+    "vanillish:brass_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "vanillish:brass"
+  }
+}

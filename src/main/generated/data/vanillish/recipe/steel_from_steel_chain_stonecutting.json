@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:steel_chain",
+  "result": {
+    "count": 1,
+    "id": "vanillish:steel"
+  }
+}

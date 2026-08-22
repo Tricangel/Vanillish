@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "algadcy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:moss_carpet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:duckweed_from_algae"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "algadcy"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:duckweed_from_algae"
+    ]
+  }
+}

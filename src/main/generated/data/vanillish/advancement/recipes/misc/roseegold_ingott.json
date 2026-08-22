@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:roseegold_ingott"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "jumpsacre2": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:copper_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "jumpsacre2"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:roseegold_ingott"
+    ]
+  }
+}

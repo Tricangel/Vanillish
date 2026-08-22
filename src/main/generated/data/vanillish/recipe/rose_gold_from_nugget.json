@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rose_gold_nuget",
+  "ingredients": [
+    "vanillish:rose_gold"
+  ],
+  "result": {
+    "count": 9,
+    "id": "vanillish:rose_gold_nugget"
+  }
+}

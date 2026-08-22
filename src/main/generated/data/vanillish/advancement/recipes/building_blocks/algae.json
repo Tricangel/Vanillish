@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "algay": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:moss_carpet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:algae"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "algay"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:algae"
+    ]
+  }
+}

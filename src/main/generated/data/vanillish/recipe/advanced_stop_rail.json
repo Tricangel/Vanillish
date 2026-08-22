@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "b": "vanillish:brass",
+    "r": "minecraft:redstone",
+    "s": "vanillish:steel"
+  },
+  "pattern": [
+    "brb",
+    "sss",
+    "brb"
+  ],
+  "result": {
+    "count": 16,
+    "id": "vanillish:advanced_stop_rail"
+  }
+}

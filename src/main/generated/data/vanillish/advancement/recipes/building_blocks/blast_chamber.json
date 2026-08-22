@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:blast_chamber"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "warding_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:redstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "warding_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:blast_chamber"
+    ]
+  }
+}

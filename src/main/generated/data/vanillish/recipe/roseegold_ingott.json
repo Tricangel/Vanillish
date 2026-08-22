@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:amethyst_shard",
+    "minecraft:amethyst_shard",
+    "minecraft:quartz",
+    "minecraft:quartz",
+    "minecraft:gold_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "count": 4,
+    "id": "vanillish:rose_gold"
+  }
+}

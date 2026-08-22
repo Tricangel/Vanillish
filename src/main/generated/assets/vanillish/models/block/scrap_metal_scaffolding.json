@@ -1,9 +1,0 @@
-{
-  "parent": "vanillish:block/template_scaffolding_stable",
-  "textures": {
-    "bottom": "vanillish:block/scrap_metal_scaffolding_bottom",
-    "particle": "vanillish:block/scrap_metal_scaffolding_top",
-    "side": "vanillish:block/scrap_metal_scaffolding_side",
-    "top": "vanillish:block/scrap_metal_scaffolding_top"
-  }
-}

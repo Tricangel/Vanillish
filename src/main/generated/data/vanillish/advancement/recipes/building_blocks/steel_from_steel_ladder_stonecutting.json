@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_ladder": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:steel_ladder"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:steel_from_steel_ladder_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_ladder"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:steel_from_steel_ladder_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:rose_gold_ladder",
+  "result": {
+    "count": 1,
+    "id": "vanillish:rose_gold"
+  }
+}

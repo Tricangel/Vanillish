@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_carved_scrap_door": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:carved_scrap_door"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:scrap_metal_shard_from_carved_scrap_door_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_carved_scrap_door"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:scrap_metal_shard_from_carved_scrap_door_stonecutting"
+    ]
+  }
+}

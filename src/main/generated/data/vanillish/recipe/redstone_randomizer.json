@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": "vanillish:brass",
+    "r": "minecraft:redstone",
+    "s": "vanillish:steel"
+  },
+  "pattern": [
+    "bsb",
+    "srs",
+    "bsb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillish:redstone_randomizer"
+  }
+}

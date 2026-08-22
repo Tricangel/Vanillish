@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_steel_torch": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:steel_torch"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:steel_lantern"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_steel_torch"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:steel_lantern"
+    ]
+  }
+}

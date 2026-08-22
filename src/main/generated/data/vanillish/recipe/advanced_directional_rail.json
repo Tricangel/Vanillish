@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "b": "vanillish:brass",
+    "i": "minecraft:lever",
+    "r": "minecraft:redstone",
+    "s": "vanillish:steel"
+  },
+  "pattern": [
+    "brb",
+    "sis",
+    "brb"
+  ],
+  "result": {
+    "count": 16,
+    "id": "vanillish:advanced_directional_rail"
+  }
+}

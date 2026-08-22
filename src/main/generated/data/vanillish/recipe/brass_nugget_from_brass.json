@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "brass_nuget",
+  "ingredients": [
+    "vanillish:brass"
+  ],
+  "result": {
+    "count": 9,
+    "id": "vanillish:brass_nugget"
+  }
+}

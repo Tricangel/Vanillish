@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:stick",
+    "C": "vanillish:rose_gold_nugget",
+    "X": [
+      "minecraft:coal",
+      "minecraft:charcoal"
+    ]
+  },
+  "pattern": [
+    "C",
+    "X",
+    "#"
+  ],
+  "result": {
+    "count": 4,
+    "id": "vanillish:rose_gold_torch"
+  }
+}

@@ -117,8 +117,8 @@ public class VanillishBlocks {
     public static final Block CHARRED_TRAPDOOR = register("charred_trapdoor", properties -> new TrapDoorBlock(CHARRED_WOOD_SET_TYPE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_TRAPDOOR), true);
 
     //Vegetation
-
-    public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.KELP), true);
+    //who invited you
+    //public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.KELP), true);
 
     //Water Vegetation
     public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);

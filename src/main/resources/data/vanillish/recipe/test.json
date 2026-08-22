@@ -2,8 +2,8 @@
   "type": "vanillish:blast_chamber",
   "group": "food",
   "time": 200,
-  "input": "minecraft:beef",
+  "input": "minecraft:iron_ingot",
   "output": {
-    "id": "minecraft:cooked_beef"
+    "id": "vanillish:steel"
   }
 }
