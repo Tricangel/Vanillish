@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vanillish:block/scrap_metal_grate"
+  }
+}

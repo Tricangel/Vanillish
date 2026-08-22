@@ -27,7 +27,7 @@ public class BlastChamberBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
-        return super.getStateForPlacement(blockPlaceContext).setValue(BlockStateProperties.FACING, blockPlaceContext.getHorizontalDirection().getOpposite());
+        return super.getStateForPlacement(blockPlaceContext).setValue(BlockStateProperties.HORIZONTAL_FACING, blockPlaceContext.getHorizontalDirection().getOpposite());
     }
 
     @Override

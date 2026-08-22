@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "vanillish:block/rose_gold_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "vanillish:block/rose_gold_ladder"
+    },
+    "facing=south": {
+      "model": "vanillish:block/rose_gold_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vanillish:block/rose_gold_ladder",
+      "y": 270
+    }
+  }
+}

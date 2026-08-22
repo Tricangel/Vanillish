@@ -1,5 +1,6 @@
 package bee.vanillish.recipe;
 
+import bee.vanillish.registry.VanillishRecipeBookCategories;
 import bee.vanillish.registry.VanillishRecipes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -40,7 +41,7 @@ public class BlastChamberRecipe extends SingleItemRecipe {
 
     @Override
     public RecipeBookCategory recipeBookCategory() {
-        return RecipeBookCategories.BLAST_FURNACE_MISC;
+        return VanillishRecipeBookCategories.BLAST_CHAMBER;
     }
 
     public String getGroup() {

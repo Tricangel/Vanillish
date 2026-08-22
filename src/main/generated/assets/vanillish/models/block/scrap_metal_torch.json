@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_torch",
+  "textures": {
+    "torch": "vanillish:block/scrap_metal_torch"
+  }
+}

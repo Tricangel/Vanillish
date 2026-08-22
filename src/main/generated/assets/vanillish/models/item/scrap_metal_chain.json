@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "vanillish:block/scrap_metal_chain_item"
+  }
+}

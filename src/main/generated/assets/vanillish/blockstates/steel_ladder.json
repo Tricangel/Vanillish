@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "vanillish:block/steel_ladder",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "vanillish:block/steel_ladder"
+    },
+    "facing=south": {
+      "model": "vanillish:block/steel_ladder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vanillish:block/steel_ladder",
+      "y": 270
+    }
+  }
+}

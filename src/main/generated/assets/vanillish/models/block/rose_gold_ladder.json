@@ -1,0 +1,6 @@
+{
+  "parent": "vanillish:block/template_ladder",
+  "textures": {
+    "texture": "vanillish:block/rose_gold_ladder"
+  }
+}

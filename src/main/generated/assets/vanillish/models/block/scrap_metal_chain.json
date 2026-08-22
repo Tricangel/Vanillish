@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_chain",
+  "textures": {
+    "texture": "vanillish:block/scrap_metal_chain"
+  }
+}

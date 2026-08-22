@@ -35,9 +35,17 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(VanillishBlocks.ADVANCED_RAIL);
 
         valueLookupBuilder(BlockTags.CLIMBABLE)
+                .add(VanillishBlocks.BRASS_LADDER)
+                .add(VanillishBlocks.ROSE_GOLD_LADDER)
+                .add(VanillishBlocks.SCRAP_METAL_LADDER)
+                .add(VanillishBlocks.STEEL_LADDER)
+                .add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING)
+                .add(VanillishBlocks.STEEL_SCAFFOLDING)
                 .add(VanillishBlocks.BRASS_SCAFFOLDING);
 
         valueLookupBuilder(VanillishTags.SCAFFOLDING)
+                .add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING)
+                .add(VanillishBlocks.STEEL_SCAFFOLDING)
                 .add(VanillishBlocks.BRASS_SCAFFOLDING)
                 .add(Blocks.SCAFFOLDING);
     }

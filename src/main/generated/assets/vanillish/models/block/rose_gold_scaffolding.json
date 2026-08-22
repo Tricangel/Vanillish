@@ -1,0 +1,9 @@
+{
+  "parent": "vanillish:block/template_scaffolding_stable",
+  "textures": {
+    "bottom": "vanillish:block/rose_gold_scaffolding_bottom",
+    "particle": "vanillish:block/rose_gold_scaffolding_top",
+    "side": "vanillish:block/rose_gold_scaffolding_side",
+    "top": "vanillish:block/rose_gold_scaffolding_top"
+  }
+}

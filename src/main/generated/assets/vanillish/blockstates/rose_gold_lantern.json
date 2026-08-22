@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "vanillish:block/rose_gold_lantern"
+    },
+    "hanging=true": {
+      "model": "vanillish:block/rose_gold_lantern_hanging"
+    }
+  }
+}

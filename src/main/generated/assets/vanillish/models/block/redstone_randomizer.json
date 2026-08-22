@@ -1,0 +1,7 @@
+{
+  "parent": "vanillish:block/cube_north",
+  "textures": {
+    "all": "vanillish:block/redstone_randomizer",
+    "north": "vanillish:block/redstone_randomizer_front"
+  }
+}

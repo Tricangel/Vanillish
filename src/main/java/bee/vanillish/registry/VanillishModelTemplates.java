@@ -15,6 +15,7 @@ public class VanillishModelTemplates {
     public static final ModelTemplate SCAFFOLDING_STABLE = create("template_scaffolding_stable", TextureSlot.PARTICLE, TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM);
     public static final ModelTemplate SCAFFOLDING_UNSTABLE = create("template_scaffolding_unstable", TextureSlot.PARTICLE, TextureSlot.TOP, TextureSlot.SIDE, TextureSlot.BOTTOM);
     public static final ModelTemplate ALGAE = create("template_algae", TextureSlot.TEXTURE);
+    public static final ModelTemplate LADDER = create("template_ladder", TextureSlot.TEXTURE);
     public static final ModelTemplate CUBE_NORTH = create("cube_north", TextureSlot.ALL, TextureSlot.NORTH);
 
     private static ModelTemplate create(String string, TextureSlot... textureSlots) {

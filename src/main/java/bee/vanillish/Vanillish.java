@@ -28,6 +28,7 @@ public class Vanillish implements ModInitializer {
 		VanillishRecipes.init();
 		VanillishAttachments.init();
 		VanillishEffects.init();
+		VanillishRecipeBookCategories.init();
 
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
 

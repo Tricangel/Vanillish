@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "vanillish:block/brass_lantern"
+    },
+    "hanging=true": {
+      "model": "vanillish:block/brass_lantern_hanging"
+    }
+  }
+}

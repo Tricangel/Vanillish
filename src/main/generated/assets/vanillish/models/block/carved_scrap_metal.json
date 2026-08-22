@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "vanillish:block/carved_scrap_metal"
+  }
+}

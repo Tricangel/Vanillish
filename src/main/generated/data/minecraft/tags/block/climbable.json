@@ -1,5 +1,11 @@
 {
   "values": [
+    "vanillish:brass_ladder",
+    "vanillish:rose_gold_ladder",
+    "vanillish:scrap_metal_ladder",
+    "vanillish:steel_ladder",
+    "vanillish:rose_gold_scaffolding",
+    "vanillish:steel_scaffolding",
     "vanillish:brass_scaffolding"
   ]
 }

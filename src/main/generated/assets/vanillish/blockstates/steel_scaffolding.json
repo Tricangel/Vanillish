@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=false": {
+      "model": "vanillish:block/steel_scaffolding"
+    },
+    "bottom=true": {
+      "model": "vanillish:block/steel_scaffolding_unstable"
+    }
+  }
+}

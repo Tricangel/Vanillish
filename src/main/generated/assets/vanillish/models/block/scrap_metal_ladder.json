@@ -1,0 +1,6 @@
+{
+  "parent": "vanillish:block/template_ladder",
+  "textures": {
+    "texture": "vanillish:block/scrap_metal_ladder"
+  }
+}

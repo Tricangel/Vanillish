@@ -1,8 +1,6 @@
 package bee.vanillish;
 
-import bee.vanillish.datagen.VanillishItemTagGen;
-import bee.vanillish.datagen.VanillishModelGen;
-import bee.vanillish.datagen.VanillishBlockTagGen;
+import bee.vanillish.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -14,6 +12,8 @@ public class VanillishDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(VanillishModelGen::new);
 		pack.addProvider(VanillishBlockTagGen::new);
 		pack.addProvider(VanillishItemTagGen::new);
+		pack.addProvider(VanillishLangGen::new);
+		pack.addProvider(VanillishRecipeGen::new);
 	}
 
 }

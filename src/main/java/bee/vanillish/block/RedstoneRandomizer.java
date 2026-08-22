@@ -31,7 +31,7 @@ public class RedstoneRandomizer extends DirectionalBlock {
     }
 
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
-        return this.defaultBlockState().setValue(POWER, blockPlaceContext.getLevel().hasNeighborSignal(blockPlaceContext.getClickedPos()) ? 15 : 0);
+        return this.defaultBlockState().setValue(POWER, blockPlaceContext.getLevel().hasNeighborSignal(blockPlaceContext.getClickedPos()) ? 15 : 0).setValue(FACING, blockPlaceContext.getNearestLookingDirection().getOpposite());
     }
 
     @Override
@@ -72,18 +72,18 @@ public class RedstoneRandomizer extends DirectionalBlock {
 
 
     protected int getSignal(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, Direction direction) {
-        if (direction.equals(blockState.getValue(FACING))) {
-            return blockState.getValue(POWER);
+        if (direction.equals(blockState.getValue(FACING).getOpposite())) {
+            return 0;
         }
-        return 0;
+        return blockState.getValue(POWER);
     }
 
     @Override
     protected int getDirectSignal(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, Direction direction) {
-        if (direction.equals(blockState.getValue(FACING))) {
-            return blockState.getValue(POWER);
+        if (direction.equals(blockState.getValue(FACING).getOpposite())) {
+            return 0;
         }
-        return 0;
+        return blockState.getValue(POWER);
     }
 
     @Override
