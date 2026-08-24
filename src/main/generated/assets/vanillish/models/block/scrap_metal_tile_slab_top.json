@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "vanillish:block/scrap_metal_tiles",
+    "side": "vanillish:block/scrap_metal_tiles",
+    "top": "vanillish:block/scrap_metal_tiles"
+  }
+}

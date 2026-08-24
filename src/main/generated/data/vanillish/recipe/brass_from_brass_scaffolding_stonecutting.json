@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "vanillish:brass_scaffolding",
-  "result": {
-    "count": 1,
-    "id": "vanillish:brass"
-  }
-}

@@ -3,7 +3,7 @@
   "category": "misc",
   "group": "rose_gold_nuget",
   "ingredients": [
-    "vanillish:rose_gold"
+    "vanillish:rose_gold_ingot"
   ],
   "result": {
     "count": 9,

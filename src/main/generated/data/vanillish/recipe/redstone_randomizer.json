@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "b": "vanillish:brass",
+    "b": "vanillish:brass_ingot",
     "r": "minecraft:redstone",
-    "s": "vanillish:steel"
+    "s": "vanillish:steel_ingot"
   },
   "pattern": [
     "bsb",

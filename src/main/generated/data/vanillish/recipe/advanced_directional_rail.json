@@ -2,10 +2,10 @@
   "type": "minecraft:crafting_shaped",
   "category": "redstone",
   "key": {
-    "b": "vanillish:brass",
+    "b": "vanillish:brass_ingot",
     "i": "minecraft:lever",
     "r": "minecraft:redstone",
-    "s": "vanillish:steel"
+    "s": "vanillish:steel_ingot"
   },
   "pattern": [
     "brb",

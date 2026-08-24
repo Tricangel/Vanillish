@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vanillish:block/brass_brick_slab"
+    },
+    "type=double": {
+      "model": "vanillish:block/brass_bricks"
+    },
+    "type=top": {
+      "model": "vanillish:block/brass_brick_slab_top"
+    }
+  }
+}

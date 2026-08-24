@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "kelp",
+  "ingredients": [
+    "vanillish:block_of_kelp"
+  ],
+  "result": {
+    "count": 9,
+    "id": "minecraft:kelp"
+  }
+}

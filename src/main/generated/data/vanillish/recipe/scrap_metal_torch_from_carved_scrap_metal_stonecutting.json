@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "vanillish:carved_scrap_metal",
-  "result": {
-    "count": 1,
-    "id": "vanillish:scrap_metal_torch"
-  }
-}

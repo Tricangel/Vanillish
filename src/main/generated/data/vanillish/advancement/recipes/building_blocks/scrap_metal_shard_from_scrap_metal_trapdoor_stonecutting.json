@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_scrap_metal_trapdoor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:scrap_metal_trapdoor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:scrap_metal_shard_from_scrap_metal_trapdoor_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_scrap_metal_trapdoor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:scrap_metal_shard_from_scrap_metal_trapdoor_stonecutting"
+    ]
+  }
+}

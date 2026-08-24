@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_scrap_metal_torch": {
+    "has_scrap_metal": {
       "conditions": {
         "items": [
           {
-            "items": "vanillish:scrap_metal_torch"
+            "items": "vanillish:scrap_metal"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_scrap_metal_torch"
+      "has_scrap_metal"
     ]
   ],
   "rewards": {

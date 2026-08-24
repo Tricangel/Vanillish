@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "vanillish:block/algae_medium"
+    "model": "vanillish:item/algae"
   }
 }

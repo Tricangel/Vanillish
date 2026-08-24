@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rose_gold": {
+    "has_rose_gold_ingot": {
       "conditions": {
         "items": [
           {
-            "items": "vanillish:rose_gold"
+            "items": "vanillish:rose_gold_ingot"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rose_gold"
+      "has_rose_gold_ingot"
     ]
   ],
   "rewards": {

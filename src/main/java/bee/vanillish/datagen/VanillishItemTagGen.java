@@ -19,6 +19,12 @@ public class VanillishItemTagGen extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        valueLookupBuilder(VanillishTags.CHARRED_WOOD)
+                .add(VanillishBlocks.CHARRED_LOG.asItem())
+                .add(VanillishBlocks.STRIPPED_CHARRED_WOOD.asItem())
+                .add(VanillishBlocks.STRIPPED_CHARRED_LOG.asItem())
+                .add(VanillishBlocks.CHARRED_WOOD.asItem());
+
         valueLookupBuilder(VanillishTags.FUEL)
                 .add(Items.GUNPOWDER)
                 .add(Blocks.TNT.asItem());

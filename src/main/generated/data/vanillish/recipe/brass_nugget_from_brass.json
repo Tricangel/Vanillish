@@ -3,7 +3,7 @@
   "category": "misc",
   "group": "brass_nuget",
   "ingredients": [
-    "vanillish:brass"
+    "vanillish:brass_ingot"
   ],
   "result": {
     "count": 9,

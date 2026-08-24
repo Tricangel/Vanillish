@@ -1,18 +1,14 @@
 package bee.vanillish.mixin;
 
-import bee.vanillish.block.DirectionalRailBlock;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.minecart.MinecartBehavior;
 import net.minecraft.world.entity.vehicle.minecart.OldMinecartBehavior;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.RailShape;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,7 +28,7 @@ public abstract class OldMinecartBehaviourMixin extends MinecartBehavior {
 		Vec3 delta = this.getDeltaMovement();
 		double velocity = delta.horizontalDistance();
 
-		if (blockState.is(VanillishTags.ADVANCED_RAILS) && !blockState.getValueOrElse(BlockStateProperties.POWERED, true)) {
+		if (blockState.is(VanillishTags.ADVANCED_RAILS) && !blockState.getValueOrElse(BlockStateProperties.POWERED, false)) {
 			this.setDeltaMovement(delta.add(delta.x / velocity * 0.01, 0.0F, delta.z / velocity * 0.01));
 			return;
 		}
@@ -42,7 +38,7 @@ public abstract class OldMinecartBehaviourMixin extends MinecartBehavior {
 			this.setDeltaMovement(this.getDeltaMovement().scale(.5));
 		}
 
-		if (blockState.is(VanillishBlocks.ADVANCED_RAIL)) {
+		if (blockState.is(VanillishBlocks.ADVANCED_POWERED_RAIL)) {
 			this.setDeltaMovement(delta.add(delta.x / velocity * 0.06, 0.0F, delta.z / velocity * 0.06));
 		}
 

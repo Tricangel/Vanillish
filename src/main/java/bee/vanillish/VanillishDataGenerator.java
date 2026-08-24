@@ -14,6 +14,6 @@ public class VanillishDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(VanillishItemTagGen::new);
 		pack.addProvider(VanillishLangGen::new);
 		pack.addProvider(VanillishRecipeGen::new);
+		pack.addProvider(VanillishBlockLoot::new);
 	}
-
 }

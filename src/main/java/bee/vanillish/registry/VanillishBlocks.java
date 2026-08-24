@@ -21,69 +21,83 @@ public class VanillishBlocks {
 
     //Components
     public static final Block BLAST_CHAMBER = register("blast_chamber", BlastChamberBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE), true);
-    public static final Block WARDING_STONE = register("warding_stone", WardingStoneBlock::new, BlockBehaviour.Properties.of(), true);
-    public static final Block REDSTONE_RANDOMIZER = register("redstone_randomizer", RedstoneRandomizer::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), true);
+    public static final Block WARDING_STONE = register("warding_stone", WardingStoneBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), true);
+    public static final Block REDSTONE_RANDOMIZER = register("redstone_randomizer", RedstoneRandomizer::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OBSERVER), true);
 
     //Brass family
 
     public static final Block BRASS_BLOCK = register("brass_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block BRASS_BRICKS = register("brass_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block BRASS_BRICK_STAIRS = register("brass_brick_stair", properties -> new StairBlock(BRASS_BRICKS.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block BRASS_BRICK_SLAB = register("brass_brick_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block BRASS_GRATE = register("brass_grate", WaterloggedTransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE), true);
     public static final Block BRASS_TILES = register("brass_tiles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block BRASS_TILE_STAIRS = register("brass_tile_stair", properties -> new StairBlock(BRASS_TILES.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block BRASS_TILE_SLAB = register("brass_tile_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block BRASS_BARS = register("brass_bars", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS), true);
     public static final Block BRASS_CHAIN = register("brass_chain", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN), true);
     public static final Block BRASS_LANTERN = register("brass_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block BRASS_TORCH = register("brass_torch", properties -> new TorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block BRASS_WALL_TORCH = register("brass_wall_torch", properties -> new WallTorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block BRASS_LADDER = register("brass_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER), true);
-    public static final Block BRASS_SCAFFOLDING = registerScaffolding("brass_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING));
+    public static final Block BRASS_LADDER = register("brass_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
+    public static final Block BRASS_SCAFFOLDING = registerScaffolding("brass_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
 
     public static final Block CARVED_ROSE_GOLD = register("carved_rose_gold", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block ROSE_GOLD_BLOCK = register("rose_gold_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block ROSE_GOLD_GRATE = register("rose_gold_grate", WaterloggedTransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE), true);
     public static final Block ROSE_GOLD_TILES = register("rose_gold_tiles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block ROSE_GOLD_TILE_STAIRS = register("rose_gold_tile_stair", properties -> new StairBlock(ROSE_GOLD_TILES.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block ROSE_GOLD_TILE_SLAB = register("rose_gold_tile_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block ROSE_GOLD_BARS = register("rose_gold_bars", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS), true);
     public static final Block ROSE_GOLD_CHAIN = register("rose_gold_chain", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN), true);
     public static final Block ROSE_GOLD_LANTERN = register("rose_gold_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block ROSE_GOLD_TORCH = register("rose_gold_torch", properties -> new TorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block ROSE_GOLD_WALL_TORCH = register("rose_gold_wall_torch", properties -> new WallTorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block ROSE_GOLD_LADDER = register("rose_gold_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER), true);
-    public static final Block ROSE_GOLD_SCAFFOLDING = registerScaffolding("rose_gold_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING));
+    public static final Block ROSE_GOLD_LADDER = register("rose_gold_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
+    public static final Block ROSE_GOLD_SCAFFOLDING = registerScaffolding("rose_gold_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
 
-    public static final Block CARVED_STEEL = register("carved_steel", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block STEEL_BRICKS = register("steel_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block STEEL_BLOCK = register("steel_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block STEEL_BRICK_STAIRS = register("steel_brick_stair", properties -> new StairBlock(STEEL_BRICKS.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block STEEL_BRICK_SLAB = register("steel_brick_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block STEEL_GRATE = register("steel_grate", WaterloggedTransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE), true);
     public static final Block STEEL_TILES = register("steel_tiles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block STEEL_TILE_STAIRS = register("steel_tile_stair", properties -> new StairBlock(STEEL_TILES.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block STEEL_TILE_SLAB = register("steel_tile_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block STEEL_BARS = register("steel_bars", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS), true);
     public static final Block STEEL_CHAIN = register("steel_chain", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN), true);
     public static final Block STEEL_LANTERN = register("steel_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block STEEL_TORCH = register("steel_torch", properties -> new TorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block STEEL_WALL_TORCH = register("steel_wall_torch", properties -> new WallTorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block STEEL_LADDER = register("steel_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER), true);
-    public static final Block STEEL_SCAFFOLDING = registerScaffolding("steel_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING));
+    public static final Block STEEL_LADDER = register("steel_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
+    public static final Block STEEL_SCAFFOLDING = registerScaffolding("steel_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
 
     public static final Block CARVED_SCRAP_METAL = register("carved_scrap_metal", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
-    public static final Block SCRAP_METAL_BLOCK = register("scrap_metal_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block SCRAP_METAL = register("scrap_metal", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block SCRAP_METAL_BRICKS = register("scrap_metal_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block SCRAP_METAL_BRICK_STAIRS = register("scrap_metal_brick_stair", properties -> new StairBlock(SCRAP_METAL_BRICKS.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block SCRAP_METAL_BRICK_SLAB = register("scrap_metal_brick_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block SCRAP_METAL_GRATE = register("scrap_metal_grate", WaterloggedTransparentBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE), true);
     public static final Block SCRAP_METAL_TILES = register("scrap_metal_tiles", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
-    public static final Block SCRAP_METAL_BARS = register("scrap_metal_bars", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS), true);
+    public static final Block SCRAP_METAL_TILE_STAIRS = register("scrap_metal_tile_stair", properties -> new StairBlock(SCRAP_METAL_TILES.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
+    public static final Block SCRAP_METAL_TILE_SLAB = register("scrap_metal_tile_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);public static final Block SCRAP_METAL_BARS = register("scrap_metal_bars", IronBarsBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BARS), true);
     public static final Block SCRAP_METAL_CHAIN = register("scrap_metal_chain", ChainBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_CHAIN), true);
     public static final Block SCRAP_METAL_LANTERN = register("scrap_metal_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block SCRAP_METAL_TORCH = register("scrap_metal_torch", properties -> new TorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block SCRAP_METAL_WALL_TORCH = register("scrap_metal_wall_torch", properties -> new WallTorchBlock(ParticleTypes.FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block SCRAP_METAL_LADDER = register("scrap_metal_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER), true);
+    public static final Block SCRAP_METAL_LADDER = register("scrap_metal_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
     //public static final Block SCRAP_METAL_SCAFFOLDING = registerScaffolding("scrap_metal_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING));
 
-    public static final Block SCRAP_METAL_DOOR = register("carved_scrap_door", properties -> new DoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR), true);
-    public static final Block SCRAP_METAL_TRAPDOOR = register("carved_scrap_trapdoor", properties -> new TrapDoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
+    public static final Block SCRAP_METAL_DOOR = register("scrap_metal_door", properties -> new DoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_DOOR), true);
+    public static final Block SCRAP_METAL_TRAPDOOR = register("scrap_metal_trapdoor", properties -> new TrapDoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
 
 
     //public static final WeatheringCopperBlocks COPPER_SCAFFOLDING = WeatheringCopperBlocks.create("copper_scaffolding", VanillishBlocks::registerScaffolding, MetalScaffolding::new, WeatheringCopperScaffolding::new, p -> BlockBehaviour.Properties.ofFullCopy(VanillishBlocks.BRASS_SCAFFOLDING));
 
     //Brass components
 
-    public static final Block ADVANCED_RAIL = register("advanced_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
+    public static final Block ADVANCED_RAIL = register("advanced_rail", RailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.RAIL), true);
+    public static final Block ADVANCED_POWERED_RAIL = register("advanced_powered_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
     public static final Block ADVANCED_STOP_RAIL = register("advanced_stop_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
     //add function to this
     public static final Block ADVANCED_BOUNCY_RAIL = register("advanced_bouncy_rail", PoweredRailBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POWERED_RAIL), true);
@@ -118,10 +132,10 @@ public class VanillishBlocks {
 
     //Vegetation
     //who invited you
-    //public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.KELP), true);
+    public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK), true);
 
     //Water Vegetation
-    public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
+    public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).noOcclusion().isViewBlocking(Blocks::never), false);
     public static final Block DUCKWEED = register("duckweed", FloatingWaterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
 
 

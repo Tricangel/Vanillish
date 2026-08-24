@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "vanillish:brass"
+    "#": "vanillish:brass_ingot"
   },
   "pattern": [
     "###",

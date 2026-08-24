@@ -19,6 +19,11 @@ public class DirectionalRailBlock extends PoweredRailBlock {
     }
 
     @Override
+    public BlockState getStateForPlacement(BlockPlaceContext blockPlaceContext) {
+        return super.getStateForPlacement(blockPlaceContext).setValue(INVERTED, blockPlaceContext.getHorizontalDirection().equals(Direction.SOUTH) || blockPlaceContext.getHorizontalDirection().equals(Direction.EAST));
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
         builder.add(INVERTED);

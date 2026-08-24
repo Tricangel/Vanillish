@@ -3,6 +3,7 @@ package bee.vanillish.datagen;
 import bee.vanillish.Vanillish;
 import bee.vanillish.block.AlgaeBlock;
 import bee.vanillish.registry.VanillishBlocks;
+import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishModelTemplates;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -12,9 +13,7 @@ import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
-import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.client.renderer.block.model.VariantMutator;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -31,8 +30,9 @@ public class VanillishModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
-        blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_RAIL);
-        blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL);
+        blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_POWERED_RAIL);
+        this.createDirectionalRail(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, blockModelGenerators);
+        blockModelGenerators.createPassiveRail(VanillishBlocks.ADVANCED_RAIL);
         blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_DETECTOR_RAIL);
         blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_BOUNCY_RAIL);
         blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_STOP_RAIL);
@@ -45,9 +45,9 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createNormalTorch(VanillishBlocks.BRASS_TORCH, VanillishBlocks.BRASS_WALL_TORCH);
         blockModelGenerators.createBarsAndItem(VanillishBlocks.BRASS_BARS);
         blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_BLOCK);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_BRICKS);
+        blockModelGenerators.family(VanillishBlocks.BRASS_BRICKS).slab(VanillishBlocks.BRASS_BRICK_SLAB).stairs(VanillishBlocks.BRASS_BRICK_STAIRS);
+        blockModelGenerators.family(VanillishBlocks.BRASS_TILES).slab(VanillishBlocks.BRASS_TILE_SLAB).stairs(VanillishBlocks.BRASS_TILE_STAIRS);
         blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_GRATE);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.BRASS_TILES);
         this.createScaffolding(VanillishBlocks.BRASS_SCAFFOLDING, blockModelGenerators);
 
         blockModelGenerators.createTrivialCube(VanillishBlocks.CARVED_ROSE_GOLD);
@@ -58,10 +58,9 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createBarsAndItem(VanillishBlocks.ROSE_GOLD_BARS);
         blockModelGenerators.createTrivialCube(VanillishBlocks.ROSE_GOLD_BLOCK);
         blockModelGenerators.createTrivialCube(VanillishBlocks.ROSE_GOLD_GRATE);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.ROSE_GOLD_TILES);
+        blockModelGenerators.family(VanillishBlocks.ROSE_GOLD_TILES).slab(VanillishBlocks.ROSE_GOLD_TILE_SLAB).stairs(VanillishBlocks.ROSE_GOLD_TILE_STAIRS);
         this.createScaffolding(VanillishBlocks.ROSE_GOLD_SCAFFOLDING, blockModelGenerators);
 
-        blockModelGenerators.createTrivialCube(VanillishBlocks.CARVED_STEEL);
         createLadder(VanillishBlocks.STEEL_LADDER, blockModelGenerators);
         createChain(VanillishBlocks.STEEL_CHAIN, blockModelGenerators);
         blockModelGenerators.createLantern(VanillishBlocks.STEEL_LANTERN);
@@ -69,24 +68,26 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createBarsAndItem(VanillishBlocks.STEEL_BARS);
         blockModelGenerators.createTrivialCube(VanillishBlocks.STEEL_BLOCK);
         blockModelGenerators.createTrivialCube(VanillishBlocks.STEEL_GRATE);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.STEEL_TILES);
+        blockModelGenerators.family(VanillishBlocks.STEEL_BRICKS).slab(VanillishBlocks.STEEL_BRICK_SLAB).stairs(VanillishBlocks.STEEL_BRICK_STAIRS);
+        blockModelGenerators.family(VanillishBlocks.STEEL_TILES).slab(VanillishBlocks.STEEL_TILE_SLAB).stairs(VanillishBlocks.STEEL_TILE_STAIRS);
         this.createScaffolding(VanillishBlocks.STEEL_SCAFFOLDING, blockModelGenerators);
 
         blockModelGenerators.createTrivialCube(VanillishBlocks.CARVED_SCRAP_METAL);
+        blockModelGenerators.createTrivialCube(VanillishBlocks.SCRAP_METAL);
         createLadder(VanillishBlocks.SCRAP_METAL_LADDER, blockModelGenerators);
         createChain(VanillishBlocks.SCRAP_METAL_CHAIN, blockModelGenerators);
         blockModelGenerators.createLantern(VanillishBlocks.SCRAP_METAL_LANTERN);
         blockModelGenerators.createNormalTorch(VanillishBlocks.SCRAP_METAL_TORCH, VanillishBlocks.SCRAP_METAL_WALL_TORCH);
         blockModelGenerators.createBarsAndItem(VanillishBlocks.SCRAP_METAL_BARS);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.SCRAP_METAL_BLOCK);
         blockModelGenerators.createTrivialCube(VanillishBlocks.SCRAP_METAL_GRATE);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.SCRAP_METAL_BRICKS);
-        blockModelGenerators.createTrivialCube(VanillishBlocks.SCRAP_METAL_TILES);
+        blockModelGenerators.family(VanillishBlocks.SCRAP_METAL_BRICKS).slab(VanillishBlocks.SCRAP_METAL_BRICK_SLAB).stairs(VanillishBlocks.SCRAP_METAL_BRICK_STAIRS);
+        blockModelGenerators.family(VanillishBlocks.SCRAP_METAL_TILES).slab(VanillishBlocks.SCRAP_METAL_TILE_SLAB).stairs(VanillishBlocks.SCRAP_METAL_TILE_STAIRS);
 
         blockModelGenerators.createDoor(VanillishBlocks.SCRAP_METAL_DOOR);
         blockModelGenerators.createTrapdoor(VanillishBlocks.SCRAP_METAL_TRAPDOOR);
 
         createAlgae(VanillishBlocks.ALGAE, blockModelGenerators);
+        blockModelGenerators.createTrivialCube(VanillishBlocks.BLOCK_OF_KELP);
         blockModelGenerators.createFurnace(VanillishBlocks.BLAST_CHAMBER, TexturedModel.ORIENTABLE_ONLY_TOP);
 
         blockModelGenerators.woodProvider(VanillishBlocks.CHARRED_LOG).logWithHorizontal(VanillishBlocks.CHARRED_LOG).wood(VanillishBlocks.CHARRED_WOOD);
@@ -101,6 +102,59 @@ public class VanillishModelGen extends FabricModelProvider {
                 .fenceGate(VanillishBlocks.CHARRED_FENCE_GATE)
                 .button(VanillishBlocks.CHARRED_BUTTON)
                 .pressurePlate(VanillishBlocks.CHARRED_PRESSURE_PLATE);
+    }
+
+    public void createDirectionalRail(Block block, BlockModelGenerators generators) {
+        MultiVariant multiVariant = plainVariant(generators.createSuffixedVariant(block, "", ModelTemplates.RAIL_FLAT, TextureMapping::rail));
+        MultiVariant multiVariant2 = plainVariant(generators.createSuffixedVariant(block, "", ModelTemplates.RAIL_RAISED_NE, TextureMapping::rail));
+        MultiVariant multiVariant3 = plainVariant(generators.createSuffixedVariant(block, "", ModelTemplates.RAIL_RAISED_SW, TextureMapping::rail));
+        MultiVariant multiVariant4 = plainVariant(generators.createSuffixedVariant(block, "_on", ModelTemplates.RAIL_FLAT, TextureMapping::rail));
+        MultiVariant multiVariant5 = plainVariant(generators.createSuffixedVariant(block, "_on", ModelTemplates.RAIL_RAISED_NE, TextureMapping::rail));
+        MultiVariant multiVariant6 = plainVariant(generators.createSuffixedVariant(block, "_on", ModelTemplates.RAIL_RAISED_SW, TextureMapping::rail));
+        generators.registerSimpleFlatItemModel(block);
+        generators.blockStateOutput
+                .accept(
+                        MultiVariantGenerator.dispatch(block)
+                                .with(PropertyDispatch.initial(BlockStateProperties.POWERED, BlockStateProperties.RAIL_SHAPE_STRAIGHT, BlockStateProperties.INVERTED).generate((boolean_, railShape, inverted) -> {
+                                    MultiVariant variant = switch (railShape) {
+                                        case NORTH_SOUTH -> {
+                                            var temp = boolean_ ? multiVariant4 : multiVariant;
+                                            if (!inverted) temp = temp.with(Y_ROT_180);
+                                            yield temp;
+                                        }
+                                        case EAST_WEST -> {
+                                            var temp = (boolean_ ? multiVariant4 : multiVariant).with(Y_ROT_90);
+                                            if (inverted) temp = temp.with(Y_ROT_270);
+                                            yield temp;
+                                        }
+                                        case ASCENDING_EAST -> {
+                                            var temp = (boolean_ ? multiVariant5 : multiVariant2).with(Y_ROT_90);
+                                            if (inverted) temp = temp.with(Y_ROT_270);
+                                            yield temp;
+                                        }
+                                        case ASCENDING_WEST -> {
+                                            var temp = (boolean_ ? multiVariant6 : multiVariant3).with(Y_ROT_90);
+                                            if (inverted) temp = temp.with(Y_ROT_270);
+                                            yield temp;
+                                        }
+                                        case ASCENDING_NORTH -> {
+                                            var temp = boolean_ ? multiVariant5 : multiVariant2;
+                                            if (!inverted) temp = temp.with(Y_ROT_180);
+                                            yield temp;
+                                        }
+                                        case ASCENDING_SOUTH -> {
+                                            var temp = boolean_ ? multiVariant6 : multiVariant3;
+                                            if (!inverted) temp = temp.with(Y_ROT_180);
+                                            yield temp;
+                                        }
+                                        default -> throw new UnsupportedOperationException("Fix you generator!");
+                                    };
+
+                                    return variant;
+                                }))
+                );
+
+
     }
 
     public final void createRandomizer(Block block, BlockModelGenerators generators) {
@@ -136,7 +190,7 @@ public class VanillishModelGen extends FabricModelProvider {
         MultiVariant largeVariant = plainVariant(VanillishModelTemplates.ALGAE.createWithSuffix(block, "_large", large, generators.modelOutput));
 
 
-        generators.registerSimpleItemModel(block, mediumVariant);
+        generators.registerSimpleFlatItemModel(block);
         generators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(AlgaeBlock.SIZE).select(1, smallVariant).select(2, plainVariant(mediumVariant)).select(3, largeVariant)));
 
     }
@@ -155,6 +209,14 @@ public class VanillishModelGen extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
+
+        itemModelGenerators.generateFlatItem(VanillishItems.BRASS_NUGGET, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.ROSE_GOLD_NUGGET, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.STEEL_NUGGET, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.STEEL_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.BRASS_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.ROSE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.SCRAP_METAL_SHARD, ModelTemplates.FLAT_ITEM);
 
     }
 }

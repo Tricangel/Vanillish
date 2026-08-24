@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vanillish:block/steel_brick_slab"
+    },
+    "type=double": {
+      "model": "vanillish:block/steel_bricks"
+    },
+    "type=top": {
+      "model": "vanillish:block/steel_brick_slab_top"
+    }
+  }
+}

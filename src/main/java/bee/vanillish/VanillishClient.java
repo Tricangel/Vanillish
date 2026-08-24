@@ -43,6 +43,7 @@ public class VanillishClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_LADDER, ChunkSectionLayer.CUTOUT);
 
         BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_RAIL, ChunkSectionLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_POWERED_RAIL, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_STOP_RAIL, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_BOUNCY_RAIL, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, ChunkSectionLayer.CUTOUT);

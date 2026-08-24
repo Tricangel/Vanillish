@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "vanillish:block/scrap_metal_block"
+    "model": "vanillish:item/scrap_metal_torch"
   }
 }

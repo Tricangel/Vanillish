@@ -19,11 +19,17 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.BLAST_CHAMBER, "Blast Chamber");
         translationBuilder.add(VanillishBlocks.WARDING_STONE, "Warding Stone");
         translationBuilder.add(VanillishBlocks.REDSTONE_RANDOMIZER, "Redstone Randomizer");
+        translationBuilder.add(VanillishBlocks.BLOCK_OF_KELP, "Kelp Block");
+        translationBuilder.add(VanillishBlocks.ALGAE, "Algae");
 
         translationBuilder.add(VanillishBlocks.BRASS_BLOCK, "Brass Block");
         translationBuilder.add(VanillishBlocks.BRASS_BRICKS, "Brass Bricks");
+        translationBuilder.add(VanillishBlocks.BRASS_BRICK_STAIRS, "Brass Brick Stairs");
+        translationBuilder.add(VanillishBlocks.BRASS_BRICK_SLAB, "Brass Brick Slab");
         translationBuilder.add(VanillishBlocks.BRASS_GRATE, "Brass Grate");
         translationBuilder.add(VanillishBlocks.BRASS_TILES, "Brass Tiles");
+        translationBuilder.add(VanillishBlocks.BRASS_TILE_STAIRS, "Brass Tile Stairs");
+        translationBuilder.add(VanillishBlocks.BRASS_TILE_SLAB, "Brass Tile Slab");
         translationBuilder.add(VanillishBlocks.BRASS_BARS, "Brass Bars");
         translationBuilder.add(VanillishBlocks.BRASS_CHAIN, "Brass Chain");
         translationBuilder.add(VanillishBlocks.BRASS_LANTERN, "Brass Lantern");
@@ -32,9 +38,13 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.BRASS_SCAFFOLDING, "Brass Scaffolding");
 
         translationBuilder.add(VanillishBlocks.STEEL_BLOCK, "Steel Block");
-        translationBuilder.add(VanillishBlocks.CARVED_STEEL, "Carved Steel");
+        translationBuilder.add(VanillishBlocks.STEEL_BRICKS, "Steel Bricks");
+        translationBuilder.add(VanillishBlocks.STEEL_BRICK_STAIRS, "Steel Brick Stairs");
+        translationBuilder.add(VanillishBlocks.STEEL_BRICK_SLAB, "Steel Brick Slab");
         translationBuilder.add(VanillishBlocks.STEEL_GRATE, "Steel Grate");
         translationBuilder.add(VanillishBlocks.STEEL_TILES, "Steel Tiles");
+        translationBuilder.add(VanillishBlocks.STEEL_TILE_STAIRS, "Steel Tile Stairs");
+        translationBuilder.add(VanillishBlocks.STEEL_TILE_SLAB, "Steel Tile Slab");
         translationBuilder.add(VanillishBlocks.STEEL_BARS, "Steel Bars");
         translationBuilder.add(VanillishBlocks.STEEL_CHAIN, "Steel Chain");
         translationBuilder.add(VanillishBlocks.STEEL_LANTERN, "Steel Lantern");
@@ -46,6 +56,8 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.CARVED_ROSE_GOLD, "Carved Rose Gold");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_GRATE, "Rose Gold Grate");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_TILES, "Rose Gold Tiles");
+        translationBuilder.add(VanillishBlocks.ROSE_GOLD_TILE_STAIRS, "Rose Gold Tile Stairs");
+        translationBuilder.add(VanillishBlocks.ROSE_GOLD_TILE_SLAB, "Rose Gold Tile Slab");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_BARS, "Rose Gold Bars");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_CHAIN, "Rose Gold Chain");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_LANTERN, "Rose Gold Lantern");
@@ -53,11 +65,15 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_LADDER, "Rose Gold Ladder");
         translationBuilder.add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING, "Rose Gold Scaffolding");
 
-        translationBuilder.add(VanillishBlocks.SCRAP_METAL_BLOCK, "Scrap Metal Block");
         translationBuilder.add(VanillishBlocks.CARVED_SCRAP_METAL, "Carved Scrap Metal");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL, "Scrap Metal");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_BRICKS, "Scrap Metal Bricks");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_BRICK_STAIRS, "Scrap Metal Brick Stairs");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_BRICK_SLAB, "Scrap Metal Brick Slab");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_GRATE, "Scrap Metal Grate");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_TILES, "Scrap Metal Tiles");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_TILE_STAIRS, "Scrap Metal Tile Stairs");
+        translationBuilder.add(VanillishBlocks.SCRAP_METAL_TILE_SLAB, "Scrap Metal Tile Slab");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_BARS, "Scrap Metal Bars");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_CHAIN, "Scrap Metal Chain");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_LANTERN, "Scrap Metal Lantern");
@@ -66,10 +82,32 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_DOOR, "Scrap Metal Door");
         translationBuilder.add(VanillishBlocks.SCRAP_METAL_TRAPDOOR, "Scrap Metal Trapdoor");
 
+        translationBuilder.add(VanillishBlocks.CHARRED_BUTTON, "Charred Button");
+        translationBuilder.add(VanillishBlocks.CHARRED_DOOR, "Charred Door");
+        translationBuilder.add(VanillishBlocks.CHARRED_LOG, "Charred Log");
+        translationBuilder.add(VanillishBlocks.CHARRED_FENCE, "Charred Fence");
+        translationBuilder.add(VanillishBlocks.CHARRED_PLANKS, "Charred Planks");
+        translationBuilder.add(VanillishBlocks.CHARRED_SHELF, "Charred Shelf");
+        translationBuilder.add(VanillishBlocks.CHARRED_SLAB, "Charred Slab");
+        translationBuilder.add(VanillishBlocks.CHARRED_WOOD, "Charred Wood");
+        translationBuilder.add(VanillishBlocks.CHARRED_FENCE_GATE, "Charred Fence Gate");
+        translationBuilder.add(VanillishBlocks.CHARRED_PRESSURE_PLATE, "Charred Pressure Plate");
+        translationBuilder.add(VanillishBlocks.CHARRED_STAIRS, "Charred Stairs");
+        translationBuilder.add(VanillishBlocks.CHARRED_TRAPDOOR, "Charred Trapdoor");
+
 
         translationBuilder.add(VanillishBlocks.ADVANCED_RAIL, "Advanced Rail");
+        translationBuilder.add(VanillishBlocks.ADVANCED_POWERED_RAIL, "Advanced Powered Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, "Advanced Directional Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_DETECTOR_RAIL, "Advanced Detector Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_STOP_RAIL, "Advanced Stop Rail");
+
+        translationBuilder.add(VanillishItems.STEEL_INGOT, "Steel Ingot");
+        translationBuilder.add(VanillishItems.BRASS_INGOT, "Brass Ingot");
+        translationBuilder.add(VanillishItems.ROSE_GOLD_INGOT, "Rose Gold Ingot");
+        translationBuilder.add(VanillishItems.STEEL_NUGGET, "Steel Nugget");
+        translationBuilder.add(VanillishItems.BRASS_NUGGET, "Brass Nugget");
+        translationBuilder.add(VanillishItems.ROSE_GOLD_NUGGET, "Rose Gold Nugget");
+        translationBuilder.add(VanillishItems.SCRAP_METAL_SHARD, "Scrap Metal Shard");
     }
 }

@@ -1,9 +1,10 @@
 {
   "values": [
+    "vanillish:advanced_rail",
     "vanillish:advanced_stop_rail",
     "vanillish:advanced_detector_rail",
     "vanillish:advanced_directional_rail",
     "vanillish:advanced_bouncy_rail",
-    "vanillish:advanced_rail"
+    "vanillish:advanced_powered_rail"
   ]
 }

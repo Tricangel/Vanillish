@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "vanillish:rose_gold"
+    "#": "vanillish:rose_gold_ingot"
   },
   "pattern": [
     "###",
