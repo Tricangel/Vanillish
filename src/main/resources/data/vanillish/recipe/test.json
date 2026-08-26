@@ -1,9 +1,9 @@
 {
   "type": "vanillish:blast_chamber",
-  "group": "food",
-  "time": 200,
+  "group": "blast_chamber",
+  "time": 150,
   "input": "minecraft:iron_ingot",
   "output": {
-    "id": "vanillish:steel"
+    "id": "vanillish:steel_ingot"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:scrap_metal",
+  "result": {
+    "count": 1,
+    "id": "vanillish:scrap_metal_grate"
+  }
+}

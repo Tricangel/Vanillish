@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbstractMinecartMixin",
+    "FallingBlockMixin",
     "LivingEntityMixin",
+    "NewMinecartBehaviourMixin",
     "OldMinecartBehaviourMixin"
   ],
   "injectors": {
@@ -14,6 +16,8 @@
     "requireAnnotations": true
   },
   "client": [
+    "BlockModelGeneratorsMixin",
+    "MinecraftMixin",
     "SearchRecipeBookCategoryMixin"
   ]
 }

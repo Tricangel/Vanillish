@@ -38,6 +38,7 @@ public class VanillishItems {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Vanillish.id(name));
         GenericItem item = itemFactory.apply(settings.setId(itemKey));
         Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        VanillishCreativeTab.ITEMS.add(item);
         return item;
     }
 
@@ -45,6 +46,7 @@ public class VanillishItems {
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Vanillish.id(name));
         BlockItem item = itemFactory.apply(settings.setId(itemKey).useBlockDescriptionPrefix());
         Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+        VanillishCreativeTab.ITEMS.add(item);
 
         return item;
     }

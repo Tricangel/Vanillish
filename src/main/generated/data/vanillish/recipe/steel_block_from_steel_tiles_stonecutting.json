@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "vanillish:steel_tiles",
-  "result": {
-    "count": 1,
-    "id": "vanillish:steel_block"
-  }
-}

@@ -1,0 +1,9 @@
+{
+  "type": "vanillish:blast_chamber",
+  "group": "blast_chamber",
+  "time": 100,
+  "input": "minecraft:smooth_sandstone",
+  "output": {
+    "id": "vanillish:smooth_dark_sandstone"
+  }
+}

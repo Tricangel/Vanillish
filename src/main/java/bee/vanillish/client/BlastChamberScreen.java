@@ -3,6 +3,8 @@ package bee.vanillish.client;
 import bee.vanillish.Vanillish;
 import bee.vanillish.client.recipebook.BlastChamberRecipeBook;
 import bee.vanillish.menu.BlastChamberMenu;
+import bee.vanillish.registry.VanillishItems;
+import bee.vanillish.registry.VanillishRecipeBookCategories;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.navigation.ScreenPosition;
 import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
@@ -19,9 +21,12 @@ import org.jspecify.annotations.NonNull;
 import java.util.List;
 
 public class BlastChamberScreen extends AbstractRecipeBookScreen<BlastChamberMenu> {
-    public static final RecipeBookComponent.TabInfo TABS = new RecipeBookComponent.TabInfo(SearchRecipeBookCategory.BLAST_CHAMBER);
+    public static final List<RecipeBookComponent.TabInfo> TABS = List.of(
+            new RecipeBookComponent.TabInfo(SearchRecipeBookCategory.BLAST_CHAMBER),
+            new RecipeBookComponent.TabInfo(VanillishItems.STEEL_INGOT, VanillishRecipeBookCategories.BLAST_CHAMBER)
+    );
     public BlastChamberScreen(BlastChamberMenu recipeBookMenu, Inventory inventory, Component component) {
-        super(recipeBookMenu, new BlastChamberRecipeBook(recipeBookMenu, List.of(TABS), Component.translatable("gui.recipebook.toggleRecipes.blastable")), inventory, component);
+        super(recipeBookMenu, new BlastChamberRecipeBook(recipeBookMenu, TABS, Component.translatable("gui.recipebook.toggleRecipes.blastable")), inventory, component);
     }
 
     @Override

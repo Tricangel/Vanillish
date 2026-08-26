@@ -111,14 +111,14 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BLOCK, VanillishBlocks.BRASS_TILES);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BLOCK, VanillishBlocks.BRASS_GRATE);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.BRASS_INGOT, VanillishBlocks.BRASS_LADDER);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.BRASS_INGOT, VanillishBlocks.BRASS_BARS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.BRASS_INGOT, VanillishBlocks.BRASS_SCAFFOLDING);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.BRASS_INGOT, VanillishBlocks.BRASS_CHAIN);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_LADDER, VanillishItems.BRASS_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BARS, VanillishItems.BRASS_INGOT, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_SCAFFOLDING, VanillishItems.BRASS_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_CHAIN, VanillishItems.BRASS_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.BRASS_LANTERN)
                         .define('#', VanillishItems.BRASS_TORCH)
-                        .define('X', Items.IRON_NUGGET)
+                        .define('X', VanillishItems.BRASS_NUGGET)
                         .pattern("XXX")
                         .pattern("X#X")
                         .pattern("XXX")
@@ -152,18 +152,18 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("jumpsacre2", has(Items.COPPER_INGOT))
                         .save(recipeOutput, key("roseegold_ingott"));
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_BLOCK, VanillishBlocks.CARVED_ROSE_GOLD);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_BLOCK, VanillishBlocks.ROSE_GOLD_TILES);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_BLOCK, VanillishBlocks.ROSE_GOLD_GRATE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CARVED_ROSE_GOLD, VanillishBlocks.ROSE_GOLD_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_TILES, VanillishBlocks.ROSE_GOLD_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_GRATE, VanillishBlocks.ROSE_GOLD_BLOCK);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.ROSE_GOLD_INGOT, VanillishBlocks.ROSE_GOLD_LADDER);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.ROSE_GOLD_INGOT, VanillishBlocks.ROSE_GOLD_BARS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.ROSE_GOLD_INGOT, VanillishBlocks.ROSE_GOLD_SCAFFOLDING);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.ROSE_GOLD_INGOT, VanillishBlocks.ROSE_GOLD_CHAIN);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_LADDER, VanillishItems.ROSE_GOLD_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_BARS, VanillishItems.ROSE_GOLD_INGOT, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_SCAFFOLDING, VanillishItems.ROSE_GOLD_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_CHAIN, VanillishItems.ROSE_GOLD_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.ROSE_GOLD_LANTERN)
                         .define('#', VanillishItems.ROSE_GOLD_TORCH)
-                        .define('X', Items.IRON_NUGGET)
+                        .define('X', VanillishItems.ROSE_GOLD_NUGGET)
                         .pattern("XXX")
                         .pattern("X#X")
                         .pattern("XXX")
@@ -190,18 +190,18 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 );
 
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BLOCK, VanillishBlocks.STEEL_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BLOCK, VanillishBlocks.STEEL_TILES);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BLOCK, VanillishBlocks.STEEL_GRATE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BRICKS, VanillishBlocks.STEEL_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_TILES, VanillishBlocks.STEEL_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_GRATE, VanillishBlocks.STEEL_BLOCK);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.STEEL_INGOT, VanillishBlocks.STEEL_LADDER);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.STEEL_INGOT, VanillishBlocks.STEEL_BARS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.STEEL_INGOT, VanillishBlocks.STEEL_SCAFFOLDING);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.STEEL_INGOT, VanillishBlocks.STEEL_CHAIN);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_LADDER, VanillishItems.STEEL_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BARS, VanillishItems.STEEL_INGOT, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_SCAFFOLDING, VanillishItems.STEEL_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_CHAIN, VanillishItems.STEEL_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.STEEL_LANTERN)
                         .define('#', VanillishItems.STEEL_TORCH)
-                        .define('X', Items.IRON_NUGGET)
+                        .define('X', VanillishItems.STEEL_NUGGET)
                         .pattern("XXX")
                         .pattern("X#X")
                         .pattern("XXX")
@@ -226,15 +226,15 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_iron_nugget", has(Items.IRON_NUGGET))
                         .save(recipeOutput, key("scrap_metal_from_iron_and_copper"));
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL, VanillishBlocks.CARVED_SCRAP_METAL);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL, VanillishBlocks.SCRAP_METAL_TILES);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL, VanillishBlocks.SCRAP_METAL_GRATE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CARVED_SCRAP_METAL, VanillishBlocks.SCRAP_METAL);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_TILES, VanillishBlocks.SCRAP_METAL);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_GRATE, VanillishBlocks.SCRAP_METAL);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.SCRAP_METAL_SHARD, VanillishBlocks.SCRAP_METAL_LADDER);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.SCRAP_METAL_SHARD, VanillishBlocks.SCRAP_METAL_DOOR);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.SCRAP_METAL_SHARD, VanillishBlocks.SCRAP_METAL_TRAPDOOR);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.SCRAP_METAL_SHARD, VanillishBlocks.SCRAP_METAL_BARS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishItems.SCRAP_METAL_SHARD, VanillishBlocks.SCRAP_METAL_CHAIN);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_LADDER, VanillishItems.SCRAP_METAL_SHARD);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_DOOR, VanillishItems.SCRAP_METAL_SHARD);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_TRAPDOOR, VanillishItems.SCRAP_METAL_SHARD);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_BARS, VanillishItems.SCRAP_METAL_SHARD, 2);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_CHAIN, VanillishItems.SCRAP_METAL_SHARD);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.SCRAP_METAL_LANTERN)
                         .define('#', VanillishItems.SCRAP_METAL_TORCH)
@@ -323,22 +323,40 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
 
                 planksFromLog(VanillishBlocks.CHARRED_PLANKS, VanillishTags.CHARRED_WOOD, 4);
 
+                simpleCookingRecipe("smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.ACACIA_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking1", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking2", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.CHERRY_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking3", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.JUNGLE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking4", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.DARK_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking5", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.MANGROVE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking6", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking7", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking8", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.PALE_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking9", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.SPRUCE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
 
-                provider.lookupOrThrow(Registries.ITEM).getOrThrow(ItemTags.LOGS_THAT_BURN).unwrap().ifRight(itemlist -> {
-                    for (Holder<Item> item : itemlist) {
-
-                        if (item.getRegisteredName().contains("wood")) {
-                            simpleCookingRecipe("smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, item.value(), VanillishBlocks.CHARRED_WOOD.asItem(), 0.45f);
-
-                        } else {
-                            simpleCookingRecipe("smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, item.value(), VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-
-                        }
-
-                    }
-                });
+                simpleCookingRecipe("smoking10", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_ACACIA_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking11", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking12", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_CHERRY_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking13", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_JUNGLE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking14", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_DARK_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking15", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_MANGROVE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking16", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking17", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking18", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_PALE_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking19", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_SPRUCE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
 
 
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE, VanillishBlocks.CUT_DARK_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE, VanillishBlocks.CHISELED_DARK_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CUT_DARK_SANDSTONE, VanillishBlocks.CHISELED_DARK_SANDSTONE);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE.asItem())
+                        .pattern("ss")
+                        .pattern("ss")
+                        .define('s', VanillishBlocks.DARK_SILT)
+                        .unlockedBy("has_dark_silt", has(VanillishBlocks.DARK_SILT))
+                        .save(recipeOutput);
 
             }
         };

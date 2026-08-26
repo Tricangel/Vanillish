@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vanillish:block/cut_dark_sandstone_slab"
+    },
+    "type=double": {
+      "model": "vanillish:block/cut_dark_sandstone"
+    },
+    "type=top": {
+      "model": "vanillish:block/cut_dark_sandstone_slab_top"
+    }
+  }
+}

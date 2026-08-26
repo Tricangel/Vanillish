@@ -109,5 +109,23 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishItems.BRASS_NUGGET, "Brass Nugget");
         translationBuilder.add(VanillishItems.ROSE_GOLD_NUGGET, "Rose Gold Nugget");
         translationBuilder.add(VanillishItems.SCRAP_METAL_SHARD, "Scrap Metal Shard");
+
+        translationBuilder.add(VanillishBlocks.DARK_SANDSTONE, "Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.DARK_SANDSTONE_STAIRS, "Dark Sandstone Stairs");
+        translationBuilder.add(VanillishBlocks.DARK_SANDSTONE_SLAB, "Dark Sandstone Slab");
+        translationBuilder.add(VanillishBlocks.DARK_SANDSTONE_WALL, "Dark Sandstone Wall");
+        translationBuilder.add(VanillishBlocks.SMOOTH_DARK_SANDSTONE, "Smooth Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.SMOOTH_DARK_SANDSTONE_STAIRS, "Smooth Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.SMOOTH_DARK_SANDSTONE_SLAB, "Smooth Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.SMOOTH_DARK_SANDSTONE_WALL, "Smooth Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.CHISELED_DARK_SANDSTONE, "Chiseled Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.CUT_DARK_SANDSTONE, "Cut Dark Sandstone");
+        translationBuilder.add(VanillishBlocks.CUT_DARK_SANDSTONE_SLAB, "Cut Dark Sandstone Slab");
+
+        translationBuilder.add(VanillishBlocks.DARK_SILT, "Dark Silt");
+        translationBuilder.add(VanillishBlocks.DEEP_GRIT, "Deep Grit");
+
+
+        translationBuilder.add("vanillish.creative_tab", "Vanillish Items");
     }
 }

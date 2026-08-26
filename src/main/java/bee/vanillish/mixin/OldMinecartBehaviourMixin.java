@@ -21,7 +21,7 @@ public abstract class OldMinecartBehaviourMixin extends MinecartBehavior {
 		super(abstractMinecart);
 	}
 
-	@Inject(at = @At("HEAD"), method = "moveAlongTrack", cancellable = true)
+	@Inject(at = @At("HEAD"), method = "moveAlongTrack")
 	private void addRailFunctionality(ServerLevel serverLevel, CallbackInfo ci) {
 		BlockPos blockPos = this.minecart.getCurrentBlockPosOrRailBelow();
 		BlockState blockState = this.level().getBlockState(blockPos);

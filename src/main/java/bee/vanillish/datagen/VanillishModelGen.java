@@ -15,6 +15,7 @@ import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -30,6 +31,28 @@ public class VanillishModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
+
+        blockModelGenerators.createTrivialBlock(VanillishBlocks.CHISELED_DARK_SANDSTONE, block -> TexturedModel.TOP_BOTTOM_WITH_WALL.get(VanillishBlocks.SMOOTH_DARK_SANDSTONE).updateTextures(m -> m.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block))));
+        blockModelGenerators.createTrivialCube(VanillishBlocks.DARK_SILT);
+        blockModelGenerators.createTrivialCube(VanillishBlocks.DEEP_GRIT);
+
+
+
+        blockModelGenerators.family(VanillishBlocks.SMOOTH_DARK_SANDSTONE)
+                .stairs(VanillishBlocks.SMOOTH_DARK_SANDSTONE_STAIRS)
+                .slab(VanillishBlocks.SMOOTH_DARK_SANDSTONE_SLAB)
+                .wall(VanillishBlocks.SMOOTH_DARK_SANDSTONE_WALL);
+
+        blockModelGenerators.family(VanillishBlocks.DARK_SANDSTONE)
+                .stairs(VanillishBlocks.DARK_SANDSTONE_STAIRS)
+                .slab(VanillishBlocks.DARK_SANDSTONE_SLAB)
+                .wall(VanillishBlocks.DARK_SANDSTONE_WALL);
+
+        blockModelGenerators.family(VanillishBlocks.CUT_DARK_SANDSTONE)
+                        .slab(VanillishBlocks.CUT_DARK_SANDSTONE_SLAB);
+
+
+
         blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_POWERED_RAIL);
         this.createDirectionalRail(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, blockModelGenerators);
         blockModelGenerators.createPassiveRail(VanillishBlocks.ADVANCED_RAIL);

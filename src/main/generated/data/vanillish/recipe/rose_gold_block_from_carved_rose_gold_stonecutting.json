@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "vanillish:carved_rose_gold",
-  "result": {
-    "count": 1,
-    "id": "vanillish:rose_gold_block"
-  }
-}

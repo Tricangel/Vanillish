@@ -8,6 +8,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -138,7 +139,19 @@ public class VanillishBlocks {
     public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).noOcclusion().isViewBlocking(Blocks::never), false);
     public static final Block DUCKWEED = register("duckweed", FloatingWaterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
 
-
+    public static final Block DARK_SANDSTONE = register("dark_sandstone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block DARK_SANDSTONE_STAIRS = register("dark_sandstone_stairs", properties -> new StairBlock(DARK_SANDSTONE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block DARK_SANDSTONE_SLAB = register("dark_sandstone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block DARK_SANDSTONE_WALL = register("dark_sandstone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block CUT_DARK_SANDSTONE = register("cut_dark_sandstone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_SANDSTONE), true);
+    public static final Block CUT_DARK_SANDSTONE_SLAB = register("cut_dark_sandstone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CUT_SANDSTONE), true);
+    public static final Block CHISELED_DARK_SANDSTONE = register("chiseled_dark_sandstone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CHISELED_SANDSTONE), true);
+    public static final Block SMOOTH_DARK_SANDSTONE = register("smooth_dark_sandstone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SMOOTH_SANDSTONE), true);
+    public static final Block SMOOTH_DARK_SANDSTONE_STAIRS = register("smooth_dark_sandstone_stairs", properties -> new StairBlock(DARK_SANDSTONE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block SMOOTH_DARK_SANDSTONE_SLAB = register("smooth_dark_sandstone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block SMOOTH_DARK_SANDSTONE_WALL = register("smooth_dark_sandstone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
+    public static final Block DARK_SILT = register("dark_silt", properties -> new SandBlock(new ColorRGBA(-8356741), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND), true);
+    public static final Block DEEP_GRIT = register("deep_grit", properties -> new SandBlock(new ColorRGBA(-8356741), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.GRAVEL), true);
 
 
 
@@ -159,6 +172,7 @@ public class VanillishBlocks {
             ResourceKey<Item> itemKey = keyOfItem(name);
             BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+            VanillishCreativeTab.ITEMS.add(blockItem);
         }
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
@@ -174,7 +188,7 @@ public class VanillishBlocks {
         ResourceKey<Item> itemKey = keyOfItem(name);
         BlockItem blockItem = new MetalScaffoldingItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
         Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
-
+        VanillishCreativeTab.ITEMS.add(blockItem);
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }
 

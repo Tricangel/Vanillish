@@ -3,6 +3,7 @@ package bee.vanillish;
 import bee.vanillish.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.LevelReader;
@@ -29,33 +30,14 @@ public class Vanillish implements ModInitializer {
 		VanillishAttachments.init();
 		VanillishEffects.init();
 		VanillishRecipeBookCategories.init();
+		VanillishCreativeTab.init();
+
+
 
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
 
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_WOOD, VanillishBlocks.STRIPPED_CHARRED_WOOD);
-	}
-
-	public static @Nullable Pair<BlockPos, BlockState> getClosestBlockState(Block block, LevelReader levelReader, AABB aabb, BlockPos startingPos) {
-		BlockPos closestPos = null;
-		for (BlockPos pos : BlockPos.betweenClosedStream(aabb).toList()) {
-
-			if (levelReader.getBlockState(pos).is(block)) {
-
-				if (closestPos == null || pos.distManhattan(startingPos) < closestPos.distManhattan(startingPos)) {
-
-					closestPos = pos;
-
-				}
-
-			}
-
-		}
-
-		if (closestPos == null) return null;
-
-		return new Pair<>(closestPos, levelReader.getBlockState(closestPos));
-
 	}
 
 	public static Identifier id(String path) {

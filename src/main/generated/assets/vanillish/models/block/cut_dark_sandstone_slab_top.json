@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "vanillish:block/smooth_dark_sandstone_bottom",
+    "side": "vanillish:block/cut_dark_sandstone",
+    "top": "vanillish:block/smooth_dark_sandstone_top"
+  }
+}
