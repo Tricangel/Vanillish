@@ -240,6 +240,7 @@ public class VanillishModelGen extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(VanillishItems.BRASS_INGOT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(VanillishItems.ROSE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(VanillishItems.SCRAP_METAL_SHARD, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(VanillishItems.PUTRID_LEATHER, ModelTemplates.FLAT_ITEM);
 
     }
 }

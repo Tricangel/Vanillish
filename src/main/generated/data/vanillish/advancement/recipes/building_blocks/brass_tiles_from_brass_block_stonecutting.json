@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_brass_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:brass_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:brass_tiles_from_brass_block_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_brass_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:brass_tiles_from_brass_block_stonecutting"
+    ]
+  }
+}

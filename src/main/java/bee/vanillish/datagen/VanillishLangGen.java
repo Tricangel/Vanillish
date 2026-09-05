@@ -1,6 +1,7 @@
 package bee.vanillish.datagen;
 
 import bee.vanillish.registry.VanillishBlocks;
+import bee.vanillish.registry.VanillishEffects;
 import bee.vanillish.registry.VanillishItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -21,6 +22,8 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.REDSTONE_RANDOMIZER, "Redstone Randomizer");
         translationBuilder.add(VanillishBlocks.BLOCK_OF_KELP, "Kelp Block");
         translationBuilder.add(VanillishBlocks.ALGAE, "Algae");
+
+        translationBuilder.add(VanillishItems.PUTRID_LEATHER, "Putrid Leather");
 
         translationBuilder.add(VanillishBlocks.BRASS_BLOCK, "Brass Block");
         translationBuilder.add(VanillishBlocks.BRASS_BRICKS, "Brass Bricks");
@@ -85,6 +88,8 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.CHARRED_BUTTON, "Charred Button");
         translationBuilder.add(VanillishBlocks.CHARRED_DOOR, "Charred Door");
         translationBuilder.add(VanillishBlocks.CHARRED_LOG, "Charred Log");
+        translationBuilder.add(VanillishBlocks.STRIPPED_CHARRED_LOG, "Stripped Charred Log");
+        translationBuilder.add(VanillishBlocks.STRIPPED_CHARRED_WOOD, "Stripped Charred Wood");
         translationBuilder.add(VanillishBlocks.CHARRED_FENCE, "Charred Fence");
         translationBuilder.add(VanillishBlocks.CHARRED_PLANKS, "Charred Planks");
         translationBuilder.add(VanillishBlocks.CHARRED_SHELF, "Charred Shelf");
@@ -125,7 +130,9 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.DARK_SILT, "Dark Silt");
         translationBuilder.add(VanillishBlocks.DEEP_GRIT, "Deep Grit");
 
+        translationBuilder.add(VanillishEffects.PROTECTED.value(), "Protected");
 
-        translationBuilder.add("vanillish.creative_tab", "Vanillish Items");
+
+        translationBuilder.add("vanillish.creative_tab", "Vanillish");
     }
 }

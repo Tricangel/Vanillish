@@ -3,9 +3,12 @@ package bee.vanillish;
 import bee.vanillish.client.BlastChamberScreen;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishMenuTypes;
+import bee.vanillish.registry.VanillishParticles;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 
 public class VanillishClient implements ClientModInitializer {
@@ -52,6 +55,12 @@ public class VanillishClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(VanillishBlocks.DUCKWEED, ChunkSectionLayer.CUTOUT);
 
         MenuScreens.register(VanillishMenuTypes.BLAST_CHAMBER, BlastChamberScreen::new);
+
+
+        ParticleFactoryRegistry.getInstance().register(VanillishParticles.BRASS_FLAME, FlameParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(VanillishParticles.STEEL_FLAME, FlameParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(VanillishParticles.ROSE_GOLD_FLAME, FlameParticle.Provider::new);
+        ParticleFactoryRegistry.getInstance().register(VanillishParticles.SCRAP_METAL_FLAME, FlameParticle.Provider::new);
 
 
     }

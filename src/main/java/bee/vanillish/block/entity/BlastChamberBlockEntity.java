@@ -1,5 +1,6 @@
 package bee.vanillish.block.entity;
 
+import bee.vanillish.Vanillish;
 import bee.vanillish.menu.BlastChamberMenu;
 import bee.vanillish.recipe.BlastChamberRecipe;
 import bee.vanillish.registry.VanillishBlockEntities;
@@ -184,6 +185,7 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
                 if (fuel.is(VanillishTags.FUEL) && entity.litTime == 0) {
                     if (fuel.is(Items.TNT)) {
                         level.explode(null,blockPos.getX(), blockPos.getY(), blockPos.getZ(), 2, Level.ExplosionInteraction.BLOCK);
+                        return;
                     }
                     entity.litTime = 400;
                     entity.totalLitTime = 400;
@@ -192,17 +194,20 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
                 }
 
                 if (entity.litTime > 0) {
-                    RecipeHolder<BlastChamberRecipe> output = entity.quickCheck.getRecipeFor(new SingleRecipeInput(entity.itemStacks.getFirst()), serverLevel).get();
-
+                    Optional<RecipeHolder<BlastChamberRecipe>> output = entity.quickCheck.getRecipeFor(new SingleRecipeInput(entity.itemStacks.getFirst()), serverLevel);
+                    if (output.isEmpty()) {
+                        Vanillish.LOGGER.error("Missing recipe for {}", entity.itemStacks.getFirst().getItem());
+                        return;
+                    }
                     if (entity.totalCookTime == 0) {
 
-                        entity.totalCookTime = output.value().getTime();
+                        entity.totalCookTime = output.get().value().getTime();
 
                     }
 
                         entity.cookTime++;
 
-                    if (entity.cookTime > output.value().getTime()) {
+                    if (entity.cookTime > output.get().value().getTime()) {
 
                         cookItem(entity, serverLevel);
 

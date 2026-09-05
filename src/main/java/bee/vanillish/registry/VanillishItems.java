@@ -15,6 +15,8 @@ import java.util.function.Function;
 
 public class VanillishItems {
 
+    public static final Item PUTRID_LEATHER = register("putrid_leather", Item::new, new Item.Properties());
+
     public static final Item BRASS_INGOT = register("brass_ingot", Item::new, new Item.Properties());
     public static final Item ROSE_GOLD_INGOT = register("rose_gold_ingot", Item::new, new Item.Properties());
     public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Properties());

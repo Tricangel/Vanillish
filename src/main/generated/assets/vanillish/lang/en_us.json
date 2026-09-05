@@ -89,13 +89,17 @@
   "block.vanillish.steel_tile_stair": "Steel Tile Stairs",
   "block.vanillish.steel_tiles": "Steel Tiles",
   "block.vanillish.steel_torch": "Steel Torch",
+  "block.vanillish.stripped_charred_log": "Stripped Charred Log",
+  "block.vanillish.stripped_charred_wood": "Stripped Charred Wood",
   "block.vanillish.warding_stone": "Warding Stone",
+  "effect.vanillish.protected": "Protected",
   "item.vanillish.brass_ingot": "Brass Ingot",
   "item.vanillish.brass_nugget": "Brass Nugget",
+  "item.vanillish.putrid_leather": "Putrid Leather",
   "item.vanillish.rose_gold_ingot": "Rose Gold Ingot",
   "item.vanillish.rose_gold_nugget": "Rose Gold Nugget",
   "item.vanillish.scrap_metal_shard": "Scrap Metal Shard",
   "item.vanillish.steel_ingot": "Steel Ingot",
   "item.vanillish.steel_nugget": "Steel Nugget",
-  "vanillish.creative_tab": "Vanillish Items"
+  "vanillish.creative_tab": "Vanillish"
 }

@@ -17,10 +17,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SmokingRecipe;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -107,9 +104,9 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("jumpsacre", has(Items.COPPER_INGOT))
                         .save(recipeOutput, key("brass_ingott"));
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BLOCK, VanillishBlocks.BRASS_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BLOCK, VanillishBlocks.BRASS_TILES);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BLOCK, VanillishBlocks.BRASS_GRATE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BRICKS, VanillishBlocks.BRASS_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_TILES, VanillishBlocks.BRASS_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_GRATE, VanillishBlocks.BRASS_BLOCK);
 
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_LADDER, VanillishItems.BRASS_INGOT);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BARS, VanillishItems.BRASS_INGOT, 2);
@@ -334,16 +331,16 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 simpleCookingRecipe("smoking8", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.PALE_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
                 simpleCookingRecipe("smoking9", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.SPRUCE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
 
-                simpleCookingRecipe("smoking10", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_ACACIA_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking11", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking12", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_CHERRY_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking13", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_JUNGLE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking14", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_DARK_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking15", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_MANGROVE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking16", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking17", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking18", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_PALE_OAK_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
-                simpleCookingRecipe("smoking19", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_SPRUCE_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking10", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_ACACIA_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking11", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking12", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_CHERRY_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking13", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_JUNGLE_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking14", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_DARK_OAK_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking15", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_MANGROVE_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking16", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_BIRCH_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking17", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_OAK_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking18", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_PALE_OAK_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
+                simpleCookingRecipe("smoking19", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.STRIPPED_SPRUCE_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG.asItem(), 0.45f);
 
 
 
@@ -358,6 +355,43 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_dark_silt", has(VanillishBlocks.DARK_SILT))
                         .save(recipeOutput);
 
+                shaped(RecipeCategory.MISC, VanillishItems.PUTRID_LEATHER)
+                        .pattern("rrr")
+                        .pattern("rrr")
+                        .pattern("rrr")
+                        .define('r', Items.ROTTEN_FLESH)
+                        .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
+                        .save(recipeOutput);
+
+                simpleCookingRecipe("campfire", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new, 100, VanillishItems.PUTRID_LEATHER, Items.LEATHER, 0.45f);
+
+
+                shapeless(RecipeCategory.MISC, Items.QUARTZ, 4)
+                        .requires(Items.QUARTZ_BLOCK)
+                        .unlockedBy("has_quartz_block", has(Items.QUARTZ_BLOCK))
+                        .save(recipeOutput);
+
+                shaped(RecipeCategory.MISC, Items.PAPER)
+                        .pattern("bbb")
+                        .pattern("bbb")
+                        .define('b', Items.BAMBOO)
+                        .unlockedBy("has_bamboo", has(Items.BAMBOO))
+                        .save(recipeOutput);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, Items.CHEST, 4)
+                        .pattern("lll")
+                        .pattern("l l")
+                        .pattern("lll")
+                        .define('l', ItemTags.LOGS)
+                        .unlockedBy("has_log", has(ItemTags.LOGS))
+                        .save(recipeOutput);
+
+                shaped(RecipeCategory.BUILDING_BLOCKS, Items.STICK, 16)
+                        .pattern("l")
+                        .pattern("l")
+                        .define('l', ItemTags.LOGS)
+                        .unlockedBy("has_log", has(ItemTags.LOGS))
+                        .save(recipeOutput);
             }
         };
     }

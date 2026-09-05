@@ -31,6 +31,7 @@ public class Vanillish implements ModInitializer {
 		VanillishEffects.init();
 		VanillishRecipeBookCategories.init();
 		VanillishCreativeTab.init();
+		VanillishParticles.init();
 
 
 
