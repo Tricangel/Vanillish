@@ -127,11 +127,23 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
 
             if (slot.isEmpty()) return true;
 
-            if (!ItemStack.isSameItemSameComponents(output, slot)) return false;
+
+            if (!ItemStack.isSameItemSameComponents(output, slot)) {
+                entity.cookTime--;
+                if (entity.cookTime == 0) {
+                    entity.totalCookTime = 0;
+                }
+                return false;
+            };
 
             if (slot.getCount() >= slot.getMaxStackSize()) return false;
 
             return slot.getCount() + output.getCount() <= slot.getMaxStackSize();
+        } else {
+            entity.cookTime--;
+            if (entity.cookTime == 0) {
+                entity.totalCookTime = 0;
+            }
         }
 
         return false;

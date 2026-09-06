@@ -224,6 +224,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .save(recipeOutput, key("scrap_metal_from_iron_and_copper"));
 
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CARVED_SCRAP_METAL, VanillishBlocks.SCRAP_METAL);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_BRICKS, VanillishBlocks.SCRAP_METAL);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_TILES, VanillishBlocks.SCRAP_METAL);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCRAP_METAL_GRATE, VanillishBlocks.SCRAP_METAL);
 
@@ -318,6 +319,15 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 woodFromLogs(VanillishBlocks.CHARRED_WOOD, VanillishBlocks.CHARRED_LOG);
                 woodFromLogs(VanillishBlocks.STRIPPED_CHARRED_WOOD, VanillishBlocks.STRIPPED_CHARRED_LOG);
 
+                pressurePlate(VanillishBlocks.CHARRED_PRESSURE_PLATE, VanillishBlocks.CHARRED_PLANKS);
+
+                buttonBuilder(VanillishBlocks.CHARRED_BUTTON, Ingredient.of(VanillishBlocks.CHARRED_PLANKS)).unlockedBy("has_charred_planks", has(VanillishBlocks.CHARRED_PLANKS)).save(recipeOutput);
+                fenceBuilder(VanillishBlocks.CHARRED_FENCE, Ingredient.of(VanillishBlocks.CHARRED_PLANKS)).unlockedBy("has_charred_planks", has(VanillishBlocks.CHARRED_PLANKS)).save(recipeOutput);
+                fenceGateBuilder(VanillishBlocks.CHARRED_FENCE_GATE, Ingredient.of(VanillishBlocks.CHARRED_PLANKS)).unlockedBy("has_charred_planks", has(VanillishBlocks.CHARRED_PLANKS)).save(recipeOutput);
+                shelf(VanillishBlocks.CHARRED_SHELF, VanillishBlocks.STRIPPED_CHARRED_LOG);
+                doorBuilder(VanillishBlocks.CHARRED_DOOR, Ingredient.of(VanillishBlocks.CHARRED_PLANKS)).unlockedBy("has_charred_planks", has(VanillishBlocks.CHARRED_PLANKS)).save(recipeOutput);
+                trapdoorBuilder(VanillishBlocks.CHARRED_TRAPDOOR, Ingredient.of(VanillishBlocks.CHARRED_PLANKS)).unlockedBy("has_charred_planks", has(VanillishBlocks.CHARRED_PLANKS)).save(recipeOutput);
+
                 planksFromLog(VanillishBlocks.CHARRED_PLANKS, VanillishTags.CHARRED_WOOD, 4);
 
                 simpleCookingRecipe("smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new, 100, Items.ACACIA_LOG, VanillishBlocks.CHARRED_LOG.asItem(), 0.45f);
@@ -344,9 +354,11 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
 
 
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE, VanillishBlocks.CUT_DARK_SANDSTONE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE, VanillishBlocks.CHISELED_DARK_SANDSTONE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CUT_DARK_SANDSTONE, VanillishBlocks.CHISELED_DARK_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CUT_DARK_SANDSTONE, VanillishBlocks.DARK_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CHISELED_DARK_SANDSTONE, VanillishBlocks.SMOOTH_DARK_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CUT_DARK_SANDSTONE, VanillishBlocks.SMOOTH_DARK_SANDSTONE);
+                smeltingResultFromBase(VanillishBlocks.SMOOTH_DARK_SANDSTONE, VanillishBlocks.DARK_SANDSTONE);
+
 
                 shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE.asItem())
                         .pattern("ss")

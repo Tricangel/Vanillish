@@ -1,7 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	Vanillish/Tags for minecraft:block
 418dd62fa9338f343ae10fcb42603f44fe7a5c53 data/minecraft/tags/block/climbable.json
 ced9d0c2dd05eb6ce3ddbb403ea650a0eccce2b9 data/minecraft/tags/block/mineable/axe.json
-fbf2bb5839738c23490c21f454640335b5df427a data/minecraft/tags/block/mineable/pickaxe.json
+fc6762b592abd34fb9beabdbd7392d3b17edb322 data/minecraft/tags/block/mineable/pickaxe.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/minecraft/tags/block/rails.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/vanillish/tags/block/advanced_rails.json
 21b5a88f2e5a4ad3cd88ee23517cbad4f4b9881b data/vanillish/tags/block/scaffolding.json

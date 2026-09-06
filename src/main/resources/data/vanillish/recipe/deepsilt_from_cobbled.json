@@ -2,8 +2,8 @@
   "type": "vanillish:blast_chamber",
   "group": "blast_chamber",
   "time": 100,
-  "input": "minecraft:deepslate",
+  "input": "minecraft:cobbled_deepslate",
   "output": {
-    "id": "vanillish:deep_grit"
+    "id": "vanillish:deep_silt"
   }
 }

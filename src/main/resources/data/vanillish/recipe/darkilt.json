@@ -2,8 +2,8 @@
   "type": "vanillish:blast_chamber",
   "group": "blast_chamber",
   "time": 100,
-  "input": "minecraft:sand",
+  "input": "vanillish:deep_grit",
   "output": {
-    "id": "vanillish:dark_silt"
+    "id": "vanillish:deep_silt"
   }
 }

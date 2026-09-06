@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "vanillish:charred_planks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillish:charred_button"
+  }
+}

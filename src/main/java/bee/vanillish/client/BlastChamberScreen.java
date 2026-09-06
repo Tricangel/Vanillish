@@ -38,7 +38,7 @@ public class BlastChamberScreen extends AbstractRecipeBookScreen<BlastChamberMen
     protected void renderBg(GuiGraphics guiGraphics, float f, int i, int j) {
         int k = this.leftPos;
         int l = this.topPos;
-        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, Vanillish.id("textures/gui/container/blast_chamber.png"), k, l, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
+        guiGraphics.blit(RenderPipelines.GUI_TEXTURED, Vanillish.id("textures/gui/container/blast_chamber.png"), k + 1, l, 0.0F, 0.0F, this.imageWidth, this.imageHeight, 256, 256);
 
         if (this.menu.isLit()) {
 

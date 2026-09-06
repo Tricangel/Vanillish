@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:smooth_dark_sandstone",
+  "result": {
+    "count": 1,
+    "id": "vanillish:chiseled_dark_sandstone"
+  }
+}

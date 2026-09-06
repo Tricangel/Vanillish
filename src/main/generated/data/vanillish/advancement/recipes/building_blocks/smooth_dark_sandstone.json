@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_dark_sandstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "vanillish:dark_sandstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "vanillish:smooth_dark_sandstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_dark_sandstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "vanillish:smooth_dark_sandstone"
+    ]
+  }
+}
