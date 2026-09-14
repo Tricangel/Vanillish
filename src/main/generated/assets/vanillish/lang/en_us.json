@@ -1,4 +1,5 @@
 {
+  "block.vanillish.advanced_bouncy_rail": "Advanced Bouncy Rail",
   "block.vanillish.advanced_detector_rail": "Advanced Detector Rail",
   "block.vanillish.advanced_directional_rail": "Advanced Directional Rail",
   "block.vanillish.advanced_powered_rail": "Advanced Powered Rail",
@@ -44,6 +45,7 @@
   "block.vanillish.dark_sandstone_wall": "Dark Sandstone Wall",
   "block.vanillish.dark_silt": "Dark Silt",
   "block.vanillish.deep_grit": "Deep Grit",
+  "block.vanillish.duckweed": "Duckweed",
   "block.vanillish.redstone_randomizer": "Redstone Randomizer",
   "block.vanillish.rose_gold_bars": "Rose Gold Bars",
   "block.vanillish.rose_gold_block": "Rose Gold Block",

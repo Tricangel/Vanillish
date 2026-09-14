@@ -43,7 +43,7 @@ public class BlastChamberScreen extends AbstractRecipeBookScreen<BlastChamberMen
         if (this.menu.isLit()) {
 
             int n = Mth.ceil(this.menu.getLitProgress() * 13.0F) + 1;
-            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, Vanillish.id("container/gunpowder"), 16, 16, 0, 14 - n, k + 55, l + 35 + 14 - n, 14, n);
+            guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, Vanillish.id("container/gunpowder"), 16, 16, 0, 14 - n, k + 56, l + 35 + 14 - n, 14, n);
         }
 
 

@@ -135,8 +135,8 @@ public class VanillishBlocks {
     public static final Block BLOCK_OF_KELP = register("block_of_kelp", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DRIED_KELP_BLOCK), true);
 
     //Water Vegetation
-    public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).noOcclusion().isViewBlocking(Blocks::never), false);
-    public static final Block DUCKWEED = register("duckweed", FloatingWaterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK), false);
+    public static final Block ALGAE = register("algae", AlgaeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).noOcclusion().isViewBlocking(Blocks::never).noCollision(), false);
+    public static final Block DUCKWEED = register("duckweed", FloatingWaterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSS_BLOCK).noCollision(), false);
 
     public static final Block DARK_SANDSTONE = register("dark_sandstone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);
     public static final Block DARK_SANDSTONE_STAIRS = register("dark_sandstone_stairs", properties -> new StairBlock(DARK_SANDSTONE.defaultBlockState(), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE), true);

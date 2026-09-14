@@ -4,6 +4,6 @@
   "time": 100,
   "input": "minecraft:cobbled_deepslate",
   "output": {
-    "id": "vanillish:deep_silt"
+    "id": "vanillish:dark_silt"
   }
 }

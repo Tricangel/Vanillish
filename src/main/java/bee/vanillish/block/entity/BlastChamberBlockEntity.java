@@ -199,8 +199,8 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
                         level.explode(null,blockPos.getX(), blockPos.getY(), blockPos.getZ(), 2, Level.ExplosionInteraction.BLOCK);
                         return;
                     }
-                    entity.litTime = 400;
-                    entity.totalLitTime = 400;
+                    entity.litTime = 1000;
+                    entity.totalLitTime = 1000;
                     fuel.shrink(1);
                     entity.itemStacks.set(1, fuel);
                 }

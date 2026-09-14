@@ -22,6 +22,7 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.REDSTONE_RANDOMIZER, "Redstone Randomizer");
         translationBuilder.add(VanillishBlocks.BLOCK_OF_KELP, "Kelp Block");
         translationBuilder.add(VanillishBlocks.ALGAE, "Algae");
+        translationBuilder.add(VanillishBlocks.DUCKWEED, "Duckweed");
 
         translationBuilder.add(VanillishItems.PUTRID_LEATHER, "Putrid Leather");
 
@@ -102,6 +103,7 @@ public class VanillishLangGen extends FabricLanguageProvider {
 
 
         translationBuilder.add(VanillishBlocks.ADVANCED_RAIL, "Advanced Rail");
+        translationBuilder.add(VanillishBlocks.ADVANCED_BOUNCY_RAIL, "Advanced Bouncy Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_POWERED_RAIL, "Advanced Powered Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, "Advanced Directional Rail");
         translationBuilder.add(VanillishBlocks.ADVANCED_DETECTOR_RAIL, "Advanced Detector Rail");

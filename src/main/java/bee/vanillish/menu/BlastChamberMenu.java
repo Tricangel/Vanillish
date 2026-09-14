@@ -1,14 +1,10 @@
 package bee.vanillish.menu;
 
-import bee.vanillish.Vanillish;
-import bee.vanillish.data.BlastChamberFuel;
 import bee.vanillish.menu.slot.BlastChamberFuelSlot;
 import bee.vanillish.menu.slot.BlastChamberResultSlot;
 import bee.vanillish.registry.VanillishMenuTypes;
 import bee.vanillish.registry.VanillishRecipes;
 import bee.vanillish.registry.VanillishTags;
-import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
@@ -89,12 +85,12 @@ public class BlastChamberMenu extends RecipeBookMenu {
     }
 
     @Override
-    public RecipeBookType getRecipeBookType() {
+    public @NonNull RecipeBookType getRecipeBookType() {
         return RecipeBookType.BLAST_FURNACE;
     }
 
     @Override
-    public ItemStack quickMoveStack(Player player, int i) {
+    public @NonNull ItemStack quickMoveStack(Player player, int i) {
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.getSlot(i);
 
@@ -103,6 +99,10 @@ public class BlastChamberMenu extends RecipeBookMenu {
             itemStack = itemStack.copy();
 
             if (i == 2) {
+                //stupid fix but it kinda works so idc
+                if (!player.getInventory().hasAnyMatching(x -> x.is(stack.getItem()))) {
+                    stack.setCount(Mth.ceil((float) stack.getCount() / 2));
+                }
 
                 if (moveItemStackTo(stack, 2, 39, true)) {
                     return ItemStack.EMPTY;
