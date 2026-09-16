@@ -23,7 +23,7 @@ import org.jspecify.annotations.NonNull;
 public class BlastChamberMenu extends RecipeBookMenu {
     public Level level;
     public Player player;
-    private final RecipePropertySet acceptedInputs;
+    public final RecipePropertySet acceptedInputs;
     private final ContainerData data;
     public BlastChamberMenu(int i, Inventory inventory) {
         this(i, inventory, new SimpleContainer(3), new SimpleContainerData(4));

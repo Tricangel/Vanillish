@@ -253,7 +253,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_scrap_metal_nugget", this.has(VanillishItems.SCRAP_METAL_SHARD))
                         .save(this.output, key("gayasstwink"));
 
-                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_RAIL, 16)
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_RAIL, 32)
                         .pattern("b b")
                         .pattern("sis")
                         .pattern("b b")
@@ -263,7 +263,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_redstone", has(Items.REDSTONE))
                         .save(recipeOutput);
 
-                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_POWERED_RAIL, 16)
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_POWERED_RAIL, 32)
                         .pattern("brb")
                         .pattern("sis")
                         .pattern("brb")
@@ -274,7 +274,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_redstone", has(Items.REDSTONE))
                         .save(recipeOutput);
 
-                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_DETECTOR_RAIL, 16)
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_DETECTOR_RAIL, 32)
                         .pattern("brb")
                         .pattern("sis")
                         .pattern("brb")
@@ -285,7 +285,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_redstone", has(Items.REDSTONE))
                         .save(recipeOutput);
 
-                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_STOP_RAIL, 16)
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_STOP_RAIL, 32)
                         .pattern("brb")
                         .pattern("sss")
                         .pattern("brb")
@@ -295,7 +295,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .unlockedBy("has_redstone", has(Items.REDSTONE))
                         .save(recipeOutput);
 
-                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, 16)
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, 3)
                         .pattern("brb")
                         .pattern("sis")
                         .pattern("brb")

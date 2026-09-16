@@ -36,6 +36,8 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 
 		double movementBonus = blockState.getValueOrElse(BlockStateProperties.POWERED, false) ? 0.03 : 0.01;
 
+		if (blockState.is(VanillishBlocks.ADVANCED_RAIL)) movementBonus = 0.02;
+
 		if (vec3.length() > 0.01) {
 			newDelta = vec3.normalize().scale(vec3.length() + movementBonus);
 		} else {
@@ -81,10 +83,10 @@ public abstract class NewMinecartBehaviourMixin extends MinecartBehavior {
 		BlockState state = serverLevel.getBlockState(this.minecart.getCurrentBlockPosOrRailBelow());
 		if (state.is(VanillishTags.ADVANCED_RAILS)) {
 
-            return this.minecart.isInWater() ? 0.4 : 0.9;
+            return this.minecart.isInWater() ? 0.75 : 1.5;
 
 		}
-		return this.minecart.isInWater() ? 0.2 : 0.4;
+		return this.minecart.isInWater() ? 0.3 : 0.6;
 	}
 
 

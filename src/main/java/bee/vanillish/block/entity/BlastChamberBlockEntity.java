@@ -139,11 +139,6 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
             if (slot.getCount() >= slot.getMaxStackSize()) return false;
 
             return slot.getCount() + output.getCount() <= slot.getMaxStackSize();
-        } else {
-            entity.cookTime--;
-            if (entity.cookTime == 0) {
-                entity.totalCookTime = 0;
-            }
         }
 
         return false;
@@ -176,6 +171,16 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
 
     public static void tick(Level level, BlockPos blockPos, BlockState blockState, BlastChamberBlockEntity entity) {
         if (level instanceof ServerLevel serverLevel) {
+
+            if (entity.itemStacks.get(0).isEmpty()) {
+                if (entity.cookTime > 0) {
+                    entity.cookTime--;
+                } else {
+                    entity.cookTime = 0;
+                    entity.totalCookTime = 0;
+                }
+            }
+
             ItemStack fuel = entity.itemStacks.get(1);
 
             if (entity.litTime > 0) {
