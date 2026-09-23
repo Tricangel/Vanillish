@@ -20,6 +20,7 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.BLAST_CHAMBER, "Blast Chamber");
         translationBuilder.add(VanillishBlocks.WARDING_STONE, "Warding Stone");
         translationBuilder.add(VanillishBlocks.REDSTONE_RANDOMIZER, "Redstone Randomizer");
+        translationBuilder.add(VanillishBlocks.GAZER, "Gazer");
         translationBuilder.add(VanillishBlocks.BLOCK_OF_KELP, "Kelp Block");
         translationBuilder.add(VanillishBlocks.ALGAE, "Algae");
         translationBuilder.add(VanillishBlocks.DUCKWEED, "Duckweed");
@@ -131,6 +132,17 @@ public class VanillishLangGen extends FabricLanguageProvider {
 
         translationBuilder.add(VanillishBlocks.DARK_SILT, "Dark Silt");
         translationBuilder.add(VanillishBlocks.DEEP_GRIT, "Deep Grit");
+
+        translationBuilder.add(VanillishBlocks.STONE_PABBLE, "Stone Pabble");
+        translationBuilder.add(VanillishBlocks.TUFF_PABBLE, "Tuff Pabble");
+        translationBuilder.add(VanillishBlocks.BASALT_PABBLE, "Basalt Pabble");
+        translationBuilder.add(VanillishBlocks.DEEPSLATE_PABBLE, "Deepslate Pabble");
+        translationBuilder.add(VanillishBlocks.BLACKSTONE_PABBLE, "Blackstone Pabble");
+        translationBuilder.add(VanillishBlocks.CALCITE_PABBLE, "Calcite Pabble");
+        translationBuilder.add(VanillishBlocks.DIORITE_PABBLE, "Diorite Pabble");
+        translationBuilder.add(VanillishBlocks.DRIPSTONE_PABBLE, "Dripstone Pabble");
+        translationBuilder.add(VanillishBlocks.GRANITE_PABBLE, "Granite Pabble");
+        translationBuilder.add(VanillishBlocks.NETHERRACK_PABBLE, "Netherrack Pabble");
 
         translationBuilder.add(VanillishEffects.PROTECTED.value(), "Protected");
 

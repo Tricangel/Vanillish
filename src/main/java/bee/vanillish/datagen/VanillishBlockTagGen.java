@@ -24,6 +24,8 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(VanillishBlocks.CHARRED_BUTTON)
                 .add(VanillishBlocks.CHARRED_DOOR)
                 .add(VanillishBlocks.CHARRED_LOG)
+                .add(VanillishBlocks.STRIPPED_CHARRED_LOG)
+                .add(VanillishBlocks.STRIPPED_CHARRED_WOOD)
                 .add(VanillishBlocks.CHARRED_FENCE)
                 .add(VanillishBlocks.CHARRED_PLANKS)
                 .add(VanillishBlocks.CHARRED_SHELF)
@@ -119,6 +121,18 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING)
                 .add(VanillishBlocks.STEEL_SCAFFOLDING)
                 .add(VanillishBlocks.BRASS_SCAFFOLDING);
+        
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+        .add(VanillishBlocks.STONE_PABBLE)
+        .add(VanillishBlocks.TUFF_PABBLE)
+        .add(VanillishBlocks.BASALT_PABBLE)
+        .add(VanillishBlocks.DEEPSLATE_PABBLE)
+        .add(VanillishBlocks.BLACKSTONE_PABBLE)
+        .add(VanillishBlocks.CALCITE_PABBLE)
+        .add(VanillishBlocks.DIORITE_PABBLE)
+        .add(VanillishBlocks.DRIPSTONE_PABBLE)
+        .add(VanillishBlocks.GRANITE_PABBLE)
+        .add(VanillishBlocks.NETHERRACK_PABBLE);
 
         valueLookupBuilder(VanillishTags.SCAFFOLDING)
                 .add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING)

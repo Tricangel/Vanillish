@@ -18,6 +18,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
@@ -36,6 +37,16 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createTrivialCube(VanillishBlocks.DARK_SILT);
         blockModelGenerators.createTrivialCube(VanillishBlocks.DEEP_GRIT);
 
+        this.createMultiface(VanillishBlocks.STONE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.TUFF_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.BASALT_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.DEEPSLATE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.BLACKSTONE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.CALCITE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.DIORITE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.DRIPSTONE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.GRANITE_PABBLE, blockModelGenerators);
+        this.createMultiface(VanillishBlocks.NETHERRACK_PABBLE, blockModelGenerators);
 
 
         blockModelGenerators.family(VanillishBlocks.SMOOTH_DARK_SANDSTONE)
@@ -61,6 +72,8 @@ public class VanillishModelGen extends FabricModelProvider {
         blockModelGenerators.createActiveRail(VanillishBlocks.ADVANCED_STOP_RAIL);
         blockModelGenerators.createTrivialCube(VanillishBlocks.WARDING_STONE);
         createRandomizer(VanillishBlocks.REDSTONE_RANDOMIZER, blockModelGenerators);
+        createGazer(blockModelGenerators);
+
 
         createLadder(VanillishBlocks.BRASS_LADDER, blockModelGenerators);
         createChain(VanillishBlocks.BRASS_CHAIN, blockModelGenerators);
@@ -127,6 +140,26 @@ public class VanillishModelGen extends FabricModelProvider {
                 .pressurePlate(VanillishBlocks.CHARRED_PRESSURE_PLATE);
     }
 
+    public void createMultiface(Block block, BlockModelGenerators generators) {
+        generators.createMultiface(block, block.asItem());
+        plainVariant(VanillishModelTemplates.MULTIFACE.create(block, TextureMapping.cube(block), generators.modelOutput));
+    }
+
+    public void createGazer(BlockModelGenerators generators) {
+        Block block = VanillishBlocks.GAZER;
+
+        MultiVariant off = plainVariant(Vanillish.id("block/gazer"));
+        MultiVariant on = plainVariant(Vanillish.id("block/gazer_on"));
+
+        generators.blockStateOutput
+                .accept(
+                        MultiVariantGenerator.dispatch(block)
+                                .with(createBooleanModelDispatch(BlockStateProperties.POWERED, on, off))
+                                .with(ROTATION_FACING)
+                );
+
+    }
+
     public void createDirectionalRail(Block block, BlockModelGenerators generators) {
         MultiVariant multiVariant = plainVariant(generators.createSuffixedVariant(block, "", ModelTemplates.RAIL_FLAT, TextureMapping::rail));
         MultiVariant multiVariant2 = plainVariant(generators.createSuffixedVariant(block, "", ModelTemplates.RAIL_RAISED_NE, TextureMapping::rail));
@@ -138,42 +171,38 @@ public class VanillishModelGen extends FabricModelProvider {
         generators.blockStateOutput
                 .accept(
                         MultiVariantGenerator.dispatch(block)
-                                .with(PropertyDispatch.initial(BlockStateProperties.POWERED, BlockStateProperties.RAIL_SHAPE_STRAIGHT, BlockStateProperties.INVERTED).generate((boolean_, railShape, inverted) -> {
-                                    MultiVariant variant = switch (railShape) {
-                                        case NORTH_SOUTH -> {
-                                            var temp = boolean_ ? multiVariant4 : multiVariant;
-                                            if (!inverted) temp = temp.with(Y_ROT_180);
-                                            yield temp;
-                                        }
-                                        case EAST_WEST -> {
-                                            var temp = (boolean_ ? multiVariant4 : multiVariant).with(Y_ROT_90);
-                                            if (inverted) temp = temp.with(Y_ROT_270);
-                                            yield temp;
-                                        }
-                                        case ASCENDING_EAST -> {
-                                            var temp = (boolean_ ? multiVariant5 : multiVariant2).with(Y_ROT_90);
-                                            if (inverted) temp = temp.with(Y_ROT_270);
-                                            yield temp;
-                                        }
-                                        case ASCENDING_WEST -> {
-                                            var temp = (boolean_ ? multiVariant6 : multiVariant3).with(Y_ROT_90);
-                                            if (inverted) temp = temp.with(Y_ROT_270);
-                                            yield temp;
-                                        }
-                                        case ASCENDING_NORTH -> {
-                                            var temp = boolean_ ? multiVariant5 : multiVariant2;
-                                            if (!inverted) temp = temp.with(Y_ROT_180);
-                                            yield temp;
-                                        }
-                                        case ASCENDING_SOUTH -> {
-                                            var temp = boolean_ ? multiVariant6 : multiVariant3;
-                                            if (!inverted) temp = temp.with(Y_ROT_180);
-                                            yield temp;
-                                        }
-                                        default -> throw new UnsupportedOperationException("Fix you generator!");
-                                    };
-
-                                    return variant;
+                                .with(PropertyDispatch.initial(BlockStateProperties.POWERED, BlockStateProperties.RAIL_SHAPE_STRAIGHT, BlockStateProperties.INVERTED).generate((boolean_, railShape, inverted) -> switch (railShape) {
+                                    case NORTH_SOUTH -> {
+                                        var temp = boolean_ ? multiVariant4 : multiVariant;
+                                        if (!inverted) temp = temp.with(Y_ROT_180);
+                                        yield temp;
+                                    }
+                                    case EAST_WEST -> {
+                                        var temp = (boolean_ ? multiVariant4 : multiVariant).with(Y_ROT_90);
+                                        if (inverted) temp = temp.with(Y_ROT_270);
+                                        yield temp;
+                                    }
+                                    case ASCENDING_EAST -> {
+                                        var temp = (boolean_ ? multiVariant5 : multiVariant2).with(Y_ROT_90);
+                                        if (inverted) temp = temp.with(Y_ROT_270);
+                                        yield temp;
+                                    }
+                                    case ASCENDING_WEST -> {
+                                        var temp = (boolean_ ? multiVariant6 : multiVariant3).with(Y_ROT_90);
+                                        if (inverted) temp = temp.with(Y_ROT_270);
+                                        yield temp;
+                                    }
+                                    case ASCENDING_NORTH -> {
+                                        var temp = boolean_ ? multiVariant5 : multiVariant2;
+                                        if (!inverted) temp = temp.with(Y_ROT_180);
+                                        yield temp;
+                                    }
+                                    case ASCENDING_SOUTH -> {
+                                        var temp = boolean_ ? multiVariant6 : multiVariant3;
+                                        if (!inverted) temp = temp.with(Y_ROT_180);
+                                        yield temp;
+                                    }
+                                    default -> throw new UnsupportedOperationException("Fix you generator!");
                                 }))
                 );
 

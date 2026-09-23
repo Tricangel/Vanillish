@@ -53,6 +53,16 @@
     "vanillish:scrap_metal_chain",
     "vanillish:scrap_metal_lantern",
     "vanillish:scrap_metal_ladder",
-    "vanillish:scrap_metal_trapdoor"
+    "vanillish:scrap_metal_trapdoor",
+    "vanillish:stone_pabble",
+    "vanillish:tuff_pabble",
+    "vanillish:basalt_pabble",
+    "vanillish:deepslate_pabble",
+    "vanillish:blackstone_pabble",
+    "vanillish:calcite_pabble",
+    "vanillish:diorite_pabble",
+    "vanillish:dripstone_pabble",
+    "vanillish:granite_pabble",
+    "vanillish:netherrack_pabble"
   ]
 }

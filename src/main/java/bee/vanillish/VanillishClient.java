@@ -54,6 +54,11 @@ public class VanillishClient implements ClientModInitializer {
         BlockRenderLayerMap.putBlock(VanillishBlocks.ALGAE, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(VanillishBlocks.DUCKWEED, ChunkSectionLayer.CUTOUT);
 
+        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, VanillishBlocks.TUFF_PABBLE,
+                VanillishBlocks.BASALT_PABBLE, VanillishBlocks.DEEPSLATE_PABBLE, VanillishBlocks.BLACKSTONE_PABBLE,
+                VanillishBlocks.CALCITE_PABBLE, VanillishBlocks.DIORITE_PABBLE, VanillishBlocks.DRIPSTONE_PABBLE,
+                VanillishBlocks.GRANITE_PABBLE, VanillishBlocks.NETHERRACK_PABBLE);
+
         MenuScreens.register(VanillishMenuTypes.BLAST_CHAMBER, BlastChamberScreen::new);
 
 

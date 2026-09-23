@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.PushReaction;
 
 import java.util.function.Function;
 
@@ -24,6 +25,7 @@ public class VanillishBlocks {
     public static final Block BLAST_CHAMBER = register("blast_chamber", BlastChamberBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLAST_FURNACE), true);
     public static final Block WARDING_STONE = register("warding_stone", WardingStoneBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE), true);
     public static final Block REDSTONE_RANDOMIZER = register("redstone_randomizer", RedstoneRandomizer::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OBSERVER), true);
+    public static final Block GAZER = register("gazer", GazerBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.OBSERVER), true);
 
     //Brass family
 
@@ -153,13 +155,18 @@ public class VanillishBlocks {
     public static final Block DEEP_GRIT = register("deep_grit", properties -> new SandBlock(new ColorRGBA(-8356741), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.GRAVEL), true);
 
 
+    //Pabbles
 
-
-
-
-
-
-
+    public static final Block STONE_PABBLE = pabble("stone", SoundType.STONE);
+    public static final Block TUFF_PABBLE = pabble("tuff", SoundType.TUFF);
+    public static final Block BASALT_PABBLE = pabble("basalt", SoundType.BASALT);
+    public static final Block DEEPSLATE_PABBLE = pabble("deepslate", SoundType.DEEPSLATE);
+    public static final Block BLACKSTONE_PABBLE = pabble("blackstone", SoundType.STONE);
+    public static final Block CALCITE_PABBLE = pabble("calcite", SoundType.CALCITE);
+    public static final Block DIORITE_PABBLE = pabble("diorite", SoundType.STONE);
+    public static final Block DRIPSTONE_PABBLE = pabble("dripstone", SoundType.DRIPSTONE_BLOCK);
+    public static final Block GRANITE_PABBLE = pabble("granite", SoundType.STONE);
+    public static final Block NETHERRACK_PABBLE = pabble("netherrack", SoundType.NETHERRACK);
 
 
 
@@ -174,6 +181,10 @@ public class VanillishBlocks {
             VanillishCreativeTab.ITEMS.add(blockItem);
         }
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
+    }
+
+    private static Block pabble(String name, SoundType type) {
+        return register(name + "_pabble", MultifaceBlock::new, BlockBehaviour.Properties.of().noCollision().noOcclusion().sound(type).pushReaction(PushReaction.DESTROY).strength(0.15F, 0.5F));
     }
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {

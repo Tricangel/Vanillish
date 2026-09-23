@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "d": "minecraft:deepslate_bricks",
+    "o": "minecraft:observer",
+    "r": "vanillish:rose_gold_ingot"
+  },
+  "pattern": [
+    "drd",
+    "ror",
+    "drd"
+  ],
+  "result": {
+    "count": 1,
+    "id": "vanillish:gazer"
+  }
+}

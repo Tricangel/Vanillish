@@ -2,6 +2,7 @@ package bee.vanillish.registry;
 
 import bee.vanillish.Vanillish;
 import bee.vanillish.block.entity.BlastChamberBlockEntity;
+import bee.vanillish.block.entity.GazerBlockEntity;
 import bee.vanillish.block.entity.WardingStoneBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
@@ -15,6 +16,7 @@ public class VanillishBlockEntities {
 
     public static final BlockEntityType<BlastChamberBlockEntity> BLAST_CHAMBER = register("blast_chamber", BlastChamberBlockEntity::new, VanillishBlocks.BLAST_CHAMBER);
     public static final BlockEntityType<WardingStoneBlockEntity> WARDING_STONE = register("warding_stone", WardingStoneBlockEntity::new, VanillishBlocks.WARDING_STONE);
+    public static final BlockEntityType<GazerBlockEntity> GAZER = register("gazer", GazerBlockEntity::new, VanillishBlocks.GAZER);
 
     private static <T extends BlockEntity> BlockEntityType<T> register(
             String name,

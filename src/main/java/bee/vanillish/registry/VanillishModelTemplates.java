@@ -17,6 +17,7 @@ public class VanillishModelTemplates {
     public static final ModelTemplate ALGAE = create("template_algae", TextureSlot.TEXTURE);
     public static final ModelTemplate LADDER = create("template_ladder", TextureSlot.TEXTURE);
     public static final ModelTemplate CUBE_NORTH = create("cube_north", TextureSlot.ALL, TextureSlot.NORTH);
+    public static final ModelTemplate MULTIFACE = create("template_multiface", TextureSlot.ALL);
 
     private static ModelTemplate create(String string, TextureSlot... textureSlots) {
         return new ModelTemplate(Optional.of(Vanillish.id("block/" + string)), Optional.empty(), textureSlots);

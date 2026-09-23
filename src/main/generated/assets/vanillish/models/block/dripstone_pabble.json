@@ -1,0 +1,6 @@
+{
+  "parent": "vanillish:block/template_multiface",
+  "textures": {
+    "all": "vanillish:block/dripstone_pabble"
+  }
+}

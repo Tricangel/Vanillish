@@ -360,6 +360,17 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 smeltingResultFromBase(VanillishBlocks.SMOOTH_DARK_SANDSTONE, VanillishBlocks.DARK_SANDSTONE);
 
 
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STONE_PABBLE, Blocks.STONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.TUFF_PABBLE, Blocks.TUFF);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BASALT_PABBLE, Blocks.BASALT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DEEPSLATE_PABBLE, Blocks.DEEPSLATE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BLACKSTONE_PABBLE, Blocks.BLACKSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CALCITE_PABBLE, Blocks.CALCITE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DIORITE_PABBLE, Blocks.DIORITE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DRIPSTONE_PABBLE, Blocks.DRIPSTONE_BLOCK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.GRANITE_PABBLE, Blocks.GRANITE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.NETHERRACK_PABBLE, Blocks.NETHERRACK);
+                
                 shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE.asItem())
                         .pattern("ss")
                         .pattern("ss")
@@ -373,6 +384,16 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .pattern("rrr")
                         .define('r', Items.ROTTEN_FLESH)
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
+                        .save(recipeOutput);
+
+                shaped(RecipeCategory.REDSTONE, VanillishBlocks.GAZER)
+                        .pattern("drd")
+                        .pattern("ror")
+                        .pattern("drd")
+                        .define('d', Items.DEEPSLATE_BRICKS)
+                        .define('r', VanillishItems.ROSE_GOLD_INGOT)
+                        .define('o', Items.OBSERVER)
+                        .unlockedBy("has_rose_gold", has(VanillishItems.ROSE_GOLD_INGOT))
                         .save(recipeOutput);
 
                 simpleCookingRecipe("campfire", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new, 100, VanillishItems.PUTRID_LEATHER, Items.LEATHER, 0.45f);

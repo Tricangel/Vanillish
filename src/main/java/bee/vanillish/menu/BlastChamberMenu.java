@@ -92,58 +92,49 @@ public class BlastChamberMenu extends RecipeBookMenu {
     @Override
     public @NonNull ItemStack quickMoveStack(Player player, int i) {
         ItemStack itemStack = ItemStack.EMPTY;
-        Slot slot = this.getSlot(i);
-
-        if (slot.hasItem()) {
-            ItemStack stack = slot.getItem();
-            itemStack = itemStack.copy();
-
+        Slot slot = this.slots.get(i);
+        if (slot != null && slot.hasItem()) {
+            ItemStack itemStack2 = slot.getItem();
+            itemStack = itemStack2.copy();
             if (i == 2) {
-                //stupid fix but it kinda works so idc
-                if (!player.getInventory().hasAnyMatching(x -> x.is(stack.getItem()))) {
-                    stack.setCount(Mth.ceil((float) stack.getCount() / 2));
-                }
-
-                if (moveItemStackTo(stack, 2, 39, true)) {
+                if (!this.moveItemStackTo(itemStack2, 3, 39, true)) {
                     return ItemStack.EMPTY;
                 }
 
-                slot.onQuickCraft(stack, itemStack);
-
+                slot.onQuickCraft(itemStack2, itemStack);
             } else if (i != 1 && i != 0) {
-                if (this.canSmelt(stack)) {
-                    if (!this.moveItemStackTo(stack, 0, 1, false)) {
+                if (this.canSmelt(itemStack2)) {
+                    if (!this.moveItemStackTo(itemStack2, 0, 1, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (this.isFuel(stack.getItem())) {
-                    if (!this.moveItemStackTo(stack, 1, 2, false)) {
+                } else if (this.isFuel(itemStack2.getItem())) {
+                    if (!this.moveItemStackTo(itemStack2, 1, 2, false)) {
                         return ItemStack.EMPTY;
                     }
                 } else if (i >= 3 && i < 30) {
-                    if (!this.moveItemStackTo(stack, 30, 39, false)) {
+                    if (!this.moveItemStackTo(itemStack2, 30, 39, false)) {
                         return ItemStack.EMPTY;
                     }
-                } else if (i >= 30 && i < 39 && !this.moveItemStackTo(stack, 3, 30, false)) {
+                } else if (i >= 30 && i < 39 && !this.moveItemStackTo(itemStack2, 3, 30, false)) {
                     return ItemStack.EMPTY;
                 }
-
-            } else if (!this.moveItemStackTo(stack, 3, 39, false)) {
+            } else if (!this.moveItemStackTo(itemStack2, 3, 39, false)) {
                 return ItemStack.EMPTY;
             }
 
-            if (stack.isEmpty()) {
+            if (itemStack2.isEmpty()) {
                 slot.setByPlayer(ItemStack.EMPTY);
             } else {
                 slot.setChanged();
             }
 
-            if (stack.getCount() == itemStack.getCount()) {
+            if (itemStack2.getCount() == itemStack.getCount()) {
                 return ItemStack.EMPTY;
             }
 
-            slot.onTake(player, stack);
-
+            slot.onTake(player, itemStack2);
         }
+
         return itemStack;
     }
 
