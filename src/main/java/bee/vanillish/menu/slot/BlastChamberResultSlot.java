@@ -15,7 +15,7 @@ public class BlastChamberResultSlot extends Slot {
 
     @Override
     public boolean mayPlace(@NonNull ItemStack itemStack) {
-        return menu.acceptedInputs.test(itemStack);
+        return false;
     }
 
 }

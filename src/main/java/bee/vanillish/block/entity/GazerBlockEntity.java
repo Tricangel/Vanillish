@@ -5,18 +5,8 @@ import bee.vanillish.registry.VanillishBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.monster.Creeper;
-import net.minecraft.world.entity.monster.piglin.Piglin;
-import net.minecraft.world.entity.monster.skeleton.Skeleton;
-import net.minecraft.world.entity.monster.skeleton.WitherSkeleton;
-import net.minecraft.world.entity.monster.zombie.Zombie;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.component.ResolvableProfile;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SkullBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.SkullBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -31,13 +21,13 @@ public class GazerBlockEntity extends BlockEntity {
 
     public void tick() {
         AABB aabb = AABB.encapsulatingFullBlocks(worldPosition, worldPosition.relative(getBlockState().getValue(BlockStateProperties.FACING), 3));
-        List<Entity> entities = getEntityType(aabb);
+        List<Entity> entities = getEntities(aabb);
 
         if (!entities.isEmpty()) level.setBlockAndUpdate(worldPosition, getBlockState().setValue(GazerBlock.POWERED, true));
         else level.setBlockAndUpdate(worldPosition, getBlockState().setValue(GazerBlock.POWERED, false));
     }
 
-    public List<Entity> getEntityType(AABB aabb) {
+    public List<Entity> getEntities(AABB aabb) {
         BlockState state = level.getBlockState(worldPosition.above());
         if (state.is(Blocks.SKELETON_SKULL) || state.is(Blocks.SKELETON_WALL_SKULL)) {
             return level.getEntities((Entity) null, aabb, entity -> entity.getType() == EntityType.SKELETON);

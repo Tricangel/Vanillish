@@ -21,8 +21,6 @@ public abstract class BlockModelGeneratorsMixin  {
 			return TexturedModel.TOP_BOTTOM_WITH_WALL.get(VanillishBlocks.SMOOTH_DARK_SANDSTONE).updateTextures(m -> m.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block)));
 		}
 
-
-
 		if (block.equals(VanillishBlocks.DARK_SANDSTONE)) {
 			return TexturedModel.TOP_BOTTOM_WITH_WALL.get(block);
 		}

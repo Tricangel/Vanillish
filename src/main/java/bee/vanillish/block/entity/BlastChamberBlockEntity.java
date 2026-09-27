@@ -185,17 +185,16 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
 
             if (entity.litTime > 0) {
                 entity.litTime--;
-                level.setBlockAndUpdate(blockPos, blockState.setValue(BlockStateProperties.LIT, true));
-            };
+            }
             if (entity.litTime == 0) {
-                level.setBlockAndUpdate(blockPos, blockState.setValue(BlockStateProperties.LIT, false));
                 if (!fuel.is(VanillishTags.FUEL)) {
+                    level.setBlockAndUpdate(blockPos, blockState.setValue(BlockStateProperties.LIT, false));
                     entity.totalLitTime = 0;
                     if (entity.cookTime > 0) {
                         entity.cookTime--;
                     } else entity.totalCookTime = 0;
                     return;
-                }
+                } else level.setBlockAndUpdate(blockPos, blockState.setValue(BlockStateProperties.LIT, true));
             }
 
             if (canCookItem(entity, serverLevel)) {

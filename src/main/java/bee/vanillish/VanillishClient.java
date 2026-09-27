@@ -14,50 +14,18 @@ import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 public class VanillishClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_GRATE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_BARS, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_LANTERN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_SCAFFOLDING, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.BRASS_LADDER, ChunkSectionLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_GRATE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_BARS, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_LANTERN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.SCRAP_METAL_LADDER, ChunkSectionLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_GRATE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_BARS, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_LANTERN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_SCAFFOLDING, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ROSE_GOLD_LADDER, ChunkSectionLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_GRATE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_BARS, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_LANTERN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_CHAIN, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_SCAFFOLDING, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.STEEL_LADDER, ChunkSectionLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_POWERED_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_STOP_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_BOUNCY_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ADVANCED_DETECTOR_RAIL, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.ALGAE, ChunkSectionLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(VanillishBlocks.DUCKWEED, ChunkSectionLayer.CUTOUT);
-
-        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, VanillishBlocks.TUFF_PABBLE,
-                VanillishBlocks.BASALT_PABBLE, VanillishBlocks.DEEPSLATE_PABBLE, VanillishBlocks.BLACKSTONE_PABBLE,
-                VanillishBlocks.CALCITE_PABBLE, VanillishBlocks.DIORITE_PABBLE, VanillishBlocks.DRIPSTONE_PABBLE,
-                VanillishBlocks.GRANITE_PABBLE, VanillishBlocks.NETHERRACK_PABBLE);
+        BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT, VanillishBlocks.GRANITE_PABBLE, VanillishBlocks.NETHERRACK_PABBLE, VanillishBlocks.BRASS_GRATE,
+                VanillishBlocks.BRASS_BARS, VanillishBlocks.BRASS_CHAIN, VanillishBlocks.BRASS_LANTERN,
+                VanillishBlocks.BRASS_SCAFFOLDING, VanillishBlocks.BRASS_LADDER, VanillishBlocks.SCRAP_METAL_GRATE,
+                VanillishBlocks.SCRAP_METAL_BARS, VanillishBlocks.SCRAP_METAL_CHAIN, VanillishBlocks.SCRAP_METAL_LANTERN,
+                VanillishBlocks.SCRAP_METAL_LADDER, VanillishBlocks.ROSE_GOLD_GRATE, VanillishBlocks.ROSE_GOLD_BARS,
+                VanillishBlocks.ROSE_GOLD_CHAIN, VanillishBlocks.ROSE_GOLD_LANTERN, VanillishBlocks.ROSE_GOLD_SCAFFOLDING,
+                VanillishBlocks.ROSE_GOLD_LADDER, VanillishBlocks.STEEL_GRATE, VanillishBlocks.STEEL_BARS,
+                VanillishBlocks.STEEL_CHAIN, VanillishBlocks.STEEL_LANTERN, VanillishBlocks.STEEL_CHAIN,
+                VanillishBlocks.STEEL_SCAFFOLDING, VanillishBlocks.STEEL_LADDER, VanillishBlocks.ADVANCED_RAIL,
+                VanillishBlocks.ADVANCED_POWERED_RAIL, VanillishBlocks.ADVANCED_STOP_RAIL, VanillishBlocks.ADVANCED_BOUNCY_RAIL,
+                VanillishBlocks.ADVANCED_DIRECTIONAL_RAIL, VanillishBlocks.ADVANCED_DETECTOR_RAIL, VanillishBlocks.ALGAE,
+                VanillishBlocks.DUCKWEED);
 
         MenuScreens.register(VanillishMenuTypes.BLAST_CHAMBER, BlastChamberScreen::new);
 

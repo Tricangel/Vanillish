@@ -184,11 +184,7 @@ public class VanillishBlocks {
     }
 
     private static Block pabble(String name, SoundType type) {
-        return register(name + "_pabble", MultifaceBlock::new, BlockBehaviour.Properties.of().noCollision().noOcclusion().sound(type).pushReaction(PushReaction.DESTROY).strength(0.15F, 0.5F));
-    }
-
-    private static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
-        return registerScaffolding(name, factory, properties);
+        return register(name + "_pabble", MultifaceBlock::new, BlockBehaviour.Properties.of().noCollision().noOcclusion().sound(type).pushReaction(PushReaction.DESTROY).strength(0.15F, 0.5F), true);
     }
 
     private static Block registerScaffolding(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings) {

@@ -91,9 +91,10 @@ public class BlastChamberMenu extends RecipeBookMenu {
 
     @Override
     public @NonNull ItemStack quickMoveStack(Player player, int i) {
+        System.out.println(acceptedInputs);
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(i);
-        if (slot != null && slot.hasItem()) {
+        if (slot.hasItem()) {
             ItemStack itemStack2 = slot.getItem();
             itemStack = itemStack2.copy();
             if (i == 2) {
@@ -145,7 +146,6 @@ public class BlastChamberMenu extends RecipeBookMenu {
 
     public boolean isFuel(Item item) {
         return item.getDefaultInstance().is(VanillishTags.FUEL);
-
     }
 
     @Override

@@ -27,16 +27,13 @@ public class Vanillish implements ModInitializer {
 		VanillishMenuTypes.init();
 		VanillishItems.init();
 		VanillishRecipes.init();
-		VanillishAttachments.init();
 		VanillishEffects.init();
 		VanillishRecipeBookCategories.init();
 		VanillishCreativeTab.init();
 		VanillishParticles.init();
 
 
-
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
-
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_WOOD, VanillishBlocks.STRIPPED_CHARRED_WOOD);
 	}

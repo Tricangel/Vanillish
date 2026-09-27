@@ -36,7 +36,11 @@ public class VanillishRecipes {
     public static final RecipeType<BlastChamberRecipe> BLAST_CHAMBER_RECIPE_TYPE = Registry.register(
             BuiltInRegistries.RECIPE_TYPE,
             Vanillish.id("blast_chamber"),
-            new RecipeType<BlastChamberRecipe>() { }
+            new RecipeType<BlastChamberRecipe>("blast_chamber") {
+                public String toString() {
+                    return "blast_chamber";
+                }
+            }
     );
 
 
