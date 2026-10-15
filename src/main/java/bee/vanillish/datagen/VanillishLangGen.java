@@ -2,7 +2,9 @@ package bee.vanillish.datagen;
 
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishEffects;
+import bee.vanillish.registry.VanillishEnchantments;
 import bee.vanillish.registry.VanillishItems;
+import bee.vanillish.util.BlockFamilyHelper;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -17,6 +19,7 @@ public class VanillishLangGen extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder translationBuilder) {
 
+        translationBuilder.add(VanillishBlocks.SANDSTONE_SLATE, "Sandstone Slate");
         translationBuilder.add(VanillishBlocks.BLAST_CHAMBER, "Blast Chamber");
         translationBuilder.add(VanillishBlocks.WARDING_STONE, "Warding Stone");
         translationBuilder.add(VanillishBlocks.REDSTONE_RANDOMIZER, "Redstone Randomizer");
@@ -25,7 +28,18 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.ALGAE, "Algae");
         translationBuilder.add(VanillishBlocks.DUCKWEED, "Duckweed");
 
+        BlockFamilyHelper.families.forEach(blockFamily -> blockFamily.genLang(translationBuilder));
+
         translationBuilder.add(VanillishItems.PUTRID_LEATHER, "Putrid Leather");
+
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.unaffected(), "Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.weathered(), "Weathered Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.exposed(), "Exposed Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.oxidized(), "Oxidised Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.waxed(), "Waxed Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.waxedWeathered(), "Waxed Weathered Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.waxedExposed(), "Waxed Exposed Copper Scaffolding");
+        translationBuilder.add(VanillishBlocks.COPPER_SCAFFOLDING.waxedOxidized(), "Waxed Oxidised Copper Scaffolding");
 
         translationBuilder.add(VanillishBlocks.BRASS_BLOCK, "Brass Block");
         translationBuilder.add(VanillishBlocks.BRASS_BRICKS, "Brass Bricks");
@@ -145,8 +159,32 @@ public class VanillishLangGen extends FabricLanguageProvider {
         translationBuilder.add(VanillishBlocks.NETHERRACK_PABBLE, "Netherrack Pabble");
 
         translationBuilder.add(VanillishEffects.PROTECTED.value(), "Protected");
+//
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE, "Scorch Stone");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_STAIRS, "Scorch Stone Stairs");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_SLAB, "Scorch Stone Slab");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_WALL, "Scorch Stone Wall");
+//
+//        translationBuilder.add(VanillishBlocks.SMOOTH_SCORCH_STONE, "Smooth Scorch Stone");
+//        translationBuilder.add(VanillishBlocks.SMOOTH_SCORCH_STONE_STAIRS, "Smooth Scorch Stone Stairs");
+//        translationBuilder.add(VanillishBlocks.SMOOTH_SCORCH_STONE_SLAB, "Smooth Scorch Stone Slab");
+//        translationBuilder.add(VanillishBlocks.SMOOTH_SCORCH_STONE_WALL, "Smooth Scorch Stone Wall");
+//
+//        translationBuilder.add(VanillishBlocks.POLISHED_SCORCH_STONE, "Polished Scorch Stone");
+//        translationBuilder.add(VanillishBlocks.POLISHED_SCORCH_STONE_STAIRS, "Polished Scorch Stone Stairs");
+//        translationBuilder.add(VanillishBlocks.POLISHED_SCORCH_STONE_SLAB, "Polished Scorch Stone Slab");
+//        translationBuilder.add(VanillishBlocks.POLISHED_SCORCH_STONE_WALL, "Polished Scorch Stone Wall");
+//
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_BRICKS, "Scorch Stone Bricks");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_BRICK_STAIRS, "Scorch Stone Brick Stairs");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_BRICK_SLAB, "Scorch Stone Brick Slab");
+//        translationBuilder.add(VanillishBlocks.SCORCH_STONE_BRICK_WALL, "Scorch Stone Brick Wall");
 
 
         translationBuilder.add("vanillish.creative_tab", "Vanillish");
+
+        translationBuilder.add("enchantment.vanillish.trained", "Trained");
+        translationBuilder.add("enchantment.vanillish.bulky", "Bulky");
+        translationBuilder.add("enchantment.vanillish.energized", "Energized");
     }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vanillish:block/polished_scorch_stone_slab"
+    },
+    "type=double": {
+      "model": "vanillish:block/polished_scorch_stone"
+    },
+    "type=top": {
+      "model": "vanillish:block/polished_scorch_stone_slab_top"
+    }
+  }
+}

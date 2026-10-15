@@ -3,8 +3,8 @@
   "package": "bee.vanillish.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "AbstractMinecartMixin",
     "AbstractHorseMixin",
+    "AbstractMinecartMixin",
     "FallingBlockMixin",
     "LivingEntityMixin",
     "NewMinecartBehaviourMixin"
@@ -16,6 +16,8 @@
     "requireAnnotations": true
   },
   "client": [
+    "AtlasManagerMixin",
+    "BlockModelGenerators$FamilyProviderMixin",
     "BlockModelGeneratorsMixin",
     "MinecraftMixin",
     "SearchRecipeBookCategoryMixin"

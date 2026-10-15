@@ -1,0 +1,9 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:directory",
+      "prefix": "entity/sandstone_slate/",
+      "source": "entity/sandstone_slate"
+    }
+  ]
+}

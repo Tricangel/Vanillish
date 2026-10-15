@@ -3,6 +3,8 @@ package bee.vanillish.datagen;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishTags;
+import bee.vanillish.util.BlockFamilyHelper;
+import bee.vanillish.util.VanillishBlockFamily;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
@@ -19,6 +21,16 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
+        BlockFamilyHelper.families.forEach(family -> {
+            if (family.blocks.get(VanillishBlockFamily.Variant.WALL) != null) {
+                valueLookupBuilder(BlockTags.WALLS).add(family.wall());
+            }
+            family.blocks.forEach((variant, block) -> {
+                family.blockTags.forEach(tagKey -> {
+                    valueLookupBuilder(tagKey).add(block);
+                });
+            });
+        });
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(VanillishBlocks.CHARRED_BUTTON)
@@ -95,6 +107,40 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
         .add(VanillishBlocks.SCRAP_METAL_LANTERN)
         .add(VanillishBlocks.SCRAP_METAL_LADDER)
         .add(VanillishBlocks.SCRAP_METAL_TRAPDOOR);
+//
+//        .add(VanillishBlocks.SCORCH_STONE)
+//        .add(VanillishBlocks.SCORCH_STONE_STAIRS)
+//        .add(VanillishBlocks.SCORCH_STONE_SLAB)
+//        .add(VanillishBlocks.SCORCH_STONE_WALL)
+//
+//        .add(VanillishBlocks.SMOOTH_SCORCH_STONE)
+//        .add(VanillishBlocks.SMOOTH_SCORCH_STONE_STAIRS)
+//        .add(VanillishBlocks.SMOOTH_SCORCH_STONE_SLAB)
+//        .add(VanillishBlocks.SMOOTH_SCORCH_STONE_WALL)
+//
+//        .add(VanillishBlocks.POLISHED_SCORCH_STONE)
+//        .add(VanillishBlocks.POLISHED_SCORCH_STONE_STAIRS)
+//        .add(VanillishBlocks.POLISHED_SCORCH_STONE_SLAB)
+//        .add(VanillishBlocks.POLISHED_SCORCH_STONE_WALL)
+//
+//        .add(VanillishBlocks.SCORCH_STONE_BRICKS)
+//        .add(VanillishBlocks.SCORCH_STONE_BRICK_STAIRS)
+//        .add(VanillishBlocks.SCORCH_STONE_BRICK_SLAB)
+//        .add(VanillishBlocks.SCORCH_STONE_BRICK_WALL);
+//
+//        valueLookupBuilder(BlockTags.WALLS)
+//                .add(VanillishBlocks.DARK_SANDSTONE_WALL)
+//                .add(VanillishBlocks.SCORCH_STONE_BRICK_WALL)
+//                .add(VanillishBlocks.SMOOTH_DARK_SANDSTONE_WALL)
+//                .add(VanillishBlocks.POLISHED_SCORCH_STONE_WALL)
+//                .add(VanillishBlocks.SMOOTH_SCORCH_STONE_WALL)
+//                .add(VanillishBlocks.SCORCH_STONE_WALL);
+
+        valueLookupBuilder(BlockTags.WOODEN_FENCES)
+                .add(VanillishBlocks.CHARRED_FENCE);
+
+        valueLookupBuilder(BlockTags.FENCE_GATES)
+                .add(VanillishBlocks.CHARRED_FENCE_GATE);
 
 
         valueLookupBuilder(BlockTags.RAILS)
@@ -133,6 +179,13 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
         .add(VanillishBlocks.DRIPSTONE_PABBLE)
         .add(VanillishBlocks.GRANITE_PABBLE)
         .add(VanillishBlocks.NETHERRACK_PABBLE);
+
+        VanillishBlocks.COPPER_SCAFFOLDING.forEach(block -> {
+            valueLookupBuilder(BlockTags.CLIMBABLE)
+                    .add(block);
+            valueLookupBuilder(VanillishTags.SCAFFOLDING)
+                    .add(block);
+        });
 
         valueLookupBuilder(VanillishTags.SCAFFOLDING)
                 .add(VanillishBlocks.ROSE_GOLD_SCAFFOLDING)

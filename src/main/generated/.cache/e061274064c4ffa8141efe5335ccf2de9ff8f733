@@ -1,7 +1,10 @@
 // 1.21.11	-999999999-01-01T00:00:00	Vanillish/Tags for minecraft:block
-418dd62fa9338f343ae10fcb42603f44fe7a5c53 data/minecraft/tags/block/climbable.json
+b4709b8739c0e0ea991ef8baea52f513570eac80 data/minecraft/tags/block/climbable.json
+043be5c104f84ff1a2697743982b1c17a1f018ec data/minecraft/tags/block/fence_gates.json
 e9307c93ba6d4ca6c25e596ea8a6879933dea451 data/minecraft/tags/block/mineable/axe.json
-9fb91de71a159416595807080c06d7de2d5c86f9 data/minecraft/tags/block/mineable/pickaxe.json
+240c8b05829e4d65b99a6af4ade7c29d5426a6c5 data/minecraft/tags/block/mineable/pickaxe.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/minecraft/tags/block/rails.json
+6df10b99e0ad3c3385386c1fa6e14815ad6151f8 data/minecraft/tags/block/walls.json
+1b9d6438cb51b2335a717f946d9bcf827343ef36 data/minecraft/tags/block/wooden_fences.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/vanillish/tags/block/advanced_rails.json
-21b5a88f2e5a4ad3cd88ee23517cbad4f4b9881b data/vanillish/tags/block/scaffolding.json
+b29e29c99d2631973599fd14bbd8d1e69f9633f0 data/vanillish/tags/block/scaffolding.json

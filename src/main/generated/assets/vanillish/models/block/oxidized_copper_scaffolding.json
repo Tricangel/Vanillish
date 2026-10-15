@@ -1,0 +1,9 @@
+{
+  "parent": "vanillish:block/template_scaffolding_stable",
+  "textures": {
+    "bottom": "vanillish:block/oxidized_copper_scaffolding_bottom",
+    "particle": "vanillish:block/oxidized_copper_scaffolding_top",
+    "side": "vanillish:block/oxidized_copper_scaffolding_side",
+    "top": "vanillish:block/oxidized_copper_scaffolding_top"
+  }
+}

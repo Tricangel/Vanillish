@@ -3,11 +3,14 @@ package bee.vanillish.registry;
 import bee.vanillish.Vanillish;
 import bee.vanillish.block.*;
 import bee.vanillish.item.MetalScaffoldingItem;
+import bee.vanillish.util.BlockVariantFamily;
+import bee.vanillish.util.VanillishBlockFamily;
+import bee.vanillish.util.BlockFamilyHelper;
 import net.minecraft.core.Registry;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -42,8 +45,8 @@ public class VanillishBlocks {
     public static final Block BRASS_LANTERN = register("brass_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block BRASS_TORCH = register("brass_torch", properties -> new TorchBlock(VanillishParticles.BRASS_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block BRASS_WALL_TORCH = register("brass_wall_torch", properties -> new WallTorchBlock(VanillishParticles.BRASS_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block BRASS_LADDER = register("brass_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
-    public static final Block BRASS_SCAFFOLDING = registerScaffolding("brass_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
+    public static final Block BRASS_LADDER = register("brass_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.IRON), true);
+    public static final Block BRASS_SCAFFOLDING = registerScaffolding("brass_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.IRON));
 
     public static final Block CARVED_ROSE_GOLD = register("carved_rose_gold", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block ROSE_GOLD_BLOCK = register("rose_gold_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
@@ -56,8 +59,8 @@ public class VanillishBlocks {
     public static final Block ROSE_GOLD_LANTERN = register("rose_gold_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block ROSE_GOLD_TORCH = register("rose_gold_torch", properties -> new TorchBlock(VanillishParticles.ROSE_GOLD_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block ROSE_GOLD_WALL_TORCH = register("rose_gold_wall_torch", properties -> new WallTorchBlock(VanillishParticles.ROSE_GOLD_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block ROSE_GOLD_LADDER = register("rose_gold_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
-    public static final Block ROSE_GOLD_SCAFFOLDING = registerScaffolding("rose_gold_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
+    public static final Block ROSE_GOLD_LADDER = register("rose_gold_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.IRON), true);
+    public static final Block ROSE_GOLD_SCAFFOLDING = registerScaffolding("rose_gold_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.IRON));
 
     public static final Block STEEL_BRICKS = register("steel_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block STEEL_BLOCK = register("steel_block", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
@@ -72,8 +75,8 @@ public class VanillishBlocks {
     public static final Block STEEL_LANTERN = register("steel_lantern", LanternBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LANTERN), true);
     public static final Block STEEL_TORCH = register("steel_torch", properties -> new TorchBlock(VanillishParticles.STEEL_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
     public static final Block STEEL_WALL_TORCH = register("steel_wall_torch", properties -> new WallTorchBlock(VanillishParticles.STEEL_FLAME, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH), false);
-    public static final Block STEEL_LADDER = register("steel_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.METAL), true);
-    public static final Block STEEL_SCAFFOLDING = registerScaffolding("steel_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.METAL));
+    public static final Block STEEL_LADDER = register("steel_ladder", MetalLadderBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LADDER).sound(SoundType.IRON), true);
+    public static final Block STEEL_SCAFFOLDING = registerScaffolding("steel_scaffolding", MetalScaffolding::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SCAFFOLDING).sound(SoundType.IRON));
 
     public static final Block CARVED_SCRAP_METAL = register("carved_scrap_metal", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
     public static final Block SCRAP_METAL = register("scrap_metal", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK), true);
@@ -94,7 +97,7 @@ public class VanillishBlocks {
     public static final Block SCRAP_METAL_TRAPDOOR = register("scrap_metal_trapdoor", properties -> new TrapDoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
 
 
-    //public static final WeatheringCopperBlocks COPPER_SCAFFOLDING = WeatheringCopperBlocks.create("copper_scaffolding", VanillishBlocks::registerScaffolding, MetalScaffolding::new, WeatheringCopperScaffolding::new, p -> BlockBehaviour.Properties.ofFullCopy(VanillishBlocks.BRASS_SCAFFOLDING));
+    public static final WeatheringCopperBlocks COPPER_SCAFFOLDING = WeatheringCopperBlocks.create("copper_scaffolding", VanillishBlocks::registerScaffolding, MetalScaffolding::new, WeatheringCopperScaffolding::new, p -> BlockBehaviour.Properties.ofFullCopy(VanillishBlocks.BRASS_SCAFFOLDING));
 
     //Brass components
 
@@ -109,7 +112,32 @@ public class VanillishBlocks {
 
 
 
+    //ScorchStone
 
+    public static final BlockBehaviour.Properties SCORCH_STONE_PROPERTIES = BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE);
+    public static final BlockVariantFamily SCORCH_STONE = new BlockVariantFamily.Builder("scorch_stone", "vanillish")
+            .base(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
+            .polished(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
+            .smooth(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
+            .bricks(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
+            .build();
+
+//    public static final Block SCORCH_STONE = register("scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_STAIRS = register("scorch_stone_stairs", p -> new StairBlock(SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_SLAB = register("scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_WALL = register("scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SMOOTH_SCORCH_STONE = register("smooth_scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SMOOTH_SCORCH_STONE_STAIRS = register("smooth_scorch_stone_stairs", p -> new StairBlock(SMOOTH_SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SMOOTH_SCORCH_STONE_SLAB = register("smooth_scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SMOOTH_SCORCH_STONE_WALL = register("smooth_scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block POLISHED_SCORCH_STONE = register("polished_scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block POLISHED_SCORCH_STONE_STAIRS = register("polished_scorch_stone_stairs", p -> new StairBlock(POLISHED_SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block POLISHED_SCORCH_STONE_SLAB = register("polished_scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block POLISHED_SCORCH_STONE_WALL = register("polished_scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_BRICKS = register("scorch_stone_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_BRICK_STAIRS = register("scorch_stone_brick_stairs", p -> new StairBlock(SCORCH_STONE_BRICKS.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_BRICK_SLAB = register("scorch_stone_brick_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
+//    public static final Block SCORCH_STONE_BRICK_WALL = register("scorch_stone_brick_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
 
 
     //Wood
@@ -154,6 +182,8 @@ public class VanillishBlocks {
     public static final Block DARK_SILT = register("dark_silt", properties -> new SandBlock(new ColorRGBA(-8356741), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND), true);
     public static final Block DEEP_GRIT = register("deep_grit", properties -> new SandBlock(new ColorRGBA(-8356741), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.GRAVEL), true);
 
+    public static final Block SANDSTONE_SLATE = register("sandstone_slate", SandstoneSlateBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).noOcclusion() /* hi welcome to comment in line, currently best way to do this i think*/, true);
+
 
     //Pabbles
 
@@ -169,6 +199,84 @@ public class VanillishBlocks {
     public static final Block NETHERRACK_PABBLE = pabble("netherrack", SoundType.NETHERRACK);
 
 
+    public static final VanillishBlockFamily CALCITE = BlockFamilyHelper.of("calcite", "minecraft", Blocks.CALCITE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily POLISHED_BASALT = BlockFamilyHelper.of("polished_basalt", "minecraft", Blocks.POLISHED_BASALT).stairs().slab().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PACKED_MUD = BlockFamilyHelper.of("packed_mud", "minecraft", Blocks.PACKED_MUD).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PURPUR = BlockFamilyHelper.of("purpur", "minecraft", Blocks.PURPUR_BLOCK).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily STONE = BlockFamilyHelper.of("stone", "minecraft", Blocks.STONE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily POLISHED_GRANITE = BlockFamilyHelper.of("polished_granite", "minecraft", Blocks.POLISHED_GRANITE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily POLISHED_ANDESITE = BlockFamilyHelper.of("polished_andesite", "minecraft", Blocks.POLISHED_ANDESITE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily POLISHED_DIORITE = BlockFamilyHelper.of("polished_diorite", "minecraft", Blocks.POLISHED_DIORITE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PRISMARINE_BRICK = BlockFamilyHelper.of("prismarine_brick", "minecraft", Blocks.PRISMARINE_BRICKS).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily DARK_PRISMARINE = BlockFamilyHelper.of("dark_prismarine", "minecraft", Blocks.DARK_PRISMARINE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily SMOOTH_SANDSTONE = BlockFamilyHelper.of("smooth_sandstone", "minecraft", Blocks.SMOOTH_SANDSTONE).inherited().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily RED_SMOOTH_SANDSTONE = BlockFamilyHelper.of("red_smooth_sandstone", "minecraft", Blocks.SMOOTH_RED_SANDSTONE).inherited().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CUT_SANDSTONE = BlockFamilyHelper.of("cut_sandstone", "minecraft", Blocks.CUT_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CUT_RED_SANDSTONE = BlockFamilyHelper.of("cut_red_sandstone", "minecraft", Blocks.CUT_RED_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CRACKED_STONE_BRICK = BlockFamilyHelper.of("cracked_stone_brick", "minecraft", Blocks.CRACKED_STONE_BRICKS).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
+    public static final VanillishBlockFamily TERRACOTTA = BlockFamilyHelper.of("terracotta", "minecraft", Blocks.TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily WHITE_TERRACOTTA = BlockFamilyHelper.of("white_terracotta", "minecraft", Blocks.WHITE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_GRAY_TERRACOTTA = BlockFamilyHelper.of("light_gray_terracotta", "minecraft", Blocks.LIGHT_GRAY_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GRAY_TERRACOTTA = BlockFamilyHelper.of("gray_terracotta", "minecraft", Blocks.GRAY_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLACK_TERRACOTTA = BlockFamilyHelper.of("black_terracotta", "minecraft", Blocks.BLACK_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BROWN_TERRACOTTA = BlockFamilyHelper.of("brown_terracotta", "minecraft", Blocks.BROWN_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily ORANGE_TERRACOTTA = BlockFamilyHelper.of("orange_terracotta", "minecraft", Blocks.ORANGE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily RED_TERRACOTTA = BlockFamilyHelper.of("red_terracotta", "minecraft", Blocks.RED_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily YELLOW_TERRACOTTA = BlockFamilyHelper.of("yellow_terracotta", "minecraft", Blocks.YELLOW_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIME_TERRACOTTA = BlockFamilyHelper.of("lime_terracotta", "minecraft", Blocks.LIME_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GREEN_TERRACOTTA = BlockFamilyHelper.of("green_terracotta", "minecraft", Blocks.GREEN_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CYAN_TERRACOTTA = BlockFamilyHelper.of("cyan_terracotta", "minecraft", Blocks.CYAN_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_BLUE_TERRACOTTA = BlockFamilyHelper.of("light_blue_terracotta", "minecraft", Blocks.LIGHT_BLUE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLUE_TERRACOTTA = BlockFamilyHelper.of("blue_terracotta", "minecraft", Blocks.BLUE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PURPLE_TERRACOTTA = BlockFamilyHelper.of("purple_terracotta", "minecraft", Blocks.PURPLE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily MAGENTA_TERRACOTTA = BlockFamilyHelper.of("magenta_terracotta", "minecraft", Blocks.MAGENTA_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PINK_TERRACOTTA = BlockFamilyHelper.of("pink_terracotta", "minecraft", Blocks.PINK_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
+    public static final VanillishBlockFamily WHITE_CONCRETE = BlockFamilyHelper.of("white_concrete", "minecraft", Blocks.WHITE_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_GRAY_CONCRETE = BlockFamilyHelper.of("light_gray_concrete", "minecraft", Blocks.LIGHT_GRAY_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GRAY_CONCRETE = BlockFamilyHelper.of("gray_concrete", "minecraft", Blocks.GRAY_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLACK_CONCRETE = BlockFamilyHelper.of("black_concrete", "minecraft", Blocks.BLACK_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BROWN_CONCRETE = BlockFamilyHelper.of("brown_concrete", "minecraft", Blocks.BROWN_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily ORANGE_CONCRETE = BlockFamilyHelper.of("orange_concrete", "minecraft", Blocks.ORANGE_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily RED_CONCRETE = BlockFamilyHelper.of("red_concrete", "minecraft", Blocks.RED_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily YELLOW_CONCRETE = BlockFamilyHelper.of("yellow_concrete", "minecraft", Blocks.YELLOW_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIME_CONCRETE = BlockFamilyHelper.of("lime_concrete", "minecraft", Blocks.LIME_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GREEN_CONCRETE = BlockFamilyHelper.of("green_concrete", "minecraft", Blocks.GREEN_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CYAN_CONCRETE = BlockFamilyHelper.of("cyan_concrete", "minecraft", Blocks.CYAN_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_BLUE_CONCRETE = BlockFamilyHelper.of("light_blue_concrete", "minecraft", Blocks.LIGHT_BLUE_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLUE_CONCRETE = BlockFamilyHelper.of("blue_concrete", "minecraft", Blocks.BLUE_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PURPLE_CONCRETE = BlockFamilyHelper.of("purple_concrete", "minecraft", Blocks.PURPLE_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily MAGENTA_CONCRETE = BlockFamilyHelper.of("magenta_concrete", "minecraft", Blocks.MAGENTA_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PINK_CONCRETE = BlockFamilyHelper.of("pink_concrete", "minecraft", Blocks.PINK_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
+    public static final VanillishBlockFamily WHITE_WOOL = BlockFamilyHelper.of("white_wool", "minecraft", Blocks.WHITE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_GRAY_WOOL = BlockFamilyHelper.of("light_gray_wool", "minecraft", Blocks.LIGHT_GRAY_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GRAY_WOOL = BlockFamilyHelper.of("gray_wool", "minecraft", Blocks.GRAY_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLACK_WOOL = BlockFamilyHelper.of("black_wool", "minecraft", Blocks.BLACK_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BROWN_WOOL = BlockFamilyHelper.of("brown_wool", "minecraft", Blocks.BROWN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily ORANGE_WOOL = BlockFamilyHelper.of("orange_wool", "minecraft", Blocks.ORANGE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily RED_WOOL = BlockFamilyHelper.of("red_wool", "minecraft", Blocks.RED_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily YELLOW_WOOL = BlockFamilyHelper.of("yellow_wool", "minecraft", Blocks.YELLOW_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIME_WOOL = BlockFamilyHelper.of("lime_wool", "minecraft", Blocks.LIME_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GREEN_WOOL = BlockFamilyHelper.of("green_wool", "minecraft", Blocks.GREEN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CYAN_WOOL = BlockFamilyHelper.of("cyan_wool", "minecraft", Blocks.CYAN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily LIGHT_BLUE_WOOL = BlockFamilyHelper.of("light_blue_wool", "minecraft", Blocks.LIGHT_BLUE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BLUE_WOOL = BlockFamilyHelper.of("blue_wool", "minecraft", Blocks.BLUE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PURPLE_WOOL = BlockFamilyHelper.of("purple_wool", "minecraft", Blocks.PURPLE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily MAGENTA_WOOL = BlockFamilyHelper.of("magenta_wool", "minecraft", Blocks.MAGENTA_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily PINK_WOOL = BlockFamilyHelper.of("pink_wool", "minecraft", Blocks.PINK_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
+
+    public static final VanillishBlockFamily SMOOTH_STONE = BlockFamilyHelper.of("smooth_stone", "minecraft", Blocks.SMOOTH_STONE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily DRIPSTONE = BlockFamilyHelper.of("dripstone", "minecraft", Blocks.DRIPSTONE_BLOCK).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily DEEPSLATE = BlockFamilyHelper.of("deepslate", "minecraft", Blocks.DEEPSLATE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily END_STONE = BlockFamilyHelper.of("end_stone", "minecraft", Blocks.END_STONE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily NETHERRACK = BlockFamilyHelper.of("netherrack", "minecraft", Blocks.NETHERRACK).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily GILDED_BLACKSTONE = BlockFamilyHelper.of("gilded_blackstone", "minecraft", Blocks.GILDED_BLACKSTONE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
+    public static final VanillishBlockFamily BASALT_BRICKS = BlockFamilyHelper.of("basalt_bricks", "vanillish").fullBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_BASALT)).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         ResourceKey<Block> blockKey = keyOfBlock(name);
@@ -176,7 +284,7 @@ public class VanillishBlocks {
 
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
-            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
+            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).    useBlockDescriptionPrefix());
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
             VanillishCreativeTab.ITEMS.add(blockItem);
         }

@@ -6,6 +6,14 @@
     "vanillish:steel_ladder",
     "vanillish:rose_gold_scaffolding",
     "vanillish:steel_scaffolding",
-    "vanillish:brass_scaffolding"
+    "vanillish:brass_scaffolding",
+    "vanillish:copper_scaffolding",
+    "vanillish:exposed_copper_scaffolding",
+    "vanillish:weathered_copper_scaffolding",
+    "vanillish:oxidized_copper_scaffolding",
+    "vanillish:waxed_copper_scaffolding",
+    "vanillish:waxed_exposed_copper_scaffolding",
+    "vanillish:waxed_weathered_copper_scaffolding",
+    "vanillish:waxed_oxidized_copper_scaffolding"
   ]
 }

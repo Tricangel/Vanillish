@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:basalt_bricks",
+  "result": {
+    "count": 1,
+    "id": "vanillish:basalt_bricks_slab"
+  }
+}

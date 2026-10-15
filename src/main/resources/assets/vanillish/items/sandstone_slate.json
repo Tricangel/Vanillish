@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "model": {
+      "type": "vanillish:sandstone_slate"
+    },
+    "base": "minecraft:block/sandstone"
+  }
+}

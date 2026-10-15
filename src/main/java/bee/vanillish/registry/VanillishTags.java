@@ -14,5 +14,7 @@ public class VanillishTags {
 
     public static final TagKey<Item> FUEL = TagKey.create(Registries.ITEM, Vanillish.id("fuel"));
 
+    public static final TagKey<Item> SADDLES = TagKey.create(Registries.ITEM, Vanillish.id("saddles"));
+
 
 }

@@ -1,6 +1,7 @@
 package bee.vanillish.datagen;
 
 import bee.vanillish.registry.VanillishBlocks;
+import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -19,6 +20,14 @@ public class VanillishItemTagGen extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
+
+
+        valueLookupBuilder(ItemTags.TRIM_MATERIALS)
+                .add(VanillishItems.BRASS_INGOT);
+
+        valueLookupBuilder(VanillishTags.SADDLES)
+                .add(Items.SADDLE).forceAddTag(ItemTags.HARNESSES);
 
         valueLookupBuilder(VanillishTags.CHARRED_WOOD)
                 .add(VanillishBlocks.CHARRED_LOG.asItem())

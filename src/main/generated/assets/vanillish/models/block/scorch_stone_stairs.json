@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "vanillish:block/scorch_stone",
+    "side": "vanillish:block/scorch_stone",
+    "top": "vanillish:block/scorch_stone"
+  }
+}

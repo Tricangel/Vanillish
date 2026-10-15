@@ -48,6 +48,8 @@ public class GazerBlockEntity extends BlockEntity {
             return level.getEntities((Entity) null, aabb, entity -> {
                 if (level.getBlockEntity(worldPosition.above()) instanceof SkullBlockEntity entity1) {
                     if (entity1.getOwnerProfile() == null) return entity.getType() == EntityType.PLAYER;
+                    System.out.println(entity1.getOwnerProfile().partialProfile().id());
+                    System.out.println(entity.getUUID());
                     return entity1.getOwnerProfile().partialProfile().id().equals(entity.getUUID());
                 }
                 return false;

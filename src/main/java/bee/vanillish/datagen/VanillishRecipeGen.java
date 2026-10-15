@@ -4,12 +4,15 @@ import bee.vanillish.Vanillish;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishTags;
+import bee.vanillish.util.BlockFamilyHelper;
+import bee.vanillish.util.VanillishBlockFamily;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.BlockFamilies;
+import net.minecraft.data.BlockFamily;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -18,6 +21,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -32,6 +36,31 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
         return new RecipeProvider(provider, recipeOutput) {
             @Override
             public void buildRecipes() {
+
+                BlockFamilyHelper.families.forEach(family -> {
+                    Block fullBlock = family.fullBlock();
+
+
+                    if (family.blocks.get(VanillishBlockFamily.Variant.STAIRS) != null) {
+                        stairBuilder(family.stairs(), Ingredient.of(fullBlock)).unlockedBy(getHasName(fullBlock), has(fullBlock)).save(recipeOutput);
+                        if (family.shouldGenerateStonecutterRecipes) stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, family.stairs(), fullBlock);
+                    }
+                    if (family.blocks.get(VanillishBlockFamily.Variant.SLAB) != null) {
+                        slab(RecipeCategory.BUILDING_BLOCKS, family.slab(), fullBlock);
+                        if (family.shouldGenerateStonecutterRecipes) stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, family.slab(), fullBlock);
+                    }
+                    if (family.blocks.get(VanillishBlockFamily.Variant.WALL) != null) {
+                        wall(RecipeCategory.BUILDING_BLOCKS, family.wall(), fullBlock);
+                        if (family.shouldGenerateStonecutterRecipes) stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, family.wall(), fullBlock);
+                    }
+                });
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.COPPER_SCAFFOLDING.unaffected(), Items.COPPER_INGOT);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SANDSTONE_SLATE, Items.SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SANDSTONE_SLATE, Items.SMOOTH_SANDSTONE);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SANDSTONE_SLATE, Items.CUT_SANDSTONE);
+
 
                 nineBlockStorageRecipesRecipesWithCustomUnpacking(
                         RecipeCategory.MISC, Items.KELP, RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BLOCK_OF_KELP.asItem(), "kelp_from_block", "kelp"
@@ -425,6 +454,44 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .define('l', ItemTags.LOGS)
                         .unlockedBy("has_log", has(ItemTags.LOGS))
                         .save(recipeOutput);
+
+
+//                shapeless(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE, 8)
+//                        .requires(Blocks.MAGMA_BLOCK, 2)
+//                        .requires(Blocks.BLACKSTONE, 2)
+//                        .unlockedBy("has_blackstone", has(Blocks.BLACKSTONE))
+//                        .save(recipeOutput);
+//
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SMOOTH_SCORCH_STONE, VanillishBlocks.SCORCH_STONE);
+//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SMOOTH_SCORCH_STONE, 4)
+//                        .pattern("ss")
+//                        .pattern("ss")
+//                        .define('s', VanillishBlocks.SCORCH_STONE)
+//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
+//                        .save(recipeOutput);
+//
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.POLISHED_SCORCH_STONE, VanillishBlocks.SMOOTH_SCORCH_STONE);
+//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.POLISHED_SCORCH_STONE, 4)
+//                        .pattern("ss")
+//                        .pattern("ss")
+//                        .define('s', VanillishBlocks.SMOOTH_SCORCH_STONE)
+//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
+//                        .save(recipeOutput);
+//
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_BRICKS, VanillishBlocks.POLISHED_SCORCH_STONE);
+//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_BRICKS, 4)
+//                        .pattern("ss")
+//                        .pattern("ss")
+//                        .define('s', VanillishBlocks.POLISHED_SCORCH_STONE)
+//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
+//                        .save(recipeOutput);
+//
+//
+//                //these are for duping
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_SLAB, VanillishBlocks.SCORCH_STONE, 2);
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SMOOTH_SCORCH_STONE_SLAB, VanillishBlocks.SMOOTH_SCORCH_STONE, 2);
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.POLISHED_SCORCH_STONE_SLAB, VanillishBlocks.POLISHED_SCORCH_STONE, 2);
+//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_BRICK_SLAB, VanillishBlocks.SCORCH_STONE_BRICKS, 2);
             }
         };
     }

@@ -1,0 +1,34 @@
+{
+  "anvil_cost": 5,
+  "description": {
+    "translate": "enchantment.vanillish.energized"
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.05,
+          "per_level_above_first": 0.05
+        },
+        "attribute": "minecraft:jump_strength",
+        "id": "vanillish:energized",
+        "operation": "add_value"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 1,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 5
+  },
+  "slots": [
+    "saddle"
+  ],
+  "supported_items": "#vanillish:saddles",
+  "weight": 25
+}

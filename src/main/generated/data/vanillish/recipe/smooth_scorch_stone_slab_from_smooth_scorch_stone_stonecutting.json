@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "vanillish:smooth_scorch_stone",
+  "result": {
+    "count": 2,
+    "id": "vanillish:smooth_scorch_stone_slab"
+  }
+}

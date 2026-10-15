@@ -5,6 +5,7 @@ import bee.vanillish.block.AlgaeBlock;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishModelTemplates;
+import bee.vanillish.util.BlockFamilyHelper;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -15,10 +16,8 @@ import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
@@ -32,6 +31,38 @@ public class VanillishModelGen extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
+
+        BlockFamilyHelper.families.forEach(blockFamily -> blockFamily.genModels(blockModelGenerators));
+
+//        blockModelGenerators.family(VanillishBlocks.SCORCH_STONE)
+//                .stairs(VanillishBlocks.SCORCH_STONE_STAIRS)
+//                .slab(VanillishBlocks.SCORCH_STONE_SLAB)
+//                .wall(VanillishBlocks.SCORCH_STONE_WALL);
+//
+//        blockModelGenerators.family(VanillishBlocks.SMOOTH_SCORCH_STONE)
+//                .stairs(VanillishBlocks.SMOOTH_SCORCH_STONE_STAIRS)
+//                .slab(VanillishBlocks.SMOOTH_SCORCH_STONE_SLAB)
+//                .wall(VanillishBlocks.SMOOTH_SCORCH_STONE_WALL);
+//
+//        blockModelGenerators.family(VanillishBlocks.POLISHED_SCORCH_STONE)
+//                .stairs(VanillishBlocks.POLISHED_SCORCH_STONE_STAIRS)
+//                .slab(VanillishBlocks.POLISHED_SCORCH_STONE_SLAB)
+//                .wall(VanillishBlocks.POLISHED_SCORCH_STONE_WALL);
+//
+//        blockModelGenerators.family(VanillishBlocks.SCORCH_STONE_BRICKS)
+//                .stairs(VanillishBlocks.SCORCH_STONE_BRICK_STAIRS)
+//                .slab(VanillishBlocks.SCORCH_STONE_BRICK_SLAB)
+//                .wall(VanillishBlocks.SCORCH_STONE_BRICK_WALL);
+
+        createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.unaffected(), blockModelGenerators);
+        createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.weathered(), blockModelGenerators);
+        createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.exposed(), blockModelGenerators);
+        createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.oxidized(), blockModelGenerators);
+
+        blockModelGenerators.copyModel(VanillishBlocks.COPPER_SCAFFOLDING.unaffected(), VanillishBlocks.COPPER_SCAFFOLDING.waxed());
+        blockModelGenerators.copyModel(VanillishBlocks.COPPER_SCAFFOLDING.weathered(), VanillishBlocks.COPPER_SCAFFOLDING.waxedWeathered());
+        blockModelGenerators.copyModel(VanillishBlocks.COPPER_SCAFFOLDING.exposed(), VanillishBlocks.COPPER_SCAFFOLDING.waxedExposed());
+        blockModelGenerators.copyModel(VanillishBlocks.COPPER_SCAFFOLDING.oxidized(), VanillishBlocks.COPPER_SCAFFOLDING.waxedOxidized());
 
         blockModelGenerators.createTrivialBlock(VanillishBlocks.CHISELED_DARK_SANDSTONE, block -> TexturedModel.TOP_BOTTOM_WITH_WALL.get(VanillishBlocks.SMOOTH_DARK_SANDSTONE).updateTextures(m -> m.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block))));
         blockModelGenerators.createTrivialCube(VanillishBlocks.DARK_SILT);

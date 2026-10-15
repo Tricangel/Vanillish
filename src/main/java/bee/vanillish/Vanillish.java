@@ -4,7 +4,9 @@ import bee.vanillish.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.resources.model.AtlasManager;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
@@ -31,7 +33,9 @@ public class Vanillish implements ModInitializer {
 		VanillishRecipeBookCategories.init();
 		VanillishCreativeTab.init();
 		VanillishParticles.init();
-
+		VanillishRegistries.init();
+		VanillishSandstoneSlateSheets.init();
+		VanillishSheets.init();
 
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG);
