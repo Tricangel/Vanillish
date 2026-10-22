@@ -26,7 +26,7 @@ public class SandstoneSlateSpecialRenderer implements SpecialModelRenderer<PotDe
 
     @Override
     public void submit(@Nullable PotDecorations object, ItemDisplayContext itemDisplayContext, PoseStack poseStack, SubmitNodeCollector submitNodeCollector, int i, int j, boolean bl, int k) {
-        this.renderer.submit(poseStack, submitNodeCollector, object == null ? PotDecorations.EMPTY : object, j, i, null);
+        this.renderer.submit(poseStack, submitNodeCollector, object == null ? PotDecorations.EMPTY : object, j, i, null, null);
     }
 
     @Override

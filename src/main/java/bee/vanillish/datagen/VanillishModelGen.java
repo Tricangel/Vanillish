@@ -2,6 +2,7 @@ package bee.vanillish.datagen;
 
 import bee.vanillish.Vanillish;
 import bee.vanillish.block.AlgaeBlock;
+import bee.vanillish.mixin.client.BlockModelGeneratorsMixin;
 import bee.vanillish.registry.VanillishBlocks;
 import bee.vanillish.registry.VanillishItems;
 import bee.vanillish.registry.VanillishModelTemplates;
@@ -17,10 +18,13 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
+import static net.minecraft.client.data.models.ItemModelGenerators.TRIM_PREFIX_CHESTPLATE;
 
 public class VanillishModelGen extends FabricModelProvider {
     public static final PropertyDispatch<VariantMutator> HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING).select(Direction.EAST, Y_ROT_90).select(Direction.SOUTH, Y_ROT_180).select(Direction.WEST, Y_ROT_270).select(Direction.NORTH, NOP);
@@ -34,25 +38,7 @@ public class VanillishModelGen extends FabricModelProvider {
 
         BlockFamilyHelper.families.forEach(blockFamily -> blockFamily.genModels(blockModelGenerators));
 
-//        blockModelGenerators.family(VanillishBlocks.SCORCH_STONE)
-//                .stairs(VanillishBlocks.SCORCH_STONE_STAIRS)
-//                .slab(VanillishBlocks.SCORCH_STONE_SLAB)
-//                .wall(VanillishBlocks.SCORCH_STONE_WALL);
-//
-//        blockModelGenerators.family(VanillishBlocks.SMOOTH_SCORCH_STONE)
-//                .stairs(VanillishBlocks.SMOOTH_SCORCH_STONE_STAIRS)
-//                .slab(VanillishBlocks.SMOOTH_SCORCH_STONE_SLAB)
-//                .wall(VanillishBlocks.SMOOTH_SCORCH_STONE_WALL);
-//
-//        blockModelGenerators.family(VanillishBlocks.POLISHED_SCORCH_STONE)
-//                .stairs(VanillishBlocks.POLISHED_SCORCH_STONE_STAIRS)
-//                .slab(VanillishBlocks.POLISHED_SCORCH_STONE_SLAB)
-//                .wall(VanillishBlocks.POLISHED_SCORCH_STONE_WALL);
-//
-//        blockModelGenerators.family(VanillishBlocks.SCORCH_STONE_BRICKS)
-//                .stairs(VanillishBlocks.SCORCH_STONE_BRICK_STAIRS)
-//                .slab(VanillishBlocks.SCORCH_STONE_BRICK_SLAB)
-//                .wall(VanillishBlocks.SCORCH_STONE_BRICK_WALL);
+
 
         createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.unaffected(), blockModelGenerators);
         createScaffolding(VanillishBlocks.COPPER_SCAFFOLDING.weathered(), blockModelGenerators);
@@ -301,6 +287,8 @@ public class VanillishModelGen extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(VanillishItems.ROSE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(VanillishItems.SCRAP_METAL_SHARD, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(VanillishItems.PUTRID_LEATHER, ModelTemplates.FLAT_ITEM);
+
+
 
     }
 }

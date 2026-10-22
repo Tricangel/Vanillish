@@ -16,10 +16,10 @@
     "requireAnnotations": true
   },
   "client": [
-    "AtlasManagerMixin",
-    "BlockModelGenerators$FamilyProviderMixin",
-    "BlockModelGeneratorsMixin",
-    "MinecraftMixin",
-    "SearchRecipeBookCategoryMixin"
+    "client.AtlasManagerMixin",
+    "client.BlockModelGenerators$FamilyProviderMixin",
+    "client.BlockModelGeneratorsMixin",
+    "client.MinecraftMixin",
+    "client.SearchRecipeBookCategoryMixin"
   ]
 }

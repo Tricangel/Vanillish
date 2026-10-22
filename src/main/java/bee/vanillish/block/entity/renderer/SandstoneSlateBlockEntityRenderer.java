@@ -1,15 +1,14 @@
 package bee.vanillish.block.entity.renderer;
 
 import bee.vanillish.Vanillish;
+import bee.vanillish.block.SandstoneSlateBlock;
 import bee.vanillish.block.entity.SandstoneSlateBlockEntity;
-import bee.vanillish.registry.VanillishSandstoneSlateSheets;
-import bee.vanillish.registry.VanillishSheets;
-import bee.vanillish.sandstoneslate.SandstoneSlateSheet;
+import bee.vanillish.sandstoneslate.VanillishSandstoneSlateSheets;
+import bee.vanillish.sandstoneslate.VanillishSheets;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.*;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -22,12 +21,16 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.resources.model.Material;
 import net.minecraft.client.resources.model.MaterialSet;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.entity.DecoratedPotPatterns;
+import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.PotDecorations;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import org.joml.Quaternionf;
 import org.joml.Vector3fc;
 import org.jspecify.annotations.Nullable;
 
@@ -120,37 +123,63 @@ public class SandstoneSlateBlockEntityRenderer implements BlockEntityRenderer<Sa
         int i = blockEntityRenderState.lightCoords;
         PotDecorations potDecorations = blockEntityRenderState.decorations;
 
-        this.submit(poseStack, submitNodeCollector, potDecorations, j, i, blockEntityRenderState.breakProgress);
+        this.submit(poseStack, submitNodeCollector, potDecorations, j, i, blockEntityRenderState.breakProgress, blockEntityRenderState);
+
+
 
     }
-    
-    public void submit(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, PotDecorations potDecorations, int j, int i, ModelFeatureRenderer.CrumblingOverlay breakProgress) {
-        poseStack.pushPose();
 
+    private static boolean shouldRenderFace(BlockAndTintGetter blockAndTintGetter, BlockState blockState, Direction direction, BlockPos blockPos) {
+        BlockState blockState2 = blockAndTintGetter.getBlockState(blockPos);
+        if (blockState2.getBlock() instanceof SandstoneSlateBlock) return false;
+        return Block.shouldRenderFace(blockState, blockState2, direction);
+    }
+
+    public void submit(PoseStack poseStack, SubmitNodeCollector submitNodeCollector, PotDecorations potDecorations, int j, int i, ModelFeatureRenderer.CrumblingOverlay breakProgress, SandstoneSlateRenderState state) {
+        poseStack.pushPose();
         poseStack.translate(0.5, -0.5, 0.5);
 
+        if (state == null) state = new SandstoneSlateRenderState();
         RenderType renderType = VanillishSheets.SANDSTONE_SLATE_BASE.renderType(RenderTypes::entitySolid);
         TextureAtlasSprite textureAtlasSprite = this.materials.get(VanillishSheets.SANDSTONE_SLATE_BASE);
+        Level level = Minecraft.getInstance().level;
+        if (level == null) return;
 
-        submitNodeCollector.submitModelPart(this.up, poseStack, renderType, i, j, textureAtlasSprite, false, false, -1, breakProgress, 0);
-        submitNodeCollector.submitModelPart(this.down, poseStack, renderType, i, j, textureAtlasSprite, false, false, -1, breakProgress, 0);
+        if (shouldRenderFace(level, state.blockState, Direction.DOWN, state.blockPos.relative(Direction.DOWN))) {
+            submitNodeCollector.submitModelPart(this.up, poseStack, renderType, i, j, textureAtlasSprite, false, false, -1, breakProgress, 0);
+        }
 
-        Material material = getSideMaterial(potDecorations.front());
-        submitNodeCollector.submitModelPart(
-                this.front, poseStack, material.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material), false, false, -1, breakProgress, 0
-        );
-        Material material2 = getSideMaterial(potDecorations.back());
-        submitNodeCollector.submitModelPart(
-                this.back, poseStack, material2.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material2), false, false, -1, breakProgress, 0
-        );
-        Material material3 = getSideMaterial(potDecorations.left());
-        submitNodeCollector.submitModelPart(
-                this.left, poseStack, material3.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material3), false, false, -1, breakProgress, 0
-        );
-        Material material4 = getSideMaterial(potDecorations.right());
-        submitNodeCollector.submitModelPart(
-                this.right, poseStack, material4.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material4), false, false, -1, breakProgress, 0
-        );
+        if (shouldRenderFace(level, state.blockState, Direction.UP, state.blockPos.relative(Direction.UP))) {
+            submitNodeCollector.submitModelPart(this.down, poseStack, renderType, i, j, textureAtlasSprite, false, false, -1, breakProgress, 0);
+        }
+
+        if (shouldRenderFace(level, state.blockState, Direction.NORTH, state.blockPos.relative(Direction.NORTH))) {
+            Material material = getSideMaterial(potDecorations.front());
+            submitNodeCollector.submitModelPart(
+                    this.front, poseStack, material.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material), false, false, -1, breakProgress, 0
+            );
+        }
+
+        if (shouldRenderFace(level, state.blockState, Direction.SOUTH, state.blockPos.relative(Direction.SOUTH))) {
+            Material material2 = getSideMaterial(potDecorations.back());
+            submitNodeCollector.submitModelPart(
+                    this.back, poseStack, material2.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material2), false, false, -1, breakProgress, 0
+            );
+        }
+
+        if (shouldRenderFace(level, state.blockState, Direction.WEST, state.blockPos.relative(Direction.WEST))) {
+            Material material3 = getSideMaterial(potDecorations.left());
+            submitNodeCollector.submitModelPart(
+                    this.left, poseStack, material3.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material3), false, false, -1, breakProgress, 0
+            );
+        }
+
+        if (shouldRenderFace(level, state.blockState, Direction.EAST, state.blockPos.relative(Direction.EAST))) {
+            Material material4 = getSideMaterial(potDecorations.right());
+            submitNodeCollector.submitModelPart(
+                    this.right, poseStack, material4.renderType(RenderTypes::entitySolid), i, j, this.materials.get(material4), false, false, -1, breakProgress, 0
+            );
+        }
 
 
 

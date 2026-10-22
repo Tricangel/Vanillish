@@ -4,7 +4,7 @@
       "model": "minecraft:block/gilded_blackstone_slab"
     },
     "type=double": {
-      "model": "minecraft:block/gilded_blackstone"
+      "model": "minecraft:block/gilded_blackstone_slab_full"
     },
     "type=top": {
       "model": "minecraft:block/gilded_blackstone_slab_top"

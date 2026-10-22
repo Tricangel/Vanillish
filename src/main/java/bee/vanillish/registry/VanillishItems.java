@@ -17,13 +17,13 @@ public class VanillishItems {
 
     public static final Item PUTRID_LEATHER = register("putrid_leather", Item::new, new Item.Properties());
 
-    public static final Item BRASS_INGOT = register("brass_ingot", Item::new, new Item.Properties());
-    public static final Item ROSE_GOLD_INGOT = register("rose_gold_ingot", Item::new, new Item.Properties());
-    public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Properties());
+    public static final Item BRASS_INGOT = register("brass_ingot", Item::new, new Item.Properties().trimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, Vanillish.id("brass"))));
+    public static final Item ROSE_GOLD_INGOT = register("rose_gold_ingot", Item::new, new Item.Properties().trimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, Vanillish.id("rose_gold"))));
+    public static final Item STEEL_INGOT = register("steel_ingot", Item::new, new Item.Properties().trimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, Vanillish.id("steel"))));
     public static final Item BRASS_NUGGET = register("brass_nugget", Item::new, new Item.Properties());
     public static final Item ROSE_GOLD_NUGGET = register("rose_gold_nugget", Item::new, new Item.Properties());
     public static final Item STEEL_NUGGET = register("steel_nugget", Item::new, new Item.Properties());
-    public static final Item SCRAP_METAL_SHARD = register("scrap_metal_shard", Item::new, new Item.Properties());
+    public static final Item SCRAP_METAL_SHARD = register("scrap_metal_shard", Item::new, new Item.Properties().trimMaterial(ResourceKey.create(Registries.TRIM_MATERIAL, Vanillish.id("scrap_metal"))));
 
     public static final BlockItem ALGAE = registerBlockItem("algae", properties -> new PlaceOnWaterBlockItem(VanillishBlocks.ALGAE, properties), new Item.Properties());
     public static final BlockItem DUCKWEED = registerBlockItem("duckweed", properties -> new PlaceOnWaterBlockItem(VanillishBlocks.DUCKWEED, properties), new Item.Properties());

@@ -4,7 +4,7 @@
       "model": "vanillish:block/scorch_stone_slab"
     },
     "type=double": {
-      "model": "vanillish:block/scorch_stone"
+      "model": "vanillish:block/scorch_stone_slab_full"
     },
     "type=top": {
       "model": "vanillish:block/scorch_stone_slab_top"

@@ -15,6 +15,7 @@ import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 public class VanillishBlockLoot extends FabricBlockLootTableProvider {
@@ -28,7 +29,7 @@ public class VanillishBlockLoot extends FabricBlockLootTableProvider {
         BlockFamilyHelper.families.forEach(family -> {
             family.blocks.forEach((variant, block) -> {
                 if (variant.equals(VanillishBlockFamily.Variant.SLAB)) add(block, createSlabItemTable(block));
-                else dropSelf(block);
+                else if (!(variant.equals(VanillishBlockFamily.Variant.FULL_BLOCK) && family.nameSpace.equals("minecraft"))) dropSelf(block);
             });
         });
 

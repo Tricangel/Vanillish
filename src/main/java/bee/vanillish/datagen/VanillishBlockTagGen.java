@@ -49,6 +49,7 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(VanillishBlocks.CHARRED_TRAPDOOR);
 
         valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(VanillishBlocks.SANDSTONE_SLATE)
         .add(VanillishBlocks.BLAST_CHAMBER)
         .add(VanillishBlocks.WARDING_STONE)
         .add(VanillishBlocks.REDSTONE_RANDOMIZER)

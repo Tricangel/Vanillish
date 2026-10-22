@@ -1,5 +1,8 @@
 {
   "values": [
-    "vanillish:brass_ingot"
+    "vanillish:brass_ingot",
+    "vanillish:steel_ingot",
+    "vanillish:scrap_metal_shard",
+    "vanillish:rose_gold_ingot"
   ]
 }

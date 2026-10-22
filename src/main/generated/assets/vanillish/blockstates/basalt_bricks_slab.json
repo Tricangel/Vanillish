@@ -4,7 +4,7 @@
       "model": "vanillish:block/basalt_bricks_slab"
     },
     "type=double": {
-      "model": "vanillish:block/basalt_bricks"
+      "model": "vanillish:block/basalt_bricks_slab_full"
     },
     "type=top": {
       "model": "vanillish:block/basalt_bricks_slab_top"

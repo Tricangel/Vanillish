@@ -4,7 +4,7 @@
       "model": "minecraft:block/deepslate_slab"
     },
     "type=double": {
-      "model": "minecraft:block/deepslate"
+      "model": "minecraft:block/deepslate_slab_full"
     },
     "type=top": {
       "model": "minecraft:block/deepslate_slab_top"

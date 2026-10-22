@@ -4,6 +4,7 @@ import bee.vanillish.registry.VanillishBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
@@ -24,7 +25,7 @@ import org.jspecify.annotations.Nullable;
 import java.util.Optional;
 
 public class SandstoneSlateBlockEntity extends BlockEntity {
-    public PotDecorations decorations = new PotDecorations(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty());
+    public PotDecorations decorations = PotDecorations.EMPTY;
     public SandstoneSlateBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(VanillishBlockEntities.SANDSTONE_SLATE, blockPos, blockState);
     }
@@ -93,6 +94,12 @@ public class SandstoneSlateBlockEntity extends BlockEntity {
     protected void collectImplicitComponents(DataComponentMap.Builder builder) {
         super.collectImplicitComponents(builder);
         builder.set(DataComponents.POT_DECORATIONS, decorations);
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter dataComponentGetter) {
+        super.applyImplicitComponents(dataComponentGetter);
+        this.decorations = dataComponentGetter.getOrDefault(DataComponents.POT_DECORATIONS, PotDecorations.EMPTY);
     }
 
     @Override

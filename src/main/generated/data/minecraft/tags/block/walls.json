@@ -1,5 +1,9 @@
 {
   "values": [
+    "vanillish:scorch_stone_wall",
+    "vanillish:polished_scorch_stone_wall",
+    "vanillish:smooth_scorch_stone_wall",
+    "vanillish:scorch_stone_brick_wall",
     "minecraft:calcite_wall",
     "minecraft:purpur_wall",
     "minecraft:stone_wall",
@@ -9,7 +13,7 @@
     "minecraft:prismarine_brick_wall",
     "minecraft:dark_prismarine_wall",
     "minecraft:smooth_sandstone_wall",
-    "minecraft:red_smooth_sandstone_wall",
+    "minecraft:smooth_red_sandstone_wall",
     "minecraft:cracked_stone_brick_wall",
     "minecraft:terracotta_wall",
     "minecraft:white_terracotta_wall",
@@ -50,12 +54,6 @@
     "minecraft:end_stone_wall",
     "minecraft:netherrack_wall",
     "minecraft:gilded_blackstone_wall",
-    "vanillish:basalt_bricks_wall",
-    "vanillish:dark_sandstone_wall",
-    "vanillish:scorch_stone_brick_wall",
-    "vanillish:smooth_dark_sandstone_wall",
-    "vanillish:polished_scorch_stone_wall",
-    "vanillish:smooth_scorch_stone_wall",
-    "vanillish:scorch_stone_wall"
+    "vanillish:basalt_bricks_wall"
   ]
 }

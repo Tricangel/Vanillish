@@ -2,9 +2,9 @@
 b4709b8739c0e0ea991ef8baea52f513570eac80 data/minecraft/tags/block/climbable.json
 043be5c104f84ff1a2697743982b1c17a1f018ec data/minecraft/tags/block/fence_gates.json
 e9307c93ba6d4ca6c25e596ea8a6879933dea451 data/minecraft/tags/block/mineable/axe.json
-240c8b05829e4d65b99a6af4ade7c29d5426a6c5 data/minecraft/tags/block/mineable/pickaxe.json
+e87561739088493e5dc9165d04bf6bab30a6af52 data/minecraft/tags/block/mineable/pickaxe.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/minecraft/tags/block/rails.json
-6df10b99e0ad3c3385386c1fa6e14815ad6151f8 data/minecraft/tags/block/walls.json
+3e2d646e18727c747799f5b2dd2ab785018e660d data/minecraft/tags/block/walls.json
 1b9d6438cb51b2335a717f946d9bcf827343ef36 data/minecraft/tags/block/wooden_fences.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/vanillish/tags/block/advanced_rails.json
 b29e29c99d2631973599fd14bbd8d1e69f9633f0 data/vanillish/tags/block/scaffolding.json

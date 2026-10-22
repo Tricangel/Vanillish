@@ -4,4 +4,6 @@ accessible method net/minecraft/client/gui/screens/recipebook/GhostSlots setResu
 accessible method net/minecraft/client/gui/screens/recipebook/GhostSlots setInput (Lnet/minecraft/world/inventory/Slot;Lnet/minecraft/util/context/ContextMap;Lnet/minecraft/world/item/crafting/display/SlotDisplay;)V
 accessible method net/minecraft/core/registries/BuiltInRegistries registerSimple (Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/core/registries/BuiltInRegistries$RegistryBootstrap;)Lnet/minecraft/core/Registry;
 accessible class net/minecraft/core/registries/BuiltInRegistries$RegistryBootstrap
+accessible field net/minecraft/client/data/models/BlockModelGenerators$BlockFamilyProvider models Ljava/util/Map;
 extend-enum  net/minecraft/client/gui/screens/recipebook/SearchRecipeBookCategory  BLAST_CHAMBER
+

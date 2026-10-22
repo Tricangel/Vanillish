@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "vanillish:polished_scorch_stone",
-  "result": {
-    "count": 1,
-    "id": "vanillish:scorch_stone_bricks"
-  }
-}

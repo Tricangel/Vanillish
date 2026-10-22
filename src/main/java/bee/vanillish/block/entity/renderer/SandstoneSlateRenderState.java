@@ -5,6 +5,6 @@ import net.minecraft.world.level.block.entity.PotDecorations;
 
 public class SandstoneSlateRenderState extends BlockEntityRenderState {
 
-    PotDecorations decorations;
+    PotDecorations decorations = PotDecorations.EMPTY;
 
 }

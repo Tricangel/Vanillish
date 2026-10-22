@@ -4,7 +4,7 @@
       "model": "minecraft:block/cracked_stone_brick_slab"
     },
     "type=double": {
-      "model": "minecraft:block/cracked_stone_bricks"
+      "model": "minecraft:block/cracked_stone_brick_slab_full"
     },
     "type=top": {
       "model": "minecraft:block/cracked_stone_brick_slab_top"

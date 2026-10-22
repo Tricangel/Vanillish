@@ -24,7 +24,10 @@ public class VanillishItemTagGen extends FabricTagProvider.ItemTagProvider {
 
 
         valueLookupBuilder(ItemTags.TRIM_MATERIALS)
-                .add(VanillishItems.BRASS_INGOT);
+                .add(VanillishItems.BRASS_INGOT)
+                .add(VanillishItems.STEEL_INGOT)
+                .add(VanillishItems.SCRAP_METAL_SHARD)
+                .add(VanillishItems.ROSE_GOLD_INGOT);
 
         valueLookupBuilder(VanillishTags.SADDLES)
                 .add(Items.SADDLE).forceAddTag(ItemTags.HARNESSES);

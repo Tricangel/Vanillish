@@ -4,7 +4,7 @@
       "model": "minecraft:block/netherrack_slab"
     },
     "type=double": {
-      "model": "minecraft:block/netherrack"
+      "model": "minecraft:block/netherrack_slab_full"
     },
     "type=top": {
       "model": "minecraft:block/netherrack_slab_top"

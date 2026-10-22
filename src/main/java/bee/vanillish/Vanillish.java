@@ -33,9 +33,6 @@ public class Vanillish implements ModInitializer {
 		VanillishRecipeBookCategories.init();
 		VanillishCreativeTab.init();
 		VanillishParticles.init();
-		VanillishRegistries.init();
-		VanillishSandstoneSlateSheets.init();
-		VanillishSheets.init();
 
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG);

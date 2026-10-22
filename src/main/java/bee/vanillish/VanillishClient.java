@@ -1,13 +1,12 @@
 package bee.vanillish;
 
-import bee.vanillish.block.entity.SandstoneSlateBlockEntity;
 import bee.vanillish.block.entity.renderer.SandstoneSlateBlockEntityRenderer;
 import bee.vanillish.client.BlastChamberScreen;
 import bee.vanillish.client.renderer.SandstoneSlateSpecialRenderer;
-import bee.vanillish.registry.VanillishBlockEntities;
-import bee.vanillish.registry.VanillishBlocks;
-import bee.vanillish.registry.VanillishMenuTypes;
-import bee.vanillish.registry.VanillishParticles;
+import bee.vanillish.registry.*;
+import bee.vanillish.sandstoneslate.VanillishRegistries;
+import bee.vanillish.sandstoneslate.VanillishSandstoneSlateSheets;
+import bee.vanillish.sandstoneslate.VanillishSheets;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
@@ -42,7 +41,9 @@ public class VanillishClient implements ClientModInitializer {
         MenuScreens.register(VanillishMenuTypes.BLAST_CHAMBER, BlastChamberScreen::new);
 
         SpecialModelRenderers.ID_MAPPER.put(Vanillish.id("sandstone_slate"), SandstoneSlateSpecialRenderer.Unbaked.MAP_CODEC);
-
+        VanillishRegistries.init();
+        VanillishSandstoneSlateSheets.init();
+        VanillishSheets.init();
 
         ParticleFactoryRegistry.getInstance().register(VanillishParticles.BRASS_FLAME, FlameParticle.Provider::new);
         ParticleFactoryRegistry.getInstance().register(VanillishParticles.STEEL_FLAME, FlameParticle.Provider::new);

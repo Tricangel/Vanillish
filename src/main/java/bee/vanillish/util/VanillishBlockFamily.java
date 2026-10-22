@@ -4,30 +4,32 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jspecify.annotations.NonNull;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static bee.vanillish.util.BlockFamilyHelper.id;
 
 public class VanillishBlockFamily {
     public final ImmutableList<TagKey<Block>> blockTags;
-    final String name;
+    public final String name;
+    public final String nameSpace;
     public final boolean shouldGenerateStonecutterRecipes;
     public final boolean inherited;
     public final ImmutableMap<Variant, Block> blocks;
 
-    private VanillishBlockFamily(ImmutableList<TagKey<Block>> blockTags, ImmutableMap<Variant, Block> blocks, String name, boolean bl, boolean inherited) {
+    private VanillishBlockFamily(ImmutableList<TagKey<Block>> blockTags, ImmutableMap<Variant, Block> blocks, String name, String nameSpace, boolean bl, boolean inherited) {
         this.blockTags = blockTags;
         this.blocks = blocks;
         this.name = name;
+        this.nameSpace = nameSpace;
         this.inherited = inherited;
         this.shouldGenerateStonecutterRecipes = bl;
     }
@@ -78,15 +80,39 @@ public class VanillishBlockFamily {
         Block fullBlock = this.fullBlock();
 
 
+        BlockModelGenerators.BlockFamilyProvider familyProvider;
+        TextureMapping mapping = TextureMapping.cube(fullBlock);
+        ModelTemplate template = ModelTemplates.CUBE_ALL;
+        if (nameSpace.equals("minecraft")) {
+            if (fullBlock.equals(Blocks.POLISHED_BASALT)) {
+                mapping = TextureMapping.columnWithWall(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
+                template = ModelTemplates.CUBE_COLUMN;
+            }
 
-        BlockModelGenerators.BlockFamilyProvider familyProvider = blockModelGenerators.family(fullBlock);
+            familyProvider = blockModelGenerators.new BlockFamilyProvider(mapping);
+        } else familyProvider = blockModelGenerators.family(fullBlock);
+
+
 
         if (blocks.get(Variant.STAIRS) != null) familyProvider.stairs(stairs());
-        System.out.println(fullBlock);
-        if (blocks.get(Variant.SLAB) != null) familyProvider.slab(slab());
+        if (blocks.get(Variant.SLAB) != null) slab(slab(), blockModelGenerators, familyProvider, mapping, template);
         if (blocks.get(Variant.WALL) != null) familyProvider.wall(wall());
 
     }
+
+    public void slab(Block block, BlockModelGenerators blockModelGenerators, BlockModelGenerators.BlockFamilyProvider familyProvider, TextureMapping mapping, ModelTemplate template) {
+        Identifier identifier = this.getOrCreateModel(ModelTemplates.SLAB_BOTTOM, block, blockModelGenerators, familyProvider, "", mapping);
+        MultiVariant multiVariant = BlockModelGenerators.plainVariant(this.getOrCreateModel(ModelTemplates.SLAB_TOP, block, blockModelGenerators, familyProvider, "", mapping));
+        MultiVariant fullBlock = BlockModelGenerators.plainVariant(this.getOrCreateModel(template, block, blockModelGenerators, familyProvider, "_full", mapping));
+        blockModelGenerators.blockStateOutput.accept(BlockModelGenerators.createSlab(block, BlockModelGenerators.plainVariant(identifier), multiVariant, fullBlock));
+        blockModelGenerators.registerSimpleItemModel(block, identifier);
+
+    }
+
+    private Identifier getOrCreateModel(ModelTemplate modelTemplate, Block block, BlockModelGenerators blockModelGenerators, BlockModelGenerators.BlockFamilyProvider familyProvider, String s, TextureMapping mapping) {
+        return (Identifier)familyProvider.models.computeIfAbsent(modelTemplate, (modelTemplatex) -> modelTemplatex.createWithSuffix(block, s, mapping, blockModelGenerators.modelOutput));
+    }
+
 
 
     public static class Builder {
@@ -180,7 +206,7 @@ public class VanillishBlockFamily {
         }
 
         public VanillishBlockFamily build() {
-            VanillishBlockFamily family = new VanillishBlockFamily(ImmutableList.copyOf(tags), ImmutableMap.copyOf(blocks), name, shouldGenerateStonecutterRecipes, inherited);
+            VanillishBlockFamily family = new VanillishBlockFamily(ImmutableList.copyOf(tags), ImmutableMap.copyOf(blocks), name, nameSpace, shouldGenerateStonecutterRecipes, inherited);
             BlockFamilyHelper.families.add(family);
             return family;
         }

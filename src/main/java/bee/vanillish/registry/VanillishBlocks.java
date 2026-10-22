@@ -97,7 +97,7 @@ public class VanillishBlocks {
     public static final Block SCRAP_METAL_TRAPDOOR = register("scrap_metal_trapdoor", properties -> new TrapDoorBlock(new BlockSetType("scrap_metal"), properties), BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_TRAPDOOR), true);
 
 
-    public static final WeatheringCopperBlocks COPPER_SCAFFOLDING = WeatheringCopperBlocks.create("copper_scaffolding", VanillishBlocks::registerScaffolding, MetalScaffolding::new, WeatheringCopperScaffolding::new, p -> BlockBehaviour.Properties.ofFullCopy(VanillishBlocks.BRASS_SCAFFOLDING));
+    public static final WeatheringCopperBlocks COPPER_SCAFFOLDING = WeatheringCopperBlocks.create("copper_scaffolding", VanillishBlocks::registerScaffolding, MetalScaffolding::new, WeatheringCopperScaffolding::new, p -> BlockBehaviour.Properties.ofFullCopy(VanillishBlocks.BRASS_SCAFFOLDING).randomTicks());
 
     //Brass components
 
@@ -121,24 +121,6 @@ public class VanillishBlocks {
             .smooth(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
             .bricks(SCORCH_STONE_PROPERTIES, VanillishBlockFamily.Variant.STAIRS, VanillishBlockFamily.Variant.SLAB, VanillishBlockFamily.Variant.WALL)
             .build();
-
-//    public static final Block SCORCH_STONE = register("scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_STAIRS = register("scorch_stone_stairs", p -> new StairBlock(SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_SLAB = register("scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_WALL = register("scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SMOOTH_SCORCH_STONE = register("smooth_scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SMOOTH_SCORCH_STONE_STAIRS = register("smooth_scorch_stone_stairs", p -> new StairBlock(SMOOTH_SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SMOOTH_SCORCH_STONE_SLAB = register("smooth_scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SMOOTH_SCORCH_STONE_WALL = register("smooth_scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block POLISHED_SCORCH_STONE = register("polished_scorch_stone", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block POLISHED_SCORCH_STONE_STAIRS = register("polished_scorch_stone_stairs", p -> new StairBlock(POLISHED_SCORCH_STONE.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block POLISHED_SCORCH_STONE_SLAB = register("polished_scorch_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block POLISHED_SCORCH_STONE_WALL = register("polished_scorch_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_BRICKS = register("scorch_stone_bricks", Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_BRICK_STAIRS = register("scorch_stone_brick_stairs", p -> new StairBlock(SCORCH_STONE_BRICKS.defaultBlockState(), p), BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_BRICK_SLAB = register("scorch_stone_brick_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-//    public static final Block SCORCH_STONE_BRICK_WALL = register("scorch_stone_brick_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BLACKSTONE), true);
-
 
     //Wood
 
@@ -210,7 +192,7 @@ public class VanillishBlocks {
     public static final VanillishBlockFamily PRISMARINE_BRICK = BlockFamilyHelper.of("prismarine_brick", "minecraft", Blocks.PRISMARINE_BRICKS).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily DARK_PRISMARINE = BlockFamilyHelper.of("dark_prismarine", "minecraft", Blocks.DARK_PRISMARINE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily SMOOTH_SANDSTONE = BlockFamilyHelper.of("smooth_sandstone", "minecraft", Blocks.SMOOTH_SANDSTONE).inherited().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily RED_SMOOTH_SANDSTONE = BlockFamilyHelper.of("red_smooth_sandstone", "minecraft", Blocks.SMOOTH_RED_SANDSTONE).inherited().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily RED_SMOOTH_SANDSTONE = BlockFamilyHelper.of("smooth_red_sandstone", "minecraft", Blocks.SMOOTH_RED_SANDSTONE).inherited().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily CUT_SANDSTONE = BlockFamilyHelper.of("cut_sandstone", "minecraft", Blocks.CUT_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily CUT_RED_SANDSTONE = BlockFamilyHelper.of("cut_red_sandstone", "minecraft", Blocks.CUT_RED_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily CRACKED_STONE_BRICK = BlockFamilyHelper.of("cracked_stone_brick", "minecraft", Blocks.CRACKED_STONE_BRICKS).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
