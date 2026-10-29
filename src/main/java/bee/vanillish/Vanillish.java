@@ -2,7 +2,9 @@ package bee.vanillish;
 
 import bee.vanillish.registry.*;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.resources.model.AtlasManager;
 import net.minecraft.core.BlockPos;
@@ -37,6 +39,7 @@ public class Vanillish implements ModInitializer {
 		BlockEntityType.SHELF.addSupportedBlock(VanillishBlocks.CHARRED_SHELF);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_LOG, VanillishBlocks.STRIPPED_CHARRED_LOG);
 		StrippableBlockRegistry.register(VanillishBlocks.CHARRED_WOOD, VanillishBlocks.STRIPPED_CHARRED_WOOD);
+
 	}
 
 	public static Identifier id(String path) {

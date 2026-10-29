@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:netherrack",
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "vanillish:netherrack_pabble"
   }
 }

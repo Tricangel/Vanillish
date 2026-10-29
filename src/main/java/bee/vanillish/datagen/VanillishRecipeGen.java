@@ -139,7 +139,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
 
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_LADDER, VanillishItems.BRASS_INGOT);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_BARS, VanillishItems.BRASS_INGOT, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_SCAFFOLDING, VanillishItems.BRASS_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_SCAFFOLDING, VanillishItems.BRASS_INGOT, 2);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BRASS_CHAIN, VanillishItems.BRASS_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.BRASS_LANTERN)
@@ -184,7 +184,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
 
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_LADDER, VanillishItems.ROSE_GOLD_INGOT);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_BARS, VanillishItems.ROSE_GOLD_INGOT, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_SCAFFOLDING, VanillishItems.ROSE_GOLD_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_SCAFFOLDING, VanillishItems.ROSE_GOLD_INGOT, 2);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.ROSE_GOLD_CHAIN, VanillishItems.ROSE_GOLD_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.ROSE_GOLD_LANTERN)
@@ -222,7 +222,7 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
 
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_LADDER, VanillishItems.STEEL_INGOT);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_BARS, VanillishItems.STEEL_INGOT, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_SCAFFOLDING, VanillishItems.STEEL_INGOT);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_SCAFFOLDING, VanillishItems.STEEL_INGOT, 2);
                 stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STEEL_CHAIN, VanillishItems.STEEL_INGOT);
 
                 this.shaped(RecipeCategory.DECORATIONS, VanillishBlocks.STEEL_LANTERN)
@@ -389,16 +389,16 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                 smeltingResultFromBase(VanillishBlocks.SMOOTH_DARK_SANDSTONE, VanillishBlocks.DARK_SANDSTONE);
 
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STONE_PABBLE, Blocks.STONE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.TUFF_PABBLE, Blocks.TUFF);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BASALT_PABBLE, Blocks.BASALT);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DEEPSLATE_PABBLE, Blocks.DEEPSLATE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BLACKSTONE_PABBLE, Blocks.BLACKSTONE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CALCITE_PABBLE, Blocks.CALCITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DIORITE_PABBLE, Blocks.DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DRIPSTONE_PABBLE, Blocks.DRIPSTONE_BLOCK);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.GRANITE_PABBLE, Blocks.GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.NETHERRACK_PABBLE, Blocks.NETHERRACK);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.STONE_PABBLE, Blocks.STONE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.TUFF_PABBLE, Blocks.TUFF, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BASALT_PABBLE, Blocks.BASALT, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DEEPSLATE_PABBLE, Blocks.DEEPSLATE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.BLACKSTONE_PABBLE, Blocks.BLACKSTONE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.CALCITE_PABBLE, Blocks.CALCITE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DIORITE_PABBLE, Blocks.DIORITE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DRIPSTONE_PABBLE, Blocks.DRIPSTONE_BLOCK, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.GRANITE_PABBLE, Blocks.GRANITE, 4);
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.NETHERRACK_PABBLE, Blocks.NETHERRACK, 4);
                 
                 shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.DARK_SANDSTONE.asItem())
                         .pattern("ss")

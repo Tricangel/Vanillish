@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:dripstone_block",
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "vanillish:dripstone_pabble"
   }
 }

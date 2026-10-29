@@ -1,19 +1,25 @@
 package bee.vanillish.util;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jspecify.annotations.NonNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BlockVariantFamily {
-    final ImmutableMap<Variant, VanillishBlockFamily> blocks;
-
-    public BlockVariantFamily(ImmutableMap<Variant, VanillishBlockFamily> blocks) {
+    public final ImmutableMap<Variant, VanillishBlockFamily> blocks;
+    public final ImmutableList<TagKey<Block>> tags;
+    public BlockVariantFamily(ImmutableMap<Variant, VanillishBlockFamily> blocks, ImmutableList<TagKey<Block>> tags) {
         this.blocks = blocks;
+        this.tags = tags;
     }
 
     public VanillishBlockFamily base() {
@@ -40,6 +46,7 @@ public class BlockVariantFamily {
         final String nameSpace;
         final String name;
         Map<Variant, VanillishBlockFamily> blocks = new HashMap<>();
+        ArrayList<TagKey<Block>> tagKeys = new ArrayList<>();
 
         public Builder(String name, String nameSpace) {
             this.name = name;
@@ -108,8 +115,13 @@ public class BlockVariantFamily {
             return this;
         }
 
+        public Builder tag(TagKey<Block> tagKey) {
+            tagKeys.add(tagKey);
+            return this;
+        }
+
         public BlockVariantFamily build() {
-            return new BlockVariantFamily(ImmutableMap.copyOf(blocks));
+            return new BlockVariantFamily(ImmutableMap.copyOf(blocks), ImmutableList.copyOf(tagKeys));
         }
 
         private Identifier id(String nameSpace, String name) {

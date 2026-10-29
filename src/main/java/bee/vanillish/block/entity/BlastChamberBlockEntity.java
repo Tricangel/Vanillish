@@ -7,11 +7,13 @@ import bee.vanillish.registry.VanillishBlockEntities;
 import bee.vanillish.registry.VanillishRecipes;
 import bee.vanillish.registry.VanillishTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
@@ -25,10 +27,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Optional;
 
-public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
+public class BlastChamberBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer {
     private final RecipeManager.CachedCheck<SingleRecipeInput, BlastChamberRecipe> quickCheck;
     private final ContainerData dataAccess = new ContainerData() {
         @Override
@@ -237,4 +240,23 @@ public class BlastChamberBlockEntity extends BaseContainerBlockEntity {
     }
 
 
+    @Override
+    public int[] getSlotsForFace(Direction direction) {
+        if (direction == Direction.DOWN) {
+            return new int[]{2};
+        } else if (direction == Direction.UP) {
+            return new int[]{0};
+        }
+        return new int[]{1};
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int i, ItemStack itemStack, @Nullable Direction direction) {
+        return this.canPlaceItem(i, itemStack);
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(int i, ItemStack itemStack, Direction direction) {
+        return true;
+    }
 }

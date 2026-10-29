@@ -9,6 +9,7 @@ import java.util.List;
 
 public class BlockFamilyHelper {
     public static List<VanillishBlockFamily> families = new ArrayList<>();
+    public static List<BlockVariantFamily> variantFamilies = new ArrayList<>();
 
     public static VanillishBlockFamily.Builder of(String name, String nameSpace) {
         return new VanillishBlockFamily.Builder(name, nameSpace);

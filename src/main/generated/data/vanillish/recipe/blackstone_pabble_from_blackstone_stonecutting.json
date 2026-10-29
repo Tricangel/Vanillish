@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:blackstone",
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "vanillish:blackstone_pabble"
   }
 }

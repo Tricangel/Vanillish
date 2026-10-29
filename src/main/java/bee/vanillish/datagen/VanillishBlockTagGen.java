@@ -32,6 +32,12 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
             });
         });
 
+        VanillishBlocks.SCORCH_STONE.blocks.forEach((variant, vanillishBlockFamily) -> {
+            vanillishBlockFamily.blocks.forEach((variant1, block) -> {
+                valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+            });
+        });
+
         valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(VanillishBlocks.CHARRED_BUTTON)
                 .add(VanillishBlocks.CHARRED_DOOR)
