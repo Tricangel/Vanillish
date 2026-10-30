@@ -28,8 +28,14 @@ public class VanillishBlockLoot extends FabricBlockLootTableProvider {
 
         BlockFamilyHelper.families.forEach(family -> {
             family.blocks.forEach((variant, block) -> {
-                if (variant.equals(VanillishBlockFamily.Variant.SLAB)) add(block, createSlabItemTable(block));
-                else if (!(variant.equals(VanillishBlockFamily.Variant.FULL_BLOCK) && family.nameSpace.equals("minecraft"))) dropSelf(block);
+                if (variant.equals(VanillishBlockFamily.Variant.SLAB)) {
+                    if (family.silkTouch) dropWhenSilkTouch(block);
+                    else add(block, createSlabItemTable(block));
+                }
+                else if (!(variant.equals(VanillishBlockFamily.Variant.FULL_BLOCK) && family.nameSpace.equals("minecraft"))) {
+                    if (family.silkTouch) dropWhenSilkTouch(block);
+                    else dropSelf(block);
+                }
             });
         });
 

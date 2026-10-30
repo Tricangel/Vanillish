@@ -196,6 +196,14 @@ public class VanillishBlocks {
     public static final VanillishBlockFamily CUT_SANDSTONE = BlockFamilyHelper.of("cut_sandstone", "minecraft", Blocks.CUT_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily CUT_RED_SANDSTONE = BlockFamilyHelper.of("cut_red_sandstone", "minecraft", Blocks.CUT_RED_SANDSTONE).stairs().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily CRACKED_STONE_BRICK = BlockFamilyHelper.of("cracked_stone_brick", "minecraft", Blocks.CRACKED_STONE_BRICKS).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CRACKED_DEEPSLATE_BRICKS = BlockFamilyHelper.of("cracked_deepslate_bricks", "minecraft", Blocks.CRACKED_DEEPSLATE_BRICKS).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CRACKED_POLISHED_BLACKSTONE_BRICKS = BlockFamilyHelper.of("cracked_polished_blackstone_bricks", "minecraft", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily CHISELED_QUARTZ_BLOCK = BlockFamilyHelper.of("chiseled_quartz_block", "minecraft", Blocks.CHISELED_QUARTZ_BLOCK).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily BASALT = BlockFamilyHelper.of("basalt", "minecraft", Blocks.BASALT).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily SMOOTH_BASALT = BlockFamilyHelper.of("smooth_basalt", "minecraft", Blocks.SMOOTH_BASALT).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily SCULK = BlockFamilyHelper.of("sculk", "minecraft", Blocks.SCULK).stairs().slab().wall().silkTouch().build();
+    public static final VanillishBlockFamily AMETHYST_BLOCK = BlockFamilyHelper.of("amethyst_block", "minecraft", Blocks.AMETHYST_BLOCK).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+
 
     public static final VanillishBlockFamily TERRACOTTA = BlockFamilyHelper.of("terracotta", "minecraft", Blocks.TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily WHITE_TERRACOTTA = BlockFamilyHelper.of("white_terracotta", "minecraft", Blocks.WHITE_TERRACOTTA).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
@@ -232,23 +240,40 @@ public class VanillishBlocks {
     public static final VanillishBlockFamily MAGENTA_CONCRETE = BlockFamilyHelper.of("magenta_concrete", "minecraft", Blocks.MAGENTA_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily PINK_CONCRETE = BlockFamilyHelper.of("pink_concrete", "minecraft", Blocks.PINK_CONCRETE).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
 
-    public static final VanillishBlockFamily WHITE_WOOL = BlockFamilyHelper.of("white_wool", "minecraft", Blocks.WHITE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily LIGHT_GRAY_WOOL = BlockFamilyHelper.of("light_gray_wool", "minecraft", Blocks.LIGHT_GRAY_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily GRAY_WOOL = BlockFamilyHelper.of("gray_wool", "minecraft", Blocks.GRAY_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily BLACK_WOOL = BlockFamilyHelper.of("black_wool", "minecraft", Blocks.BLACK_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily BROWN_WOOL = BlockFamilyHelper.of("brown_wool", "minecraft", Blocks.BROWN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily ORANGE_WOOL = BlockFamilyHelper.of("orange_wool", "minecraft", Blocks.ORANGE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily RED_WOOL = BlockFamilyHelper.of("red_wool", "minecraft", Blocks.RED_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily YELLOW_WOOL = BlockFamilyHelper.of("yellow_wool", "minecraft", Blocks.YELLOW_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily LIME_WOOL = BlockFamilyHelper.of("lime_wool", "minecraft", Blocks.LIME_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily GREEN_WOOL = BlockFamilyHelper.of("green_wool", "minecraft", Blocks.GREEN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily CYAN_WOOL = BlockFamilyHelper.of("cyan_wool", "minecraft", Blocks.CYAN_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily LIGHT_BLUE_WOOL = BlockFamilyHelper.of("light_blue_wool", "minecraft", Blocks.LIGHT_BLUE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily BLUE_WOOL = BlockFamilyHelper.of("blue_wool", "minecraft", Blocks.BLUE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily PURPLE_WOOL = BlockFamilyHelper.of("purple_wool", "minecraft", Blocks.PURPLE_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily MAGENTA_WOOL = BlockFamilyHelper.of("magenta_wool", "minecraft", Blocks.MAGENTA_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
-    public static final VanillishBlockFamily PINK_WOOL = BlockFamilyHelper.of("pink_wool", "minecraft", Blocks.PINK_WOOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily WHITE_WOOL = BlockFamilyHelper.of("white_wool", "minecraft", Blocks.WHITE_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily LIGHT_GRAY_WOOL = BlockFamilyHelper.of("light_gray_wool", "minecraft", Blocks.LIGHT_GRAY_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily GRAY_WOOL = BlockFamilyHelper.of("gray_wool", "minecraft", Blocks.GRAY_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily BLACK_WOOL = BlockFamilyHelper.of("black_wool", "minecraft", Blocks.BLACK_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily BROWN_WOOL = BlockFamilyHelper.of("brown_wool", "minecraft", Blocks.BROWN_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily ORANGE_WOOL = BlockFamilyHelper.of("orange_wool", "minecraft", Blocks.ORANGE_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily RED_WOOL = BlockFamilyHelper.of("red_wool", "minecraft", Blocks.RED_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily YELLOW_WOOL = BlockFamilyHelper.of("yellow_wool", "minecraft", Blocks.YELLOW_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily LIME_WOOL = BlockFamilyHelper.of("lime_wool", "minecraft", Blocks.LIME_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily GREEN_WOOL = BlockFamilyHelper.of("green_wool", "minecraft", Blocks.GREEN_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily CYAN_WOOL = BlockFamilyHelper.of("cyan_wool", "minecraft", Blocks.CYAN_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily LIGHT_BLUE_WOOL = BlockFamilyHelper.of("light_blue_wool", "minecraft", Blocks.LIGHT_BLUE_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily BLUE_WOOL = BlockFamilyHelper.of("blue_wool", "minecraft", Blocks.BLUE_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily PURPLE_WOOL = BlockFamilyHelper.of("purple_wool", "minecraft", Blocks.PURPLE_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily MAGENTA_WOOL = BlockFamilyHelper.of("magenta_wool", "minecraft", Blocks.MAGENTA_WOOL).stairs().slab().build();
+    public static final VanillishBlockFamily PINK_WOOL = BlockFamilyHelper.of("pink_wool", "minecraft", Blocks.PINK_WOOL).stairs().slab().build();
 
+    public static final VanillishBlockFamily DIRT = BlockFamilyHelper.of("dirt", "minecraft", Blocks.DIRT).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily ROOTED_DIRT = BlockFamilyHelper.of("rooted_dirt", "minecraft", Blocks.ROOTED_DIRT).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily COARSE_DIRT = BlockFamilyHelper.of("coarse_dirt", "minecraft", Blocks.COARSE_DIRT).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily GRASS = BlockFamilyHelper.of("grass", "minecraft", Blocks.GRASS_BLOCK).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily PODZOL = BlockFamilyHelper.of("podzol", "minecraft", Blocks.PODZOL).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily MYCELIUM = BlockFamilyHelper.of("mycelium", "minecraft", Blocks.MYCELIUM).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily MOSS = BlockFamilyHelper.of("moss", "minecraft", Blocks.MOSS_BLOCK).stairs().slab().build();
+    public static final VanillishBlockFamily PALE_MOSS = BlockFamilyHelper.of("pale_moss", "minecraft", Blocks.PALE_MOSS_BLOCK).stairs().slab().build();
+    public static final VanillishBlockFamily CLAY = BlockFamilyHelper.of("clay", "minecraft", Blocks.CLAY).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily SAND = BlockFamilyHelper.of("sand", "minecraft", Blocks.SAND).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily GRAVEL = BlockFamilyHelper.of("gravel", "minecraft", Blocks.GRAVEL).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily RED_SAND = BlockFamilyHelper.of("red_sand", "minecraft", Blocks.RED_SAND).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily CRIMSON_NYLIUM = BlockFamilyHelper.of("crimson_nylium", "minecraft", Blocks.CRIMSON_NYLIUM).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily WARPED_NYLIUM = BlockFamilyHelper.of("warped_nylium", "minecraft", Blocks.WARPED_NYLIUM).stairs().slab().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
+    public static final VanillishBlockFamily SOUL_SAND = BlockFamilyHelper.of("soul_sand", "minecraft", Blocks.SOUL_SAND).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily SOUL_SOIL = BlockFamilyHelper.of("soul_soil", "minecraft", Blocks.SOUL_SOIL).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
+    public static final VanillishBlockFamily SNOW = BlockFamilyHelper.of("snow", "minecraft", Blocks.SNOW_BLOCK).stairs().slab().tag(BlockTags.MINEABLE_WITH_SHOVEL).build();
 
     public static final VanillishBlockFamily SMOOTH_STONE = BlockFamilyHelper.of("smooth_stone", "minecraft", Blocks.SMOOTH_STONE).wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();
     public static final VanillishBlockFamily DRIPSTONE = BlockFamilyHelper.of("dripstone", "minecraft", Blocks.DRIPSTONE_BLOCK).stairs().slab().wall().generateStonecutter().tag(BlockTags.MINEABLE_WITH_PICKAXE).build();

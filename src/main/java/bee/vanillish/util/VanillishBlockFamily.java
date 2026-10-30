@@ -23,14 +23,16 @@ public class VanillishBlockFamily {
     public final String nameSpace;
     public final boolean shouldGenerateStonecutterRecipes;
     public final boolean inherited;
+    public final boolean silkTouch;
     public final ImmutableMap<Variant, Block> blocks;
 
-    private VanillishBlockFamily(ImmutableList<TagKey<Block>> blockTags, ImmutableMap<Variant, Block> blocks, String name, String nameSpace, boolean bl, boolean inherited) {
+    private VanillishBlockFamily(ImmutableList<TagKey<Block>> blockTags, ImmutableMap<Variant, Block> blocks, String name, String nameSpace, boolean bl, boolean inherited, boolean silkTouch) {
         this.blockTags = blockTags;
         this.blocks = blocks;
         this.name = name;
         this.nameSpace = nameSpace;
         this.inherited = inherited;
+        this.silkTouch = silkTouch;
         this.shouldGenerateStonecutterRecipes = bl;
     }
 
@@ -120,6 +122,7 @@ public class VanillishBlockFamily {
         final String nameSpace;
         final String name;
         boolean inherited = false;
+        boolean silkTouch = false;
         boolean shouldGenerateStonecutterRecipes = false;
         Map<Variant, Block> blocks = new HashMap<>();
 
@@ -205,8 +208,13 @@ public class VanillishBlockFamily {
             return this;
         }
 
+        public Builder silkTouch() {
+            silkTouch = true;
+            return this;
+        }
+
         public VanillishBlockFamily build() {
-            VanillishBlockFamily family = new VanillishBlockFamily(ImmutableList.copyOf(tags), ImmutableMap.copyOf(blocks), name, nameSpace, shouldGenerateStonecutterRecipes, inherited);
+            VanillishBlockFamily family = new VanillishBlockFamily(ImmutableList.copyOf(tags), ImmutableMap.copyOf(blocks), name, nameSpace, shouldGenerateStonecutterRecipes, inherited, silkTouch);
             BlockFamilyHelper.families.add(family);
             return family;
         }

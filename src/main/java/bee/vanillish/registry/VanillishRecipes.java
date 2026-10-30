@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.crafting.RecipePropertySet;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import org.jspecify.annotations.NonNull;
 
 public class VanillishRecipes {
 
@@ -22,12 +23,12 @@ public class VanillishRecipes {
             Vanillish.id("blast_chamber"),
             new RecipeSerializer<>() {
                 @Override
-                public MapCodec<BlastChamberRecipe> codec() {
+                public @NonNull MapCodec<BlastChamberRecipe> codec() {
                     return BlastChamberRecipe.CODEC;
                 }
 
                 @Override
-                public StreamCodec<RegistryFriendlyByteBuf, BlastChamberRecipe> streamCodec() {
+                public @NonNull StreamCodec<RegistryFriendlyByteBuf, BlastChamberRecipe> streamCodec() {
                     return BlastChamberRecipe.STREAM_CODEC;
                 }
             }
