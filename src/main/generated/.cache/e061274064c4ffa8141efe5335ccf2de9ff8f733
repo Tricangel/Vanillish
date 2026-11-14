@@ -1,11 +1,12 @@
 // 1.21.11	-999999999-01-01T00:00:00	Vanillish/Tags for minecraft:block
+7b0b602554bfad286fdbccd378aead7da95407be data/c/tags/block/chains.json
 b4709b8739c0e0ea991ef8baea52f513570eac80 data/minecraft/tags/block/climbable.json
 043be5c104f84ff1a2697743982b1c17a1f018ec data/minecraft/tags/block/fence_gates.json
 e9307c93ba6d4ca6c25e596ea8a6879933dea451 data/minecraft/tags/block/mineable/axe.json
-b0c7602ebd2bf9d06e39b71ed1fcb2c346ae05c7 data/minecraft/tags/block/mineable/pickaxe.json
-9d09ed5599924bafd48a4472286fe5d7092d8e6b data/minecraft/tags/block/mineable/shovel.json
+5958d1776a77a6256842130e4a47481228ea254b data/minecraft/tags/block/mineable/pickaxe.json
+ec23e4db88ea679a1b310553f8e9072fec7b17aa data/minecraft/tags/block/mineable/shovel.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/minecraft/tags/block/rails.json
-186c993ab7687e4bbeecdce48a4e0a731413748b data/minecraft/tags/block/walls.json
+44891484f7a2b26652f416e14e822fa1dd474302 data/minecraft/tags/block/walls.json
 1b9d6438cb51b2335a717f946d9bcf827343ef36 data/minecraft/tags/block/wooden_fences.json
 ec58ed10c0e1ef6fc11c32a398ca39fe1f182a7a data/vanillish/tags/block/advanced_rails.json
 b29e29c99d2631973599fd14bbd8d1e69f9633f0 data/vanillish/tags/block/scaffolding.json

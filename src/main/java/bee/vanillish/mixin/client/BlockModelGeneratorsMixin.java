@@ -40,9 +40,6 @@ public abstract class BlockModelGeneratorsMixin  {
 			return TexturedModel.TOP_BOTTOM_WITH_WALL.get(block);
 		}
 
-		if (block.equals(Blocks.POLISHED_BASALT)) {
-			return TexturedModel.COLUMN_WITH_WALL.get(block).updateTextures(m -> m.put(TextureSlot.SIDE, TextureMapping.getBlockTexture(block).withSuffix("_side")));
-		}
 
 
 		return original;

@@ -6,6 +6,8 @@ import bee.vanillish.block.entity.SandstoneSlateBlockEntity;
 import bee.vanillish.sandstoneslate.VanillishSandstoneSlateSheets;
 import bee.vanillish.sandstoneslate.VanillishSheets;
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.*;
 import net.minecraft.client.model.geom.builders.*;
@@ -30,6 +32,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.PotDecorations;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3fc;
 import org.jspecify.annotations.Nullable;
@@ -124,7 +127,7 @@ public class SandstoneSlateBlockEntityRenderer implements BlockEntityRenderer<Sa
         PotDecorations potDecorations = blockEntityRenderState.decorations;
 
         this.submit(poseStack, submitNodeCollector, potDecorations, j, i, blockEntityRenderState.breakProgress, blockEntityRenderState);
-
+        FluidRenderHandlerRegistry.INSTANCE.get(Fluids.WATER).renderFluid(blockEntityRenderState.blockPos, );
 
 
     }

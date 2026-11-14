@@ -42,6 +42,14 @@ public class BlockVariantFamily {
         return blocks.get(Variant.CARVED);
     }
 
+    public VanillishBlockFamily smooth() {
+        return blocks.get(Variant.SMOOTH);
+    }
+
+    public VanillishBlockFamily polished() {
+        return blocks.get(Variant.POLISHED);
+    }
+
     public static class Builder {
         final String nameSpace;
         final String name;

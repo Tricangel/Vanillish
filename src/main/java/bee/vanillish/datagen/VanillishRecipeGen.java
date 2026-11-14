@@ -456,35 +456,35 @@ public class VanillishRecipeGen extends FabricRecipeProvider {
                         .save(recipeOutput);
 
 
-//                shapeless(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE, 8)
-//                        .requires(Blocks.MAGMA_BLOCK, 2)
-//                        .requires(Blocks.BLACKSTONE, 2)
-//                        .unlockedBy("has_blackstone", has(Blocks.BLACKSTONE))
-//                        .save(recipeOutput);
-//
-//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SMOOTH_SCORCH_STONE, VanillishBlocks.SCORCH_STONE);
-//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SMOOTH_SCORCH_STONE, 4)
-//                        .pattern("ss")
-//                        .pattern("ss")
-//                        .define('s', VanillishBlocks.SCORCH_STONE)
-//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
-//                        .save(recipeOutput);
-//
-//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.POLISHED_SCORCH_STONE, VanillishBlocks.SMOOTH_SCORCH_STONE);
-//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.POLISHED_SCORCH_STONE, 4)
-//                        .pattern("ss")
-//                        .pattern("ss")
-//                        .define('s', VanillishBlocks.SMOOTH_SCORCH_STONE)
-//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
-//                        .save(recipeOutput);
-//
-//                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_BRICKS, VanillishBlocks.POLISHED_SCORCH_STONE);
-//                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE_BRICKS, 4)
-//                        .pattern("ss")
-//                        .pattern("ss")
-//                        .define('s', VanillishBlocks.POLISHED_SCORCH_STONE)
-//                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE))
-//                        .save(recipeOutput);
+                shapeless(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.base().fullBlock(), 8)
+                        .requires(Blocks.MAGMA_BLOCK, 2)
+                        .requires(Blocks.BLACKSTONE, 2)
+                        .unlockedBy("has_blackstone", has(Blocks.BLACKSTONE))
+                        .save(recipeOutput);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.smooth().fullBlock(), VanillishBlocks.SCORCH_STONE.base().fullBlock());
+                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.smooth().fullBlock(), 4)
+                        .pattern("ss")
+                        .pattern("ss")
+                        .define('s', VanillishBlocks.SCORCH_STONE.base().fullBlock())
+                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE.base().fullBlock()))
+                        .save(recipeOutput);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.polished().fullBlock(), VanillishBlocks.SCORCH_STONE.smooth().fullBlock());
+                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.polished().fullBlock(), 4)
+                        .pattern("ss")
+                        .pattern("ss")
+                        .define('s', VanillishBlocks.SCORCH_STONE.smooth().fullBlock())
+                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE.base().fullBlock()))
+                        .save(recipeOutput);
+
+                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.bricks().fullBlock(), VanillishBlocks.SCORCH_STONE.polished().fullBlock());
+                shaped(RecipeCategory.BUILDING_BLOCKS, VanillishBlocks.SCORCH_STONE.bricks().fullBlock(), 4)
+                        .pattern("ss")
+                        .pattern("ss")
+                        .define('s', VanillishBlocks.SCORCH_STONE.polished().fullBlock())
+                        .unlockedBy("has_scorchstone", has(VanillishBlocks.SCORCH_STONE.base().fullBlock()))
+                        .save(recipeOutput);
 //
 //
 //                //these are for duping

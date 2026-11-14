@@ -90,6 +90,22 @@ public class VanillishBlockFamily {
                 mapping = TextureMapping.columnWithWall(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
                 template = ModelTemplates.CUBE_COLUMN;
             }
+            if (fullBlock.equals(Blocks.BASALT)) {
+                mapping = TextureMapping.columnWithWall(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
+                template = ModelTemplates.CUBE_COLUMN;
+            }
+            if (fullBlock.equals(Blocks.GRASS_BLOCK)) {
+                mapping = TextureMapping.cubeBottomTop(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
+                template = ModelTemplates.CUBE_BOTTOM_TOP;
+            }
+            if (fullBlock.equals(Blocks.PODZOL)) {
+                mapping = TextureMapping.cubeBottomTop(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
+                template = ModelTemplates.CUBE_BOTTOM_TOP;
+            }
+            if (fullBlock.equals(Blocks.MYCELIUM)) {
+                mapping = TextureMapping.cubeBottomTop(fullBlock).put(TextureSlot.SIDE, TextureMapping.getBlockTexture(fullBlock).withSuffix("_side"));
+                template = ModelTemplates.CUBE_BOTTOM_TOP;
+            }
 
             familyProvider = blockModelGenerators.new BlockFamilyProvider(mapping);
         } else familyProvider = blockModelGenerators.family(fullBlock);

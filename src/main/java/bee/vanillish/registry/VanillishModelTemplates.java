@@ -38,7 +38,6 @@ public class VanillishModelTemplates {
         return new TextureMapping().put(TextureSlot.TOP, top).put(TextureSlot.SIDE, side).put(TextureSlot.BOTTOM, bottom).put(TextureSlot.PARTICLE, top);
     }
 
-
     public static Identifier getBlockTexture(Block block, String string) {
         Identifier identifier = BuiltInRegistries.BLOCK.getKey(block);
         return identifier.withPath((string2) -> "block/" + string2 + string);

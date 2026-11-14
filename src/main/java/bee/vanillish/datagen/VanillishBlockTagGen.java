@@ -7,6 +7,7 @@ import bee.vanillish.util.BlockFamilyHelper;
 import bee.vanillish.util.VanillishBlockFamily;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
@@ -186,6 +187,12 @@ public class VanillishBlockTagGen extends FabricTagProvider.BlockTagProvider {
         .add(VanillishBlocks.DRIPSTONE_PABBLE)
         .add(VanillishBlocks.GRANITE_PABBLE)
         .add(VanillishBlocks.NETHERRACK_PABBLE);
+
+        valueLookupBuilder(ConventionalBlockTags.CHAINS)
+                .add(VanillishBlocks.BRASS_CHAIN)
+                .add(VanillishBlocks.ROSE_GOLD_CHAIN)
+                .add(VanillishBlocks.STEEL_CHAIN)
+                .add(VanillishBlocks.SCRAP_METAL_CHAIN);
 
         VanillishBlocks.COPPER_SCAFFOLDING.forEach(block -> {
             valueLookupBuilder(BlockTags.CLIMBABLE)
